@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Multi-species parameter estimation - DEBwiki</title>
+<meta name="generator" content="MediaWiki 1.25.3" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit" />
+<link rel="edit" title="Edit" href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="DEBwiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.DEBtheory.org/wiki/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/index.php?title=Multi-species_parameter_estimation" />
+<link rel="alternate" type="application/atom+xml" title="DEBwiki Atom feed" href="/wiki/index.php?title=Special%3ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.DEBtheory.org/wiki/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: DEBwiki:resourceloader:filter:minify-css:7:0a55de4300b59c1251ed0a36228832d7 */</style>
+<script src="http://www.DEBtheory.org/wiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Multi-species_parameter_estimation","wgTitle":"Multi-species parameter estimation","wgCurRevisionId":1015,"wgRevisionId":1015,"wgArticleId":92,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":"Bas","wgUserGroups":["*","user","autoconfirmed"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Multi-species_parameter_estimation","wgRelevantArticleId":92,"wgUserId":3,"wgUserEditCount":404,"wgUserRegistration":1445588874000,"wgUserNewMsgRevisionId":null,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"watchlisttoken":"27ad2637b3b21e3d197fe22efe022552e0b38aac"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"98cdfd38a31d8b419c2f19fef374fce9602e2819+\\","patrolToken":"b31304516b0bcf05abc226be2ec097a7602e2819+\\","watchToken":"acd2551e2a89d909f4891f10daf67246602e2819+\\"});});
+/* cache key: DEBwiki:resourceloader:filter:minify-js:7:7d6917820770e30e8e357a1a012c7051 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Multi-species_parameter_estimation skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Multi-species parameter estimation</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From DEBwiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="wikitable" style="width: 22em; text-align: center; float:right; margin-left: 10px;">
+
+<tr>
+<th style="background: #E6E6FA; font-size: 150%; text-align:center;"> <a href="/wiki/index.php?title=AmP_estimation_procedure" title="AmP estimation procedure">AmP estimation</a>
+</th></tr>
+<tr>
+<td>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Concepts
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<p><a href="/wiki/index.php?title=AmP_estimation_procedure#Data_and_data_types" title="AmP estimation procedure">Data</a> and <a href="/wiki/index.php?title=Completeness" title="Completeness">completeness</a><br />
+<a href="/wiki/index.php?title=AmP_estimation_procedure#Parameter_estimation" title="AmP estimation procedure">Parameter estimation</a><br />
+<a href="/wiki/index.php?title=AmP_estimation_procedure#Goodness_of_fit_criterion" title="AmP estimation procedure">Goodness-of-fit</a>: <a href="/wiki/index.php?title=SMSE" title="SMSE" class="mw-redirect">SMSE</a> / <a href="/wiki/index.php?title=MRE" title="MRE" class="mw-redirect">MRE</a> <br />
+<a href="/wiki/index.php?title=AmP_estimation_procedure#Parameter_estimation" title="AmP estimation procedure">AmP Literature</a><br />
+</p>
+</td></tr></table>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Practice -  essentials
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<p><a href="/wiki/index.php?title=Starting_an_estimation_for_a_new_species" title="Starting an estimation for a new species">Starting an estimation for a new species</a><br />
+<a href="/wiki/index.php?title=Setting_initial_parameter_values" title="Setting initial parameter values">Setting initial parameter values</a><br />
+<a href="/wiki/index.php?title=Weight_coefficients" title="Weight coefficients">Setting weight coefficients</a><br />
+<a href="/wiki/index.php?title=Implied_properties" title="Implied properties">Computing implied properties</a><br />
+<a href="/wiki/index.php?title=Submit_instructions" title="Submit instructions">Submitting to the collection</a><br />
+<a href="/wiki/index.php?title=Parameter_confidence_intervals" title="Parameter confidence intervals">Obtaining parameter confidence intervals</a><br />
+</p>
+</td></tr>
+</table>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Practice - extra modules
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<ul><li> <a href="/wiki/index.php?title=Going_from_std_to_abj_model" title="Going from std to abj model">Going from std to abj model</a></li>
+<li> <strong class="selflink">Multi-species parameter estimation</strong></li>
+<li> <a href="/wiki/index.php?title=Get_environmental_temperatures" title="Get environmental temperatures">Get environmental temperatures</a></li>
+<li> <a href="/wiki/index.php?title=Importing_AmP_parameters_into_R" title="Importing AmP parameters into R">Importing AmP parameters into R</a></li></ul>
+</td></tr>
+</table>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Code specification
+</th></tr>
+<tr>
+<td style="font-size: 95%;"><i>User-defined files:</i> <a href="/wiki/index.php?title=Run_file" title="Run file">run</a>, <a href="/wiki/index.php?title=Mydata_file" title="Mydata file">mydata</a>, <a href="/wiki/index.php?title=Pars_init_file" title="Pars init file">pars_init</a>, <a href="/wiki/index.php?title=Predict_file" title="Predict file">predict</a><br />
+</td></tr>
+<tr>
+<td style="font-size: 95%;"><i>Data:</i> <a href="/wiki/index.php?title=Zero-variate_data" title="Zero-variate data">Zero-variate</a>, <a href="/wiki/index.php?title=Univariate_data" title="Univariate data">Univariate</a>, <a href="/wiki/index.php?title=Pseudo-data" title="Pseudo-data">Pseudo-data</a> <br />
+</td></tr>
+<tr>
+<td style="font-size: 95%;">
+<p><a href="/wiki/index.php?title=Typified_models" title="Typified models">Typified models</a><br />
+<a href="/wiki/index.php?title=Estimation_options" title="Estimation options">Estimation options</a><br />
+</p>
+</td></tr>
+</table>
+<table class="collapsible collapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> See also
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<ul><li> <a href="/wiki/index.php?title=Frequently_asked_questions_of_add-my-pet_procedure" title="Frequently asked questions of add-my-pet procedure">FAQs</a></li>
+<li> <a href="/wiki/index.php?title=Troubleshooter_for_add-my-pet_procedure" title="Troubleshooter for add-my-pet procedure">Troubleshooter</a></li></ul>
+<p><i>Quick links</i>: <a rel="nofollow" target="_blank" class="external text" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/index.html">Add-my-pet portal</a>; <a rel="nofollow" target="_blank" class="external text" href="https://en.wikipedia.org/wiki/Dynamic_energy_budget_theory">DEB Wikipedia page</a>; <a rel="nofollow" target="_blank" class="external text" href="http://www.debtheory.org/wiki/index.php?title=Main_Page">DEBwiki portal</a>; <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/Kooy2010_n.pdf">DEB notation</a>; GitHub repositories for <a rel="nofollow" target="_blank" class="external text" href="http://www.github.com/add-my-pet/DEBtool_M/">DEBtool_M</a> and <a rel="nofollow" target="_blank" class="external text" href="http://www.github.com/add-my-pet/AmPtool/">AmPtool</a>
+</p>
+</td></tr></table>
+</td></tr>
+</table>
+<p><a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/manual/">DEBtool</a> (<a rel="nofollow" target="_blank" class="external text" href="http://www.github.com/add-my-pet/DEBtool_M/">download from GitHub</a>) enables you to estimate parameters for two or more species simultaneously. 
+This can be interesting in the case that different species share particular parameter values, and/or parameter values have particular assumed relationships.
+The general idea is that the total number of parameters to be estimated for the group is (considerably) smaller than the sum of the parameters to be estimated for each species.
+</p><p>The specification of the group is done in the run-file (see below).
+A simple example of the required multi-species files is provided in <code>DEBtool_M/lib/pet/example_group_estimation.zip</code>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Required_files"><span class="tocnumber">1</span> <span class="toctext">Required files</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#mydata-files"><span class="tocnumber">1.1</span> <span class="toctext">mydata-files</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#predict-files"><span class="tocnumber">1.2</span> <span class="toctext">predict-files</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#pars_init_group-file"><span class="tocnumber">1.3</span> <span class="toctext">pars_init_group-file</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#augmented_loss_function"><span class="tocnumber">1.4</span> <span class="toctext">augmented loss function</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#run-file"><span class="tocnumber">1.5</span> <span class="toctext">run-file</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Results"><span class="tocnumber">2</span> <span class="toctext">Results</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#General_remarks"><span class="tocnumber">3</span> <span class="toctext">General remarks</span></a></li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Required_files">Required files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=1" title="Edit section: Required files">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The general setup of the multi-species estimation is the same as for single species.
+There must be 4 types of files:
+</p>
+<h4><span class="mw-headline" id="mydata-files">mydata-files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=2" title="Edit section: mydata-files">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Each species must have a <a href="/wiki/index.php?title=Mydata_file" title="Mydata file">mydata-file</a>, identical to the single-species situation; the types of data are not restricted and independent for each species.
+</p>
+<h4><span class="mw-headline" id="predict-files">predict-files</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=3" title="Edit section: predict-files">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Each species must have a <a href="/wiki/index.php?title=Predict_file" title="Predict file">predict-file</a> (which computes predictions for all data, given parameter values), identical to the single-species situation.
+You can, therefore, copy any mydata-and-predict pairs from the AmP collection; no changes required, no restrictions apply.
+</p>
+<h4><span class="mw-headline" id="pars_init_group-file"><code>pars_init_group</code>-file</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=4" title="Edit section: pars init group-file">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>A single (combined) file to initiate all parameters for estimation, named <code>pars_init_group</code>. 
+It specifies which parameters are the same, and which are different for each species.
+This choice is made by the specification of parameter values, which can be scalar (for parameters that are the same for all species), or vector-valued.
+The length of the vectors must be equal to the number of species (see the run-file below) and the values must also be in the corresponding sequence.
+The free-setting (zeros or ones) should correspond with the value setting, so also either scalar or vector-valued.
+</p><p>The general idea is to copy-modify an existing <a href="/wiki/index.php?title=Pars_init_file" title="Pars init file">single-species pars_init-file</a> and use it as a template with an eye on the provided example.
+The example shows that the call of <code>addchem</code> to add chemical parameters is slightly different from the single-species setting, 
+since the method allows that the species in the group differ in classification (phylum and class, as specified in the mydata-files, see above).
+This might have consequences for the specific densities of biomass (i.e. water content) and the nitrogen-wastes.
+If the phyla and classes of all species in the group are the same, the default values for these two parameters are again scalars, like in the single-species case.
+Notice that the default-settings for the chemical parameters can be overwritten in <code>pars_init_group</code>, 
+also in the multi-species situation (using scalars or vectors).
+If the species do differ in water content, it is best to choose the specific cost for structure, [E_G], vector-valued and free.
+</p><p>The method also allows that the <a href="/wiki/index.php?title=Typified_models" title="Typified models">model types</a> for the different species are different. 
+In that case, the model-specification in <code>pars_init_group</code> must be a string of cells, e.g. <code>metaPar.model = {'std','abj'};</code> for two species.
+Again, the length of the cell string should equal the number of species.
+If all models are the same a simple character string will do, as for the single-species situation, e.g. <code>metaPar.model = 'std';</code>, 
+but a cell string of length one also works.
+The specification of the predict-files (see above) should be consistent with that of the model type.
+If the predict-files were copied from the AmP collection, please observe the model type that has been used in the corresponding pars_init files.
+These model-types are also given in the <a rel="nofollow" target="_blank" class="external text" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/species_list.html">species-list of the AmP website</a>.
+The model types are of relevance if filters are used (which is the default); 
+these filters avoid that the parameters walk outside their logical domain during the estimation procedure, 
+which substantially contribute to the stability of the estimation process.
+</p><p>The co-variation rules are specified by <code>metaPar.covRules = 'no';</code> or <code>metaPar.covRules = 'maturities';</code>.
+</p>
+<ul><li> <code>'no'</code>: no relationships between different parameters are assumed. This is the default option, which is selected in the case that an explicit option setting of <code>covRules</code> is missing.</li>
+<li> <code>'maturities'</code>: maturity levels are assumed to be proportional to the cubed zoom factors, using <code>pets{1}</code> as reference (pets are defined in the <code>run_file</code>, see below). This only makes sense if the zoom factor in the <code>pars_init</code> file is specified as a vector. For example: maturity at birth for <code>pets{2}</code> is that for <code>pets{1}</code> times the ratio of the cubed zoom factors for <code>pets{2}</code> and <code>pets{1}</code>. The free-setting of the maturity levels of all species depends on that for <code>pets{1}</code>, irrespective of the actual settings. Also the maturity settings themselves for species <code>pets{2}</code> and higher are ignored with this <code>estim_options</code> setting. The code first executes the 'no'-rule, then any other rule using overwrite. In case of conflict, the other rules take, therefore, priority. Even if the maturity levels in the <code>pars_init</code> file are scalar-valued, they will (generally) not stay the same for all species with 'maturities' as co-variation rule.</li></ul>
+<p>User-defined co-variation options can be added in function <code>parGrp2Pets</code>, which maps the parameter setting for the group, like in <code>pars_init_group</code>, to that for each species, where all parameters are scalar; 
+just define a new <code>case</code>, using that for 'maturities' as example.
+The co-variation rules, like <code>'maturities'</code>, are always on top of the rules for <code>'no'</code>, and take priority in the case of any conflict.
+</p><p>Parameters can be specific for a particular species, as used in their predict-files.
+If a single species uses this parameter, for instance, the specification in <code>pars_init_group</code> can be either scalar (to be preferred), or vector-valued.
+In that latter case, the free-setting for species that do not use this parameter must be zero, i.e. these parameters are fixed, 
+else they make a random walk during estimation that hampers conversion to the global minimum of the loss-function and takes unnecessary computation time.
+To avoid misunderstandings in the interpretation of the results, the values of parameters for species that don't use them can best be set to <code>NaN</code> 
+(Not-a-Number).
+</p><p>Notice that, with the simplex method, it is not that easy to see the difference between the results of a random walk and a proper estimation for any particular parameter; if a changed parameter value results in the same <a href="/wiki/index.php?title=MRE" title="MRE" class="mw-redirect">MRE</a>, the result was that of a random walk.
+</p>
+<h4><span class="mw-headline" id="augmented_loss_function">augmented loss function</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=5" title="Edit section: augmented loss function">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>If you specify one or more <code>metaPar.weights</code> fields in the <code>pars_init_group</code> file for particular parameters, these weights are applied to the variance as fraction of the squared mean for these parameters and the result is added the loss function that is minimized to arrive at parameter estimates.
+This construct allows to smoothly vary between no relationship between the parameter values of the group members (weights zero, which is the default weight value) and all group members have the same parameter value (a high weight).
+An example of such a setting is <code>metaPar.weights.p_M = 5; metaPar.weights.v = 5;</code>.
+</p>
+<h4><span class="mw-headline" id="run-file">run-file</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=6" title="Edit section: run-file">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>A single run-file (the name is free), which sets the global variable "pets" as cell-string, defining the group of species, e.g. <code>pets = {'Daphnia_magna','Daphnia_pulex'};</code>.
+The species names should exactly match the species-names in the mydata-files (see above).
+The general idea is again to copy-modify an existing <a href="/wiki/index.php?title=Run_file" title="Run file">single-species run-file</a> and use it as a template with an eye on the provided example.
+</p><p>If you start multi-species estimation for the first time, use <code>estim_options('pars_init_method', 2);</code> and <code>estim_options('results_output', 1);</code>.
+This has the effect that <code>pars_init_group</code> is used to specify parameter values, file <code>results_group.mat</code> (see below) is written, and the result is printed on screen.
+After this start you might select <code>estim_options('pars_init_method', 1);</code> for continuation, meaning that you restart from the previous result. <a href="/wiki/index.php?title=Estimation_options" title="Estimation options">See all estim_options</a>.
+</p>
+<h3><span class="mw-headline" id="Results">Results</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=7" title="Edit section: Results">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Results of the estimation are stored in the file <code>results_group.mat</code>, while <code>mat2par_init</code> converts the contents to <code>pars_init_group.m</code>, like in the single-species situation.
+These resulting files also specify the <code>covRules</code> setting, even if this has not been done explicitly by the user.  
+If the model specification  as specified in <code>pars_init_group</code> is a cell-string (e.g., <code>{'std', 'abj'}</code>) rather then a character string (e.g., <code>'std'</code>), the sequence of the parameters in the file that results from  <code>mat2par_init</code> might differ from the original file.
+This is due to the fact that the models might be different and each model has particular core parameters.  
+</p><p>The names <code>pars_init_group</code> and <code>results_group.mat</code> are fixed, so you need to park different group-estimations in different directories if you are working on more than one multi-species estimation.
+</p>
+<h3><span class="mw-headline" id="General_remarks">General remarks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit&amp;section=8" title="Edit section: General remarks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If you found the global minimum, you can copy the result, stored in <code>results_group.mat</code> to the <code>pars_init_group.m</code> file using <code>mat2pars_init</code>, just like the single-species case. 
+Option setting 3 for <code>results_output</code> shows an html-page with all results for all species, which facilitates comparison. 
+Option 4 combines the result with related species in the collection, just like the single-species case.
+The default plotting of figures can be overwritten with a <code>custom_results_group</code> file; an example is given in DEBtool_M/lib/pet.
+</p><p>The idea is that the multi-species estimation is done in a dedicated subdirectory, which has copies of all mydata, predict and pars_init files of the species in the group. 
+Apart from the strategy to use a particular pars_init file as template for the <code>pars_init_group</code> file, it is possible to generate such a file, as well as the <code>run_group</code> file from the set of pars_init files with <code>pars_init2mat; mat2pars_init</code>. 
+Function <code>pars_init2mat</code> uses all mydata and pars_init files in the subdirectory and if no <code>pars_init_group</code> files exists, it writes one.  
+The resulting file still needs some editing, since all parameters are now vector-valued, while the crux of the exercise is that at least some parameters are the same for all species, to arrive at a reduction in the number of parameters that needs to be estimated. 
+</p><p>The finding the global minimum of the loss-function rapidly becomes harder with the number of parameters to be estimated, since the number of local minima increases, and the rate of conversion generally decreases.
+Although no theoretical limitations apply to the maximum group size, this principle poses a soft ceiling.
+Generally, the worse is the best fit, the more rugged is the surface of the loss-function, the more local minima exist and the harder it becomes to find the global one.
+If you think you found a global minimum, you might try to restart from there to check that the parameters don't move again.
+This restart restores the size of the simplex, which generally shrinks during estimation, increasing the probability to arrive at a local minimum that is not global.
+(A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters. 
+One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
+The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.)
+This is one of the reasons why a series of short runs with continuation, using <code>estim_options('pars_init_method', 1);</code> in the run-file (see below), is to be preferred above a single long run.
+We suggest to use <code>estim_options('max_step_number',500);</code>.
+With key `arrow-up' you can go back to your previous Matlab-command; pressing key `enter' you continue estimation.
+So it takes just two key-hits to continue estimation.
+Sometimes a small simplex size is required to reach the global minimum (e.g. to squeeze through the "key-hole"), motivating a larger maximum step number in the direct neighborhood of that minimum.
+</p><p>The <a href="/wiki/index.php?title=MRE" title="MRE" class="mw-redirect">MRE</a>'s and <a href="/wiki/index.php?title=SMSE" title="SMSE" class="mw-redirect">SMSE</a>'s of the species in the group must be higher than for each species separately, since fewer free parameters are used, giving further constraints on their values.
+The general idea of a successful multi-species estimation is that the decrease in number of estimated parameters more than compensates the decrease in goodness of fit, with the hope that the parameter values increase in realism (especially relevant for poorly-determined parameters).
+</p><p>Structure metaPar becomes available after <code>load results_group.mat</code> and has (among others) fields MRE, SMSE, cv and weights. 
+The latter two, so metaPar.weights and metaPar.cv, have the names of the various parameters and their weights, as set in <code>pars_init_group</code> and corresponding variation coefficients, respectively. 
+This can be used to study the trait off between a reduction of the variation coefficient and an increase in mean MRE and SMSE, as a result of increasing the weights for one or more parameters.
+The command <code>addCV</code> initiates or adds to a table with this information. 
+The browser opens automatically at initiation of the table, hit refresh for additional rows in the table.
+</p><p>Although multi-species parameter estimation can be scientifically important, <a rel="nofollow" target="_blank" class="external text" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/index.html">the AmP data base</a> has presently no system to accommodate the cross-linking between different entries. This means only results from single-species estimation can be submitted for publication in the AmP data base, since we want to maximize clarity about the step from data to parameter values.
+</p>
+<!-- 
+NewPP limit report
+Real time usage: 0.125 seconds
+Preprocessor visited node count: 48/1000000
+Preprocessor generated node count: 76/1000000
+Post‐expand include size: 3292/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   31.250      1 - -total
+100.00%   31.250      1 - Template:Add-my-pet_TOC
+-->
+
+<!-- Saved in parser cache with key DEBwiki:pcache:idhash:92-0!*!0!!en!*!* and timestamp 20210217165529 and revision id 1015
+ -->
+</div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://www.DEBtheory.org/wiki/index.php?title=Multi-species_parameter_estimation&amp;oldid=1015">http://www.DEBtheory.org/wiki/index.php?title=Multi-species_parameter_estimation&amp;oldid=1015</a>"					</div>
+													<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-userpage"><a href="/wiki/index.php?title=User%3ABas" class="new" dir="auto" title="Your user page [.]" accesskey=".">Bas</a></li><li id="pt-mytalk"><a href="/wiki/index.php?title=User_talk%3ABas" class="new" title="Your talk page [n]" accesskey="n">Talk</a></li><li id="pt-preferences"><a href="/wiki/index.php?title=Special%3APreferences" title="Your preferences">Preferences</a></li><li id="pt-watchlist"><a href="/wiki/index.php?title=Special%3AWatchlist" title="A list of pages you are monitoring for changes [l]" accesskey="l">Watchlist</a></li><li id="pt-mycontris"><a href="/wiki/index.php?title=Special%3AContributions/Bas" title="A list of your contributions [y]" accesskey="y">Contributions</a></li><li id="pt-logout"><a href="/wiki/index.php?title=Special%3AUserLogout&amp;returnto=Multi-species+parameter+estimation" title="Log out">Log out</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/index.php?title=Multi-species_parameter_estimation"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="/wiki/index.php?title=Talk%3AMulti-species_parameter_estimation&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/index.php?title=Multi-species_parameter_estimation" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+															<li id="ca-unwatch" class="icon"><span><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=unwatch&amp;token=c26bac2b88be8d15608c9f9d20883f30602e2819%2B%5C"  title="Remove this page from your watchlist [w]" accesskey="w">Unwatch</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+																	<li id="ca-move">
+										<a href="/wiki/index.php?title=Special%3AMovePage/Multi-species_parameter_estimation"  title="Move this page [m]" accesskey="m">Move</a>
+									</li>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/wiki/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search DEBwiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/index.php?title=Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/index.php?title=Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-recentchanges"><a href="/wiki/index.php?title=Special%3ARecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-randompage"><a href="/wiki/index.php?title=Special%3ARandom" title="Load a random page [x]" accesskey="x">Random page</a></li>
+													<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" target="_blank" title="The place to find out">Help</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/index.php?title=Special%3AWhatLinksHere/Multi-species_parameter_estimation" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/index.php?title=Special%3ARecentChangesLinked/Multi-species_parameter_estimation" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="/wiki/index.php?title=Special%3AUpload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="/wiki/index.php?title=Special%3ASpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-print"><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+													<li id="t-permalink"><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;oldid=1015" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="/wiki/index.php?title=Multi-species_parameter_estimation&amp;action=info" title="More information about this page">Page information</a></li>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 14 January 2021, at 17:09.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/wiki/index.php?title=DEBwiki%3APrivacy_policy" title="DEBwiki:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/index.php?title=DEBwiki%3AAbout" title="DEBwiki:About">About DEBwiki</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/index.php?title=DEBwiki%3AGeneral_disclaimer" title="DEBwiki:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.page.watch.ajax"],null,true);
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":3250});
+}</script>
+	</body>
+</html>
+

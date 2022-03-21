@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>AmP estimation procedure - DEBwiki</title>
+<meta name="generator" content="MediaWiki 1.25.3" />
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit" />
+<link rel="edit" title="Edit" href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="DEBwiki (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://www.DEBtheory.org/wiki/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/index.php?title=AmP_estimation_procedure" />
+<link rel="alternate" type="application/atom+xml" title="DEBwiki Atom feed" href="/wiki/index.php?title=Special%3ARecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://www.DEBtheory.org/wiki/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: DEBwiki:resourceloader:filter:minify-css:7:0a55de4300b59c1251ed0a36228832d7 */</style>
+<script src="http://www.DEBtheory.org/wiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"AmP_estimation_procedure","wgTitle":"AmP estimation procedure","wgCurRevisionId":1005,"wgRevisionId":1005,"wgArticleId":4,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":"Bas","wgUserGroups":["*","user","autoconfirmed"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"AmP_estimation_procedure","wgRelevantArticleId":4,"wgUserId":3,"wgUserEditCount":404,"wgUserRegistration":1445588874000,"wgUserNewMsgRevisionId":null,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"watchlisttoken":"27ad2637b3b21e3d197fe22efe022552e0b38aac"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"803d167b149ee6e72524cce6850a47ec602e0cc9+\\","patrolToken":"10ad26e086f7a58e4db31ea32ccef7c0602e0cc9+\\","watchToken":"7169f67f7a85f9eed8f5d99d9a30ac71602e0cc9+\\"});});
+/* cache key: DEBwiki:resourceloader:filter:minify-js:7:476c572e6896ffadcdfbbf4b89a767da */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","skins.vector.js"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-AmP_estimation_procedure skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">AmP estimation procedure</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From DEBwiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="wikitable" style="width: 22em; text-align: center; float:right; margin-left: 10px;">
+
+<tr>
+<th style="background: #E6E6FA; font-size: 150%; text-align:center;"> <strong class="selflink">AmP estimation</strong>
+</th></tr>
+<tr>
+<td>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Concepts
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<p><a href="/wiki/index.php?title=AmP_estimation_procedure#Data_and_data_types" title="AmP estimation procedure">Data</a> and <a href="/wiki/index.php?title=Completeness" title="Completeness">completeness</a><br />
+<a href="/wiki/index.php?title=AmP_estimation_procedure#Parameter_estimation" title="AmP estimation procedure">Parameter estimation</a><br />
+<a href="/wiki/index.php?title=AmP_estimation_procedure#Goodness_of_fit_criterion" title="AmP estimation procedure">Goodness-of-fit</a>: <a href="/wiki/index.php?title=SMSE" title="SMSE" class="mw-redirect">SMSE</a> / <a href="/wiki/index.php?title=MRE" title="MRE" class="mw-redirect">MRE</a> <br />
+<a href="/wiki/index.php?title=AmP_estimation_procedure#Parameter_estimation" title="AmP estimation procedure">AmP Literature</a><br />
+</p>
+</td></tr></table>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Practice -  essentials
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<p><a href="/wiki/index.php?title=Starting_an_estimation_for_a_new_species" title="Starting an estimation for a new species">Starting an estimation for a new species</a><br />
+<a href="/wiki/index.php?title=Setting_initial_parameter_values" title="Setting initial parameter values">Setting initial parameter values</a><br />
+<a href="/wiki/index.php?title=Weight_coefficients" title="Weight coefficients">Setting weight coefficients</a><br />
+<a href="/wiki/index.php?title=Implied_properties" title="Implied properties">Computing implied properties</a><br />
+<a href="/wiki/index.php?title=Submit_instructions" title="Submit instructions">Submitting to the collection</a><br />
+<a href="/wiki/index.php?title=Parameter_confidence_intervals" title="Parameter confidence intervals">Obtaining parameter confidence intervals</a><br />
+</p>
+</td></tr>
+</table>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Practice - extra modules
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<ul><li> <a href="/wiki/index.php?title=Going_from_std_to_abj_model" title="Going from std to abj model">Going from std to abj model</a></li>
+<li> <a href="/wiki/index.php?title=Multi-species_parameter_estimation" title="Multi-species parameter estimation">Multi-species parameter estimation</a></li>
+<li> <a href="/wiki/index.php?title=Get_environmental_temperatures" title="Get environmental temperatures">Get environmental temperatures</a></li>
+<li> <a href="/wiki/index.php?title=Importing_AmP_parameters_into_R" title="Importing AmP parameters into R">Importing AmP parameters into R</a></li></ul>
+</td></tr>
+</table>
+<table class="collapsible uncollapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> Code specification
+</th></tr>
+<tr>
+<td style="font-size: 95%;"><i>User-defined files:</i> <a href="/wiki/index.php?title=Run_file" title="Run file">run</a>, <a href="/wiki/index.php?title=Mydata_file" title="Mydata file">mydata</a>, <a href="/wiki/index.php?title=Pars_init_file" title="Pars init file">pars_init</a>, <a href="/wiki/index.php?title=Predict_file" title="Predict file">predict</a><br />
+</td></tr>
+<tr>
+<td style="font-size: 95%;"><i>Data:</i> <a href="/wiki/index.php?title=Zero-variate_data" title="Zero-variate data">Zero-variate</a>, <a href="/wiki/index.php?title=Univariate_data" title="Univariate data">Univariate</a>, <a href="/wiki/index.php?title=Pseudo-data" title="Pseudo-data">Pseudo-data</a> <br />
+</td></tr>
+<tr>
+<td style="font-size: 95%;">
+<p><a href="/wiki/index.php?title=Typified_models" title="Typified models">Typified models</a><br />
+<a href="/wiki/index.php?title=Estimation_options" title="Estimation options">Estimation options</a><br />
+</p>
+</td></tr>
+</table>
+<table class="collapsible collapsed plainlist" style="width: 100%; border: 1px solid #E6E6FA;">
+<tr>
+<th style="background: #E6E6FA; padding-right: 4px; padding-left: 8px; text-align: left; border: 1px solid #E6E6FA;"> See also
+</th></tr>
+<tr>
+<td style="font-size: 95%;">
+<ul><li> <a href="/wiki/index.php?title=Frequently_asked_questions_of_add-my-pet_procedure" title="Frequently asked questions of add-my-pet procedure">FAQs</a></li>
+<li> <a href="/wiki/index.php?title=Troubleshooter_for_add-my-pet_procedure" title="Troubleshooter for add-my-pet procedure">Troubleshooter</a></li></ul>
+<p><i>Quick links</i>: <a rel="nofollow" target="_blank" class="external text" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/index.html">Add-my-pet portal</a>; <a rel="nofollow" target="_blank" class="external text" href="https://en.wikipedia.org/wiki/Dynamic_energy_budget_theory">DEB Wikipedia page</a>; <a rel="nofollow" target="_blank" class="external text" href="http://www.debtheory.org/wiki/index.php?title=Main_Page">DEBwiki portal</a>; <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/Kooy2010_n.pdf">DEB notation</a>; GitHub repositories for <a rel="nofollow" target="_blank" class="external text" href="http://www.github.com/add-my-pet/DEBtool_M/">DEBtool_M</a> and <a rel="nofollow" target="_blank" class="external text" href="http://www.github.com/add-my-pet/AmPtool/">AmPtool</a>
+</p>
+</td></tr></table>
+</td></tr>
+</table>
+<p>The purpose of this Wiki-style AmP (<a rel="nofollow" target="_blank" class="external text" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/index.html">Add-my-pet</a>) estimation procedure manual is to explain:
+</p>
+<ul><li> The concepts (this page): description of the methodology used in the AmP project and for parameter estimation;</li>
+<li> Practice and getting started (see table on the right for quick-access links): technical aspects (code specifications), and how to use the scripts and arrive at parameter estimates;</li></ul>
+<p>AmP is a project based on Dynamic Energy Budget theory for metabolic organization. For a short intro to DEB theory visit the <a rel="nofollow" target="_blank" class="external text" href="https://en.wikipedia.org/wiki/Dynamic_energy_budget_theory">DEB Wikipedia page</a>, and for more about DEB visit our main <a rel="nofollow" target="_blank" class="external text" href="http://www.debtheory.org/wiki/index.php?title=Main_Page">DEBwiki portal</a>. An introduction to modelling and statistics is given in the document <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/course/tb/tb.pdf">Basic methods for Theoretical Biology</a>.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notation"><span class="tocnumber">1</span> <span class="toctext">Notation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Data_and_data_types"><span class="tocnumber">2</span> <span class="toctext">Data and data types</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Data_quality_and_availability"><span class="tocnumber">2.1</span> <span class="toctext">Data quality and availability</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Typified_models"><span class="tocnumber">3</span> <span class="toctext">Typified models</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Parameter_estimation"><span class="tocnumber">4</span> <span class="toctext">Parameter estimation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Methodology_of_parameter_estimation"><span class="tocnumber">4.1</span> <span class="toctext">Methodology of parameter estimation</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Obtaining_parameter_estimates"><span class="tocnumber">4.2</span> <span class="toctext">Obtaining parameter estimates</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Weight_coefficients"><span class="tocnumber">4.3</span> <span class="toctext">Weight coefficients</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Estimation_options"><span class="tocnumber">4.4</span> <span class="toctext">Estimation options</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Goodness_of_fit_criterion"><span class="tocnumber">5</span> <span class="toctext">Goodness of fit criterion</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Obtaining_parameter_confidence_intervals"><span class="tocnumber">6</span> <span class="toctext">Obtaining parameter confidence intervals</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Notation">Notation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=1" title="Edit section: Notation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>This manual and the <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/manual/">DEBtool</a> software (<a rel="nofollow" target="_blank" class="external text" href="http://www.github.com/add-my-pet/DEBtool_M/">download from GitHub</a>) follow <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/Kooy2010_n.pdf">the DEB notation</a>. 
+</p>
+<h2><span class="mw-headline" id="Data_and_data_types">Data and data types</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=2" title="Edit section: Data and data types">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The data consists of:
+</p>
+<ul><li> a set of <a href="/wiki/index.php?title=Zero-variate_data" title="Zero-variate data">zero-variate data</a> (i.e. a set of numbers)</li>
+<li> and, possibly, one or more sets of <a href="/wiki/index.php?title=Uni-variate_data" title="Uni-variate data" class="mw-redirect">uni-variate data</a> (each consisting of list of values for the independent and the associated dependent variable).</li></ul>
+<p>Data sources are <a href="/wiki/index.php?title=Mydata_file#References" title="Mydata file">referenced</a> in the <a href="/wiki/index.php?title=Mydata_file" title="Mydata file">mydata file</a>.
+</p><p>Zero-variate data has real and pseudo data points. Real data relate to actual observations on the species of interest at specified temperatures and food conditions. Pseudo-data relate to the generalised animal at the reference temperature. Increasing the number of types of real data (so information) decreases the role of the pseudo-data in the parameter estimation. The impact of pseudo-data on the resulting parameter estimates is controlled by the <a href="/wiki/index.php?title=Weight_coefficients" title="Weight coefficients">weight coefficients</a>.
+</p><p>The real data should at least contain the maximum adult weight. However, it is preferable to also include weight and age at birth and puberty as well as the maximum reproduction rate. Notice that times and rates without temperature are meaningless. This combination already fixes the growth curve in a crude way, specifies kap and the maturity thresholds at birth and puberty. The weight can be dry, ash-free dry or wet weights, but the type of weight relates to the specific densities and chemical indices. Assuming that the specific density of wet mass is close to 1 g/cm3, check the values for d_V and d_E that refer to dry weight.
+</p><p><a href="/wiki/index.php?title=Pseudo-data" title="Pseudo-data">Pseudo-data</a> are parameter values corresponding to a generalized animal, i.e. typical values for a wide variety of animals (<a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/LikaKear2011.html">Lika et al 2011</a>). These values may change as the AmP collection increases. Pseudo-data serve to fill possible gaps in information that is contained in the real data. Only intensive parameters can play the role of pseudo-data points. Species-specific parameters should not be included in the pseudo-data, especially the zoom factor, the shape coefficient and the maturity levels at birth and puberty. Since the value for specific cost for structure (E_G) is sensitive for the water content of tissue, which differs between jelly fish and vertebrates, it is replaced by the growth efficiency kap_G. Pseudo-data, if used properly, can play several roles. It serves the task of increasing the identifiability of parameters and, thus, preventing the ambiguous determination of parameter values. Pseudo-data can also be used to define the area of the parameter space where the parameter values are reasonable.
+</p><p>Generally the use of statistics derived from observations, such as the von Bertalanffy growth rate or the half saturation coefficient, as data from which DEB parameters are estimated, is discouraged. It is far better to base the parameter estimation directly on the measurements, avoiding manipulation or interpretation. For instance, if wet weights were measured, use wet weights as data and do not convert them first to dry weights (or vice versa).
+</p>
+<h3><span class="mw-headline" id="Data_quality_and_availability">Data quality and availability</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=3" title="Edit section: Data quality and availability">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The quality and availability of data varies enormously over species, which has consequences for the entries. For comparative purposes, it helps to judge the completeness of the data using a marking system from 0 (low) to 10 (high) (<a href="/wiki/index.php?title=Completeness" title="Completeness">See Table</a>), published in the <a rel="nofollow" target="_blank" class="external text" href="https://www.bio.vu.nl/thb/research/bib/LikaKear2011.pdf">Lika et al. 2011 paper</a>. 
+</p><p>Data from field conditions suffer from the problem that temperature and feeding profiles are generally unknown. To a lesser extent, this also applies to laboratory conditions. Only a few species can be cultured successfully and detailed (chemical) knowledge about nutritional requirements hardly exists for any species. The idea that `some prediction is better than no prediction' fueled the collection (e.g. for management purposes), but where data are guessed is clearly indicated in the mydata-files. The hope is that such weak entries will improve over time by supplementing data and re-estimate parameters. Predictions might help to prioritize further research.
+</p><p>Another motivation to include weak entries is that predictions for situations that have not yet been studied empirically can be used to test the theory rigorously. It is encouraging to see how few data already allows for an estimation of parameters. That results are not fully random is supported by the observation that similar species (in terms of body size, habitat and taxonomy) have similar parameter values, despite lack of advanced data. See, for instance, the different species of tardigrades. The reliability of the resulting estimates and predictions should always be evaluated in the context of the data on which they are based. Generally, the more types of data, the more reliable are the results.
+</p><p>Where many different data sources are used, however, conditions can vary to the extent that variations cannot be ignored. In some mydata-files this is taken into account by assigning different feeding conditions to different data sets. Notice that the scaled functional response only takes differences in food density into account, not differences in food quality. If food qualities differ, the scaled function response is no longer less or equal to 1, but might be larger. If feeding densities and qualities are not specified with the data, this "repair" is far from ideal, however.
+</p><p>The variation not only concerns environmental conditions, but also differences in parameter values among individuals that have been used. Parameter values tend to vary across the geographical range of a species, a problem that applies to many fish entries. Although parameter values are better fixed with a growing number of data types, the inherent variability works in the opposite direction. This is why marks have been given for both completeness of data and goodness of fit.
+</p><p>Although DEB theory concerns all organisms, the collection is only about animals, for the reason that they can live off a single (chemically complex) resource and thus can be modeled with a single reserve and resource availability is relatively simple to characterize. Within the animals, we made an effort to maximize <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/phyla.html">coverage</a>, given limitations imposed by data availability.
+</p>
+<h2><span class="mw-headline" id="Typified_models">Typified models</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=4" title="Edit section: Typified models">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Different models of DEB theory have been applied to different organisms. Some of the most used models have been formalized and are called <a href="/wiki/index.php?title=Typified_models" title="Typified models">typified models</a>.
+There is a <a href="/wiki/index.php?title=Going_from_std_to_abj_model" title="Going from std to abj model">set of instructions</a> to go from model <a href="/wiki/index.php?title=Typified_models#std" title="Typified models">std</a> to <a href="/wiki/index.php?title=Typified_models#abj" title="Typified models">abj</a>. 
+</p><p><b>Species specific details which are not included</b> in the <a rel="nofollow" target="_blank" class="external text" href="https://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/pet/html/statistics_st.html">computation of implied properties</a>: 
+</p>
+<ul><li> Acanthocephalans live in the micro-aerobic environment of the gut of their host. They don't use dioxygen, but ferment. It is possible to model this (<a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/Kooy2010.html">see Section 4.9.1, Kooijman 2010</a>), but this is not yet implemented in the code behind the calculation of the statistics. These particular respiration predictions should, therefore, be ignored. </li>
+<li> Cephalopods are typically semelparous (death at first spawning) and die well before approaching ultimate body size. For practical purposes, this early death is included as an effect of ageing, but ageing has probably nothing to do with this. The asymptotic size is calculated in the pars-file and some of the listed properties are not realistic as a consequence.  </li>
+<li> The toadlets Crinia lower their allocation fraction to soma between hatch and birth (<a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/MuelAugu2012.html">Mueller et al 2012</a>).</li>
+<li> Mammals take milk during their baby-stage, weaning is included in all <a href="/wiki/index.php?title=Typified_models#stx" title="Typified models">stx</a> models for mammals as a maturity threshold, but the change in diet is not taken into account.</li>
+<li> Many birds first reproduce in their second year under (seasonal) field conditions. They apparently have a relatively long juvenile period during most of which they are fully grown. This trait leads to high values for maturity maintenance at puberty and low values for maturity maintenance. Husbandry data indicates that birds potentially reproduce much earlier, which questions the realism of these two parameters.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Parameter_estimation">Parameter estimation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=5" title="Edit section: Parameter estimation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Methodology_of_parameter_estimation">Methodology of parameter estimation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=6" title="Edit section: Methodology of parameter estimation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>We here discuss the estimation of all DEB parameters in context: the AmP method; for details see <a rel="nofollow" target="_blank" class="external text" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006100">Marques et al, 2018a</a> and <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/MarqAugu2018.html">2018b</a>.<a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/Meer2006.html">Van der Meer 2006</a> and <a rel="nofollow" target="_blank" class="external text" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-185X.2008.00053.x">Kooijman et al, 2008</a> show which particular compound parameters can be estimated from a few simple observations  and how an increasing number of parameters can be estimated if more quantities are observed at several food densities. A natural sequence exists in which parameters can be known in principle. The methodology evolved from the covariation method (<a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/LikaKear2011.html">Lika et al 2011</a>). 
+</p><p>Estimating parameter values from a set of data sets is done in the AmP collection on the basis of the minimization of a parameter-free loss function, see <a rel="nofollow" target="_blank" class="external text" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006100">Marques et al 2018</a> and <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/MarqLika2019.html">2019</a>, which takes the different dimensions of the various data sets into account, and penalizes over-estimation as hard as under-estimation, using all data sets simultaneously.
+The minimum is found using a <a rel="nofollow" target="_blank" class="external text" href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a> simplex method. 
+A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters. One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood". The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.
+During the procedure the parameter are (optionally, but by default) filtered  to avoid that combinations of values are outside their logical domain (<a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/LikaAugu2014.html">Lika et al 2014</a>). 
+</p><p>The procedure starts from a set of <a href="/wiki/index.php?title=Setting_initial_parameter_values" title="Setting initial parameter values">initial values</a>. 
+Provided that a global minimum has been found, the result does not depend on the initial value.
+</p>
+<h3><span class="mw-headline" id="Obtaining_parameter_estimates">Obtaining parameter estimates</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=7" title="Edit section: Obtaining parameter estimates">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Estimation of some 15 parameters simultaneously from a variety of data cannot be routine work. You can only expect useful results if your initial estimates are not too far from the resulting estimates. It is best to either use a time-length-energy framework (as done here) or a time-length-mass framework in the selection of primary parameters and not mix them. Both frameworks can be used to predict energies and masses, using conversion factors. 
+</p><p>To obtain the estimates, you have to prepare a script-file <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/pet/html/run_my_pet.html"><code>run_my_pet</code></a> and three function files <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/pet/html/mydata_my_pet.html"><code>mydata_my_pet</code></a>,<a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/pet/html/pars_init_my_pet.html"><code>pars_init_my_pet</code></a> and <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/pet/html/predict_my_pet.html"><code>predict_my_pet</code></a>. 
+</p><p>You can follow the <a href="/wiki/index.php?title=Starting_an_estimation_for_a_new_species" title="Starting an estimation for a new species">instructions</a> to start an Add-my-pet estimation for a single species.  
+The DEBtool also enables you to estimate parameters for <a href="/wiki/index.php?title=Multi-species_parameter_estimation" title="Multi-species parameter estimation">two or more species simultaneously</a>. This can be interesting in the case that different species share particular parameter values, and/or parameter values have particular assumed relationships. The general idea is that the total number of parameters to be estimated for the group is (considerably) smaller than the sum of the parameters to be estimated for each species. 
+</p>
+<h3><span class="mw-headline" id="Weight_coefficients">Weight coefficients</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=8" title="Edit section: Weight coefficients">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The weight coefficients serve to (subjectively) quantify  the confidence of the user in the data-sets as well as for specific data points. The AmP procedure distinguished between <a href="/wiki/index.php?title=Data_types" title="Data types"> real</a> and <a href="/wiki/index.php?title=Pseudo-data" title="Pseudo-data"> pseudo</a> data.
+The weight coefficients are automatically set to <a href="/wiki/index.php?title=File%3AWeight_coeff.png" class="image"><img alt="Weight coeff.png" src="/wiki/images/thumb/1/17/Weight_coeff.png/100px-Weight_coeff.png" width="100" height="60" srcset="/wiki/images/thumb/1/17/Weight_coeff.png/150px-Weight_coeff.png 1.5x, /wiki/images/thumb/1/17/Weight_coeff.png/200px-Weight_coeff.png 2x" /></a>
+where <i>i</i> designates the data set and <i>j</i> the point on data set <i>i</i>, where <i>n<sub>i</sub></i> designates the number of points in data set <i>i</i>.
+The motivation is to ensure that each data set contributes equally to the loss function (instead of each data point contributing equally). The default weight coefficients for <a href="/wiki/index.php?title=Pseudo-data" title="Pseudo-data"> pseudo-data</a> are <a href="/wiki/index.php?title=Weight_coefficients" title="Weight coefficients">handled differently</a>). 
+</p><p>The user can overwrite default weight values (for either the whole data set or else particular values. This is done in the <a href="/wiki/index.php?title=Mydata_file#Weight_setting" title="Mydata file">mydata file</a>. The overwriting of the weight coefficient is done by  multiplying the default value by a dimensionless factor. See <a href="/wiki/index.php?title=Weight_coefficients" title="Weight coefficients">Setting weight coefficients</a>.
+</p>
+<h3><span class="mw-headline" id="Estimation_options">Estimation options</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=9" title="Edit section: Estimation options">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The AmP estimation procedure includes several  <a href="/wiki/index.php?title=Estimation_options#Loss_functions" title="Estimation options">loss functions</a>. The user defines which loss function to use in <a href="/wiki/index.php?title=Estimation_options" title="Estimation options">estimation options</a> - the default weight coefficients for <a href="/wiki/index.php?title=Pseudo-data" title="Pseudo-data">pseudo-data</a> depends on which loss function is being used. <a href="/wiki/index.php?title=Estimation_options#Loss_functions" title="Estimation options">'sb' stands for the symmetric bounded  loss function</a> and <a href="/wiki/index.php?title=Estimation_options#Loss_functions" title="Estimation options">'su' stands for the symmetric unbounded loss function</a>. Please refer to the <a href="/wiki/index.php?title=Estimation_options" title="Estimation options">Estimation options</a> page to check what are the default options.
+</p><p>Your best option is to use a series of short iteration runs, setting 'max_step_number' at 500, say, rather than a single long run, using continuation: 
+continue with the previously obtained results.
+You can do this by first selecting 'pars_init_method' 1, meaning that you start from the values as specified in the pars_init file, in combination with 'results_output' 2, meaning that a .mat file is saved, and then select 'pars_init_method' 2, meaning that you continue with values as specified in the .mat file that was previously written.
+The significance of a series of short runs is that with each restart, the simplex has a relatively large volume, which shirks during iteration, meaning that valleys in the surface of the lossfunction are more easily detected, and the risk is reduced to arrive at a local minimum that is not the global minimum. 
+For this reason, it is always a good idea to restart from the result, even in the case of successful convergence.
+Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
+For this reason, it is not always possible to arrive at a successful convergence, i.e. the lossfunction has a rough surface.
+As long as the resulting fit is good, and the parameter values seem acceptable, this does not need to be a problem.
+When you think that the result is better than the values in the pars_init file, use <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/pet/html/mat2pars_init.html">mat2pars_init</a> (this function does not need further input), to copy the values of the .mat file to the pars_init file.
+</p><p>In many cases, convergence will be smooth and easy, but sometimes convergence is more reluctant. 
+In such cases it helps to first fix parameters in the pars_init that turn out to run to unrealistic values, and release them again if predictions are closer to data. The free/fix setting is always taken from the pars_init file, even with 'pars_init_method' 2, when the parameter values are taken from the .mat file.
+</p><p>To judge parameter values, you can study the implied properties, setting 'results_output' at 3, and an html-page is automatically opened in your system browser at the end of an iteration (or directly if 'method' 'no' is specified).
+If all looks OK, you can specify 'results_output' 4, and implied properties of related species in the collection are included in the table in the html-page.
+</p>
+<h2><span class="mw-headline" id="Goodness_of_fit_criterion">Goodness of fit criterion</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=10" title="Edit section: Goodness of fit criterion">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The match between data and predictions is quantified by the goodness of fit using the <a href="/wiki/index.php?title=Mean_relative_error" title="Mean relative error">mean relative error</a> (MRE) and the <a href="/wiki/index.php?title=Symmetric_mean_squared_error" title="Symmetric mean squared error">symmetric mean squared error</a> (SMSE). MRE can have values from 0 to infinity, while SMSE has values from 0 to 1. In both cases, 0 means predictions match data exactly.
+MRE assesses the differences between data and predictions additively, judging equally an overestimation and underestimation of the same relative size (e.g, +20% or -20% will give the same contribution), while SMSE assesses the difference multiplicatively, judging overestimation and underestimation by the same factor equally (e.g. x2 or x/2 will give the same contribution). 
+Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE or SMSE (unless the fit is perfect).
+</p><p>Relative errors in a <a href="/wiki/index.php?title=Univariate_data" title="Univariate data">univariate data</a> set are summarized to that of a single data-point by taking the MRE for all data-points. Only real data, not pseudo-data, are included in the assessment. If all weight coefficients of a data set are zero, it is not included in the computation of the MRE. The best situation is, of course, that of a small MRE. It is likely that the marks for <a href="/wiki/index.php?title=Completeness" title="Completeness">completeness</a> and goodness of fit will be negatively correlated.
+</p><p>The problem of a good fit for the wrong reasons is always present. It is, therefor, important to judge the realism of parameter values as well. Remember that parameters might be poorly fixed by data, and very different values can, sometimes, result in a tiny difference in goodness of fit.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Obtaining_parameter_confidence_intervals">Obtaining parameter confidence intervals</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=11" title="Edit section: Obtaining parameter confidence intervals">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Uncertainty of the point estimates of parameter values can be assessed by computing the marginal confidence intervals using the profile method, as described in <a rel="nofollow" target="_blank" class="external text" href="http://www.bio.vu.nl/thb/research/bib/MarqLika2019.html">Marques et al 2019</a> (development) and <a rel="nofollow" target="_blank" class="external text" href="https://www.sciencedirect.com/science/article/pii/S1385110118300200?via%3Dihub">Stavrakidis-Zachou et al.  2018</a>  (application). The profile method is a two-step procedure. In the first step, the profile (of the loss function) for a parameter is obtained. In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed. See a more detailed tutorial <a href="/wiki/index.php?title=Parameter_confidence_intervals" title="Parameter confidence intervals"> here</a>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit&amp;section=12" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Editorials of DEB special issues
+</p>
+<ul><li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/Z9V3RCZI/item-details">Augustine and Kooijman 2019</a>: A new phase in DEB research</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/P23BQ7PZ/item-details">van der Meer et al 2014</a>: 35 years of DEB research</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/EQ9A2BRT/item-details">Alunno-Bruscia et al 2011</a>: The AquaDEB project: Physiological flexibility of aquatic animals analysed with a generic Dynamic energy Budget model (phase II)</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/RCKHHISE/item-details">Sousa et al 2010</a>: Dynamic Energy Budget theory restores coherence in biology</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/G8T3C6WM/item-details">Alunno-Bruscia et al 2009</a>: The AquaDEB project (phase I): Analysing the physiological flexibility of aquatic species and connecting physiological diversity to ecological and evolutionary processes by using Dynamic Energy Budgets</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/NPI8TAJT/item-details">van der Veer &amp; Alunno-Bruscia 2006</a>: The DEBBIB project: Dynamic Energy Budgets in bivalves</li></ul>
+<p>DEB model introductions
+</p>
+<ul><li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/P5IHSZJH/item-details">Kearney 2020</a>: What is the status of metabolic theory one century after Pütter invented the von Bertalanffy growth curve?</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/7ZAEEA8I/item-details">Kooijman 2020</a>: The standard Dynamic Energy Budget model has no plausible alternatives</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/GCLZ45RP/item-details">Jager 2020</a>: Revisiting simplified DEBtox models for analysing ecotoxicity data</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/5FIG4NTI/item-details">Muller et al 2019</a>: Regulation of reproductive processes with dynamic energy budgets</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/PE95NESG/item-details">Jusup et al 2017</a>: Physics of metabolic organization</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/HJMJAUMA/item-details">Sara et al 2014</a>: Thinking beyond organism energy use: a trait-based bioenergetic mechanistic approach for predictions of life history traits in marine organisms</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/SMFUQ43D/item-details">Ledder 2014</a>: The basic Dynamic Energy Budget model and some implications</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/IST4UNRM/item-details">Kooijman 2012</a>: Energy budgets</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/99GC3EN6/item-details">Lika and Kooijman 2011</a>: The comparative topology of energy allocation in budget models</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/BSBHXEMB/item-details">Sousa et al 2006</a>: The thermodynamics of organisms in the context of Dynamic Energy Budget theory</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/JGG7XC66/item-details">Kooijman 2001</a>: Quantitative aspects of metabolic organization; a discussion of concepts</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/KIMVJRPJ/item-details">Kooijman 1998</a>: The Dynamic Energy Budget (DEB) model</li></ul>
+<p>DEB in evolutionary context
+</p>
+<ul><li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/ZIDN4GM3/item-details">Troost et al 2009</a>: Seasonality, climate cycles and body size evolution</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/PGK85QRT/item-details">Kooijman and Troost 2007</a>: Quantitative steps in the evolution of metabolic organisation as specified by the Dynamic Energy Budget theory</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/REV2G2FM/item-details">Kooijman and Hengeveld 2005</a>: The symbiontic nature of metabolic evolution</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/7HFANI75/item-details">Troost et al 2005</a>: When do mixotrophs specialize? Adaptive Dynamics theory applied to a Dynamic Energy Budget model</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/IA9QN5MF/item-details">Kooijman 2004</a>: On the coevolution of life and its environment</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/Z59JRTIJ/item-details">Kooijman et al 2003</a>: Quantitative steps in symbiogenesis and the evolution of homeostasis</li></ul>
+<p>Parameter estimation
+</p>
+<ul><li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/JPQ4L6YD/item-details">Lika et al 2020</a>: The use of augmented loss functions for estimating Dynamic Energy Budget parameters</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/9I7QQYJB/item-details">Augustine et al 2020</a>: Comparing loss functions and interval estimates for survival data</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-details">Marques et al 2019</a>: Fitting Multiple Models to Multiple Data Sets</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/item-details">Marques et al 2018</a>: The AmP project: Comparing Species on the Basis of Dynamic Energy Budget Parameters </li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/8UFGBFVW/item-details">Morais et al 2018</a>: Calibration of parameters in Dynamic Energy Budget models using Direct-Search methods</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/JBBPNHDS/item">Lika et al 2011</a>: The `covariation method' for estimating the parameters of the standard Dynamic Energy Budget model II: Properties of the estimation method and some patterns </li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/NIDAWH9D/item-details">Lika et al 2011</a>: The `covariation method' for estimating the parameters of the standard Dynamic Energy Budget model I: philosophy and approach</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/8BSPZ82F/item-details">Kooijman et al 2008</a>: From food-dependent statistics to metabolic parameters, a practical guide to the use of Dynamic Energy Budget theory</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/D7T4FXNE/item-details">Sousa et al 2008</a>: From empirical patterns to theory: A formal metabolic theory of life</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/TQK4Q3TC/item-details">van der Meer 2006</a>: An introduction to Dynamic Energy Budget (DEB) models with special emphasis on parameter estimation</li></ul>
+<p>Patterns in parameter values
+</p>
+<ul><li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/NH3HKUFP/item-details">van der Meer 2020</a>: Production efficiency differences between poikilotherms and homeotherms have little to do with metabolic rate</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/9KJP5FMN/item-details">Kooijman et al 2020</a>: The energetic basis of population growth in animal kingdom</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/KZSC9BEP/item-details">Kooijman 2020</a>: The comparative energetics of petrels and penguins</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/EYIILUTT/item-details">Augustine et al 2019</a>: Altricial-precocial spectra in animal kingdom</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/EJKIF7H7/item-details">Augustine et al 2019</a>: Why big-bodied animal species cannot evolve a waste-to-hurry strategy</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/7Z68DQAC/item-details">Lika et al 2019</a>: Body size as emergent property</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/JS8F3BJ8/item-details">Baas and Kooijman 2015</a>: Sensitivity of animals to chemical compounds links to metabolic rate</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/QBMZ5SHI/item-details">Kooijman and Lika 2014</a>: Comparative energetics of the 5 fish classes on the basis of Dynamic Energy Budgets</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/K63DEXLK/item-details">Kooijman 2014</a>: Metabolic acceleration in animal ontogeny: an evolutionary perspective</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/HBZCZUJM/item-details">Kooijman and Lika 2014</a>: Resource allocation to reproduction in animals</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/G92VQ79V/item-details">Lika et al 2014</a>: Bijection between data and parameter space quantifies the supply-demand spectrum </li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/ZK7E3R89/item-details">Kooijman 2013</a>: "Waste-to-hurry" Dynamic Energy Budgets explain the need of wasting to fully exploit blooming resources </li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/SUPBP26A/item-details">Kooijman et al 2011</a>: Scenarios for acceleration in fish development and the role of metamorphosis</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/RBEVN3FK/item-details">Kooijman et al 2007</a>: Scaling relationships based on partition coefficients and body sizes have similarities and interactions</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/8FXWJKZP/item-details">Cardoso et al 2006</a>:  Body size scaling relationships in bivalves: a comparison of field data with predictions by Dynamic Energy Budgets (DEB theory)</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/items/PDF84W6Z/item-details">van der Veer et al 2006</a>: The estimation of DEB parameters for various Northeast Atlantic bivalve species</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/QZ2ZWEUW/item-details">van der Veer et al 2003</a>: Body size scaling relationships in flatfish as predicted by Dynamic Energy Bugets (DEB theory): implications for recruitment</li>
+<li> <a rel="nofollow" target="_blank" class="external text" href="http://www.zotero.org/groups/500643/deb_library/items/NFENRXPH/item-details">Kooijman 1986</a>: Energy budgets can explain body size relations</li></ul>
+<p>Bibliography of DEB papers
+</p>
+<ul><li> <a rel="nofollow" target="_blank" class="external text" href="https://www.zotero.org/groups/500643/deb_library/">DEB library on Zotero</a></li></ul>
+
+<!-- 
+NewPP limit report
+Real time usage: 0.766 seconds
+Preprocessor visited node count: 67/1000000
+Preprocessor generated node count: 96/1000000
+Post‐expand include size: 3291/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   31.250      1 - -total
+100.00%   31.250      1 - Template:Add-my-pet_TOC
+-->
+
+<!-- Saved in parser cache with key DEBwiki:pcache:idhash:4-0!*!0!!en!5!* and timestamp 20210217144341 and revision id 1005
+ -->
+</div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://www.DEBtheory.org/wiki/index.php?title=AmP_estimation_procedure&amp;oldid=1005">http://www.DEBtheory.org/wiki/index.php?title=AmP_estimation_procedure&amp;oldid=1005</a>"					</div>
+													<div id='catlinks' class='catlinks catlinks-allhidden'></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-userpage"><a href="/wiki/index.php?title=User%3ABas" class="new" dir="auto" title="Your user page [.]" accesskey=".">Bas</a></li><li id="pt-mytalk"><a href="/wiki/index.php?title=User_talk%3ABas" class="new" title="Your talk page [n]" accesskey="n">Talk</a></li><li id="pt-preferences"><a href="/wiki/index.php?title=Special%3APreferences" title="Your preferences">Preferences</a></li><li id="pt-watchlist"><a href="/wiki/index.php?title=Special%3AWatchlist" title="A list of pages you are monitoring for changes [l]" accesskey="l">Watchlist</a></li><li id="pt-mycontris"><a href="/wiki/index.php?title=Special%3AContributions/Bas" title="A list of your contributions [y]" accesskey="y">Contributions</a></li><li id="pt-logout"><a href="/wiki/index.php?title=Special%3AUserLogout&amp;returnto=AmP+estimation+procedure" title="Log out">Log out</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/index.php?title=AmP_estimation_procedure"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="/wiki/index.php?title=Talk%3AAmP_estimation_procedure&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/index.php?title=AmP_estimation_procedure" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+															<li id="ca-unwatch" class="icon"><span><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=unwatch&amp;token=113c0a7243bd39c439216556d93facbb602e0cc9%2B%5C"  title="Remove this page from your watchlist [w]" accesskey="w">Unwatch</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+																	<li id="ca-move">
+										<a href="/wiki/index.php?title=Special%3AMovePage/AmP_estimation_procedure"  title="Move this page [m]" accesskey="m">Move</a>
+									</li>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/wiki/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search DEBwiki [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/index.php?title=Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/index.php?title=Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-recentchanges"><a href="/wiki/index.php?title=Special%3ARecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-randompage"><a href="/wiki/index.php?title=Special%3ARandom" title="Load a random page [x]" accesskey="x">Random page</a></li>
+													<li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" target="_blank" title="The place to find out">Help</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/index.php?title=Special%3AWhatLinksHere/AmP_estimation_procedure" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/index.php?title=Special%3ARecentChangesLinked/AmP_estimation_procedure" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="/wiki/index.php?title=Special%3AUpload" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="/wiki/index.php?title=Special%3ASpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-print"><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+													<li id="t-permalink"><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;oldid=1005" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="/wiki/index.php?title=AmP_estimation_procedure&amp;action=info" title="More information about this page">Page information</a></li>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 15 November 2020, at 08:42.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/wiki/index.php?title=DEBwiki%3APrivacy_policy" title="DEBwiki:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/index.php?title=DEBwiki%3AAbout" title="DEBwiki:About">About DEBwiki</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/index.php?title=DEBwiki%3AGeneral_disclaimer" title="DEBwiki:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>if(window.jQuery)jQuery.ready();</script><script>if(window.mw){
+mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.page.watch.ajax"],null,true);
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":3078});
+}</script>
+	</body>
+</html>
+
