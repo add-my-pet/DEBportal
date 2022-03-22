@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>Pseudo_data</TITLE>
+  <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"> 
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
+</HEAD>
+<BODY>
+
+  <div w3-include-html="wallpaper_DEBportal.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <div w3-include-html="toolbar_DEBportal.html"></div>
+  <script>w3IncludeHTML();</script>
+
+<div id = "main">
+  <div id = "main-wrapper">    
+    <div id="contentFull">
+
+      <h1>
+        Pseudo data
+        <a href="https://youtu.be/hIJtytohzIs" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:22"></a>
+      </h1>
+    
+      Apart from the real data, the AmP procedure makes use of pseudo-data.
+      Pseudo-data is a set of fixed (functions of) parameter values for a generalized animal species that is treated as dependent data but with small weight coefficients.
+
+      <p>
+      The following table presents pseudo-data values used by default in the AmP procedure.
+      In the mydata file, current values can be modified by the user, weight coefficients can be set to zero if the user chooses to not include pseudo-data in the
+      estimation and additional pseudo-data can be considered.
+
+      <p>
+      <table id="t01">
+        <tr class="head"><th>Code</th>  <th>Value</th> <th>Unit</th>	    <th>Description</th></tr>
+        <tr><td>v</td>	   <td>0.02</td>  <td>cm/d</td>	    <td>energy conductance</td></tr>
+        <tr><td>kap</td>   <td>0.8</td>	  <td>-</td>        <td>allocation fraction to soma</td></tr>
+        <tr><td>kap_R</td> <td>0.95</td>  <td>-</td>	    <td>reproduction efficiency</td></tr>
+        <tr><td>p_M</td>   <td>18</td>    <td>J/d.cm^3</td> <td>volume-specific somatic maintenance costs</td></tr>
+        <tr><td>k_J</td>   <td>0.002</td> <td>1/d</td>	    <td>maturity maintenance rate coefficient</td></tr>
+        <tr><td>kap_G</td> <td>0.8</td>	  <td>-</td>        <td>growth efficiency</td></tr>
+      </table>
+    </div> <!-- end of content -->
+ 
+    <div w3-include-html="footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+</BODY>
+</HTML>

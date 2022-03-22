@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>Auxiliary_data</TITLE>
+  <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"> 
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
+</HEAD>
+<BODY>
+
+  <div w3-include-html="wallpaper_DEBportal.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <div w3-include-html="toolbar_DEBportal.html"></div>
+  <script>w3IncludeHTML();</script>
+
+<div id = "main">
+  <div id = "main-wrapper">    
+    <div id="contentFull">
+
+      <h1>
+        Auxiliary data
+        <a href="https://youtu.be/hIJtytohzIs" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:22"></a>
+      </h1>
+    
+      Auxiliary data is independent data, so it is not predicted, but predictions can make use of it.
+      All times and rates dependent on temperature, which is thus a frequently used auxiliary data type.
+      So, if maxium repoduction rate Ri is in the dependent data, the mydata-file should specify a field in auxData of the type temp,
+      such as <code>auxData.temp.Ri = C2K(23)</code>, where <code>C2K</code> is a simple DEBtool-function that converts Celsius to Kelvin;
+      the DEBtool function <code>tempcorr</code> for conversion of rates to other tmeperatures works in Kelvin.
+      Like all data, the units and label must be specified as well as <code>txtData.units.temp.Ri = 'K';</code> and <code>txtData.label.temp.Ri = 'temperature';</code>.
+
+      <p>
+      Since reproduction depends on size, body length L can be a second auxiliary data point for the prediction of Ri.
+      This length might, or might not, be equal to the maximum length Li, but the prediction cannot depend on this dependent data.
+      But since maximum body length Li must be predicted as well, the predict-file will specify the expected maximum structural length L_i, which is a function of parameter values.
+      This length can be used to predict Ri.
+
+      <p>
+      Best practice is to avoid the use of numbers in the predict-file.
+      Better pass this information to the predict-file via auxData or via parameter values that are kept fixed.
+	
+    </div> <!-- end of content -->
+ 
+    <div w3-include-html="footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+</BODY>
+</HTML>

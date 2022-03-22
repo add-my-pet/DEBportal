@@ -5,11 +5,6 @@
   <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"> 
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
-  <style>
-    .end{
-     border-right: 3px solid;
-    }
-  </style>
 </HEAD>
 <BODY>
 
@@ -29,30 +24,31 @@
     </h1>
     
     <div>
-      Zero-variate data is a scalar (so a single number) that quantifies a feature of the organism at a given moment.
-      Auxiliary data might be associated to any data, so also to zero-variate data.
-      Although a single data-point has little information in itself for parameter estimation, a set of different data-point can be very useful. 
+    Zero-variate data is a scalar (so a single number) that quantifies a feature of the organism at a given moment.
 
     <h2>Codification of types zero-variate data</h2>
     In the mydata file the author needs to specify which types of data are used in the entry.
-    Labels for zero-variate data are packed as metaData.data_0 in the mydata-file.
-    The codification generally follows <a href="https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_n.pdf">DEB's notation rules</a>.
+    Labels for zero-variate data are packed as metaData.data_0.
+    The codification generally follows DEB's notation rules.
     The leading character indicates the type of variable, followed by a marker for the life history event.
 
     <p>
      Indices symbolising different life history events
-    <table align="center">
-      <tr><td>0</td> <td class="end">start of development</td>	<td>j</td> <td class="end">end of acceleration</td>	                           <td>R</td> <td>first breeding</td></tr>
-      <tr><td>h</td> <td class="end">hatching (leaving egg)</td> <td>p</td> <td class="end">puberty (start of allocation to reproduction)</td>  <td>e</td> <td>emergence (imago)</td></tr>
-      <tr><td>b</td> <td class="end">birth (start of feeding)</td> <td>i</td> <td class="end">ultimate state</td> <td>s</td> <td>start of acceleration</td></tr>
-      <tr><td>x</td> <td class="end">weaning (or fledging)</td>	<td>m</td> <td class="end">death (life span)</td> <td></td></tr>
+    <table>
+      <tr><td>0</td> <td>start of development</td>	<td>j</td> <td>end of acceleration</td>	                           <td>R</td> <td>first breeding</td></tr>
+      <tr><td>h</td> <td>hatching (leaving egg)</td>	<td>p</td> <td>puberty (start of allocation to reproduction)</td>  <td>e</td> </td>emergence (imago)</td></tr>
+      <tr><td>b</td> <td>birth (start of feeding)</td>	<td>i</td> <td>ultimate state</td>	                           <td>s</td> <td>start of acceleration</td></tr>
+      <tr><td>x</td> <td>weaning (or fledging)</td>	<td>m</td> <td>death (life span)</td></tr>
     </table>
 
     Optionally this can be followed by an underscore ("_"), indicating several values of a modifying factor:
 
-    <table  align="center">
-      <tr><td>f</td> <td class="end">functional response</td> <td>T</td> <td class="end">temperature</td> <td>t</td> <td>time</td></tr>
-      <tr><td>L</td> <td class="end">length</td> <td>W</td> <td class="end">weight</td> <td></td> <td></td></tr>
+    <table>
+      <tr><td>f</td> <td>functional response</td></tr>
+      <tr><td>T</td> <td>temperature</td></tr>
+      <tr><td>t</td> <td>time</td></tr>
+      <tr><td>L</td> <td>length</td></tr>
+    <tr><td>W</td> <td>weight</td></tr>
     </table>
 
     <p>
@@ -61,8 +57,8 @@
     Data might relate to males and females; this is not indicated in the data labels, but comments in such entries specify the parameters in which they differ.
 
     <p>
-    <table align="center">
-      <tr><th>Data labels</th>	<th>Description</th></tr>
+    <table>
+      <tr><th>Data</th> <th>Labels</th>	<th>Description</th></tr>
       <tr><td>ah</td>	<td>age at h</th></tr>
       <tr><td>ah_T</td>	<td>age at h (several T))</tr>
       <tr><td>ab</td>	<td>age at birth</td></tr>
