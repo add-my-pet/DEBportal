@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>DEB calendar</TITLE>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <style> 
+    div.cal {
+      width: 90%;
+    }
+
+    #caltop  {
+      text-align: center;
+    }
+
+    #cal  {
+      border-style: solid hidden solid hidden;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .head {
+      background-color: #FFE7C6;
+      text-align: left;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+
+  </style>
+  <script src="sys/dropdown.js"></script>
+  <script src="sys/w3data.js"></script>
+
+</HEAD>
+<BODY>
+
+  <div w3-include-html="sys/wallpaper_amp.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <div w3-include-html="sys/toolbar_amp.html"></div>
+  <script>w3IncludeHTML();</script>
+
+<!--------------------------------------------------------------->
+<!--   PART main                                               -->
+<!--   Where all of the text is placed                         -->
+<!--   use "contentFull" for 1 column                          -->
+<!--   use "content" if you want two columns"                  -->
+<!--------------------------------------------------------------->
+<div id="main">
+  <div id="main-wrapper">    
+    <div id="contentFull">
+
+    <h1 id="caltop">Calendar for DEB milestones</h1>
+    
+    <div class="cal">
+      <table id="cal">
+	<tr class="head"> <th>year</th> <th>milestones</th></tr>
+	
+       <tr class="2022"><td><b>2022</b></td> <td>
+         bi-variate data types in AmP with multiple visualisation options;<br>
+	 creation of GitHub repository AmPtox with verious examples of AmP supported tox applications;</br>
+	 hax-model as typified model for some insects;</br>
+	 compaction of AmPdata to speed-up AmP performance and improved graphics presentation and browsing;</br>
+       </td></tr>
+
+       
+       <tr class="2021"><td><b>2021</b></td> <td>
+         over 3200 AmP entries; frequent revisions of entries/taxonomy; get_id functions for 14 websites and update of all links<br>
+         "complete" taxa in AmP: cephalopods, turtles/crocodiles, carnivores/pangolins;<br>
+         over 1000 DEB library papers on Zotero (1.5 per wk);<br>
+         more <a href="DEBvideos.html" target="_blank">DEB videos</a> on many topics with search options;<br>
+         distance between species based on traits, linking to multi dimensional scaling; galleryAmP with links to species_tree;<br>
+         <a href="http:debtheory.fr" target="_blank">hosting of AmP at IUEM (Brest)</a> (VU, Amsterdam continues), with automatized syncing;<br>
+         evolutionary algorithms as alternative for the simplex method for parameter estimation by Juan Robles;<br> 
+         <a href="http://bioforecasts.science.unimelb.edu.au/app_direct/deb/" target="_blank">DEB Shiny App</a> and
+         <a href="http://bioforecasts.science.unimelb.edu.au/app_direct/deb_sea/" target="_blank">DEBsea Shiny App</a>
+         in R by Mike Kearney;<br>
+	 life-time cumulated neonate mass equals mass of female at death;<br>
+       </td></tr>
+
+       <tr class="2020"><td><b>2020</b></td> <td>
+         "complete" taxa in AmP: N-Am freshwater fish, rays/sharks;<br>
+         allEco integrated in allStat, ecoCodes & links in mydata; shstat with eco-codes;<br>
+         allStat and popStat in AmPdata on VU-server with version date;<br>
+         AmP entry prepare system with documentation; import info via structures;<br>
+         further improved presentation/ documentation/ archiving/ searching:<br> 
+         e.g. report_my_pet, 6 results_output levels, get_links, select entries for char-strings;<br>
+         augmented loss functions for multi-species further developed;<br>
+         elasticities for bijection data- to parameter-space;<br> 
+         pop growth at constant T, f; All entries have a population-traits page;<br>
+         macro-chemical reaction equation coefficients at population level;<br>
+         AmP code for CPM, EBT (Escalator Boxcar train), IBM (Ind-Based pop. Modelling in NetLogo);<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2019</b></td> <td>
+         1806 AmP entries; more cases with f(t), T(t): integration of estimation and environmental trajectory reconstruction;<br>
+         "complete" taxa in AmP: petrels/penguins;<br>
+         790 DEB library papers on Zotero;<br>
+         better knowledge of pars and patterns: better context for par-evaluation (151 entries in archive);<br>
+         revisions of some basic functions: temperature correction for >1 parameters, maturity for large l_p;<br>
+         updates on evolutionary tree (detailed trees change more frequently);<br>
+         use of clade to identify AmP entries that are most related to one that is not in the collection (Taxonomicon, CoL);<br>
+         improved presentation/documentation/archiving/searching: bib's, citation, manual (DEBwiki, AmPtool);<br>
+         prt_results_my_pet for iteration results; prt_report_my_pet with searching, comparing species, color coding excentricity;<br>
+         application pages on AmP website: work in progress;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2018</b></td> <td>
+         Searching in species_tree, links from entries to list & tree;<br>
+         self-made tree with distribution of statistics; pedigree with statistics;<br>
+         improved algorithms; confidence intervals based on loss-function profiles;<br>
+         multi-species parameter estimation, augmented loss functions;<br>
+         "complete" taxa in AmP: carnivores;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2017</b></td> <td>
+         700 AmP entries;<br>
+         changes in the curator team; curation reports/procedure: modular setup;<br>
+         allStat & allEco on GitHub: eco-coding + selection/visualization functions;<br>
+         links to large websites/data-bases;<br>
+         general: Catalog of Life, Taxonomicon, EoL, ADW, Wiki, WoRMS;<br>
+         specialized: molluscabase, fishbase, amphibiaweb, reptile-database, avibase, msw3, AnAge;<br>
+         structure allStat.mat with data for all AmP species;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2016</b></td> <td>
+         Start of <a href="https://www.zotero.org/groups/500643/deb_library/" target="_blank">DEBlib on Zotero</a>;<br>
+         setup of DEBtheory.org portal, DEBwiki;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2015</b></td> <td>
+         318 AmP entries, conversion from Excel-based old to web-based new system with code AmPtool and DEBtool on GitHub;<br>
+         set-up of BibTex-style reference list for each entry;<br>
+         use of Overleaf & Dropbox for organisation in the curator team; creation of debtheory.org;<br>
+         setup of standard in code-documentation and checking-procedures for new entries;<br>
+         Perl-based lists-of-lists for taxonomic structure of entries;<br>
+         creation of DEB mailing list;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2014</b></td> <td>
+         NECs depend on specific somatic maintenance with Jan Baas;<br>
+         typical reproduction is much less than max with Dina Lika;<br>
+         formation of curator team with weekly Skype's and yearly workshops;<br>
+         set-up par-estimation procedure for multiple entries; use of .mat-files for continuation<br>
+         styling of DEB models, data, parameters;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2013</b></td> <td>
+         Waste-to-hurry;<br>
+         DEBtool_Octave support is ceased;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2012</b></td> <td>
+         Bijection between data- and parameter space;<br>
+         quantification of supply-demand spectra;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2011</b></td> <td>
+         Type R-acceleration of maturation with Starrlight Augustine;<br>
+         interactions between photo-synthesis,  -respiration  & -inhibition;<br>
+         start of practical schools prior to DEB symposia with special issues;<br>
+       </td></tr>
+
+       <tr class="2010"><td><b>2010</b></td> <td>
+         Topology of allocation schemes with Dina Lika;<br>
+         start of <a href="../bib/Kooy2010_c.pdf" target="_blank">comment-document on DEB3</a>;<br>
+         embryo staging with Starrlight Augustine;<br>
+       </td></tr>
+
+       <tr class="2000"><td><b>2009</b></td> <td>
+         Reserve dynamics as consequence of weak homeostasis, partitionablility of reserve dynamics;<br> 
+         evolution of central metabolism;<br>
+         start of AQUAdeb group on initiative of Marianne Alunno-Bruscia with regular meetings;<br>
+         first DEB symposium (Brest) with special issue; AmP entries as course exercise;<br>
+       </td></tr> 			
+
+       <tr class="2000"><td><b>2008</b></td> <td>
+         Start writing of <a href="../bib/Kooy2010.html" target="_blank">DEB3</a>; setting-up of add_my_pet;<br>
+         mergeability of reserve dynamics with T&agrave;nia Sousa;<br>
+       </td></tr>
+
+       <tr class="2000"><td><b>2007</b></td> <td>
+         Type M-acceleration of metabolism with Laure Pecquerie;<br>
+         toxicity of mixtures of many compounds with Jan Baas and Tjalling Jager;<br>
+       </td></tr>
+
+       <tr class="2000"><td><b>2006</b></td> <td>
+         Isotope dynamics at individual level;<br>
+       </td></tr>
+
+       <tr class="2000"><td><b>2005</b></td> <td>
+         Stochastic mass-conserved formulations for DEB structured popopulations with Johan Grasman & Bob Kooi;<br>
+         entropy of living individuals with T&agrave;nia Sousa;<br>
+         application of Adaptive Dynamics to DEB structured populations with Tineke Troost & Bob Kooi;<br>
+       </td></tr>
+             
+       <tr class="2000"><td><b>2004</b></td> <td>
+         Handshaking protocols for Synthesizing Units;<br>
+         mitochondria-cytosol interactions with Lee Segel;
+       </td></tr>
+
+       <tr class="2000"><td><b>2003</b></td> <td>
+         Generalisations of the &kappa;-rule;<br>
+         tumour growth, consistency with Mayneord 1932;<br>
+         co-metabolism in microbial degradation, with Bernd Brandt;<br>
+       </td></tr>
+
+       <tr class="2000"><td><b>2002</b></td> <td>
+         Ageing acceleration; hazard model for lethal effects of toxicants;<br>
+         Gompertz stress coefficient with Ingeborg van Leeuwen;<br>
+       </td></tr>
+
+       <tr class="2000"><td><b>2001</b></td> <td>
+         <a href="http://www.debtheory.org/wiki/index.php?title=Upcoming_events" target="_blank">First tele course, to be repeated each 2 years</a>;<br>
+         stepwise merging of symbiontic partners into a new individual;<br>
+       </td></tr>
+
+       <tr class="2000"><td><b>2000</b></td> <td>
+         Conversion of private APL code to public DEBtool in Matlab/Octave;<br>
+         modules for mixotrophy;<br>
+         co-metabolism & inhibition with SUs;<br>
+       </td></tr>
+				
+       <tr class="1990"><td><b>1999</b></td> <td>
+         Toxicity of mixtures of compounds;<br>
+         reconstruction of film models: explicit pde and boundary conditions<br>
+         co-var rules for parameters one-compartment and film models and for effects of toxicants;<br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1998</b></td> <td>
+         Start writing of <a href="../bib/Kooy2000.html" target="_blank">DEB2</a>;<br>
+         symbiosis on the basis of mutual syntrophy;<br>
+         effect of ionization and lipid content on toxico-kinetics;<br>
+         diverse uptake and elimination routes for toxicants;<br>
+         interaction of toxico-kinetics with metabolism;<br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1997</b></td> <td>
+         Excretion of reserves for multiple reserves;<br>
+         Canonical communities;</br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1996</b></td> <td>
+         Synthesising Units (SUs) as alternative for enzyme kinetics;<br>
+         writing of <a href="../bib/KooyBeda1996.html" target="_blank">analysis of toxicity data</a> with Jacques Bedaux;<br>
+         presentation of this book in OECD workshop (Braunschweig);<br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1994</b></td> <td>
+         Multiple substrates, reserves & structures: plants model;<br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1993</b></td> <td>
+         First local DEB course based on DEB1;<br>
+         dynamic generalizations of the &kappa;-rule;<br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1992</b></td> <td>
+         Static generalisations of the &kappa;-rule;<br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1991</b></td> <td>
+         Multiple reserve & partition. of reserve kinetics;<br>
+       </td></tr>
+
+       <tr class="1990"><td><b>1990</b></td> <td>
+         Start writing of <a href="../bib/Kooy1993.html" target="_blank">DEB1</a>;<br>
+         type T-acceleration of metabolism; consistency with Nelder 1961 for bird growth;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1989</b></td> <td>
+         Ageing as accumulation of damage in 2 steps;<br>
+         Weibull ageing rate; consistency with Gompertz 1825, Weibull 1951;<br>
+         microbial food chains with Bob Kooi; re-interpretation of Drent 1976 data;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1988</b></td> <td>
+         Reconstruction of food uptake from growth;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1987</b></td> <td>
+         Mass as conserved quantity in combination with energy;<br>
+         respiration as in indirect calorimetry; consistency with Lavoisier 1780;<br>
+         step from macro- to micro-chemical reaction equations;<br>
+         renovation of DEB notation;<br>
+       </td></tr>
+						
+       <tr class="1980"><td><b>1986</b></td> <td>
+         The name DEB was chosen on instigation by Joos Joosse;<br>
+         microbial product formation & fermentation: consistency with Leudeking-Piret 1958;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1985</b></td> <td>
+         Shape correction function; changes in shape;<br>
+         bacteria as static mixtures between V0- and V1-morphs, consistency with Marr-Pirt 1962;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1984</b></td> <td>
+         Maturity maintenance as energy sink with Horst Thieme;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1983</b></td> <td>
+         Physical co-variation rules of DEB parameters; consistency with Kleiber 1932;<br>
+         bacterial populations as juveniles;<br>
+         foetal development, consistency with Huggett-Widdas 1951;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1982</b></td> <td>
+         Embryos are juveniles that don't eat; <br>
+         consistency with Rahn & Ar 1974 for respiration in bird embryos and Smith 1957 in fish embryos;<br>
+         costs of eggs & maternal effects;<br>
+         maturity as state variable;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1981</b></td> <td>
+         Reserve dynamics reconstructed from cell quota of Droop 1973;<br>
+         effects of toxicants at population level;</br>
+         setup of <a href="../bib/Kooy2010_n.pdf">DEB notation</a>;<br>
+       </td></tr>
+
+       <tr class="1980"><td><b>1980</b></td> <td>
+         Sublethal effects of toxicants as changes in parameter-values;<br>
+         parameter values linear in internal concentrations;
+       </td></tr>
+
+       <tr class="1970"><td><b>1979</b></td> <td>
+         Start of DEB work with Holling 1959, P&uuml;tter 1920, Arrhenius 1889 & &kappa;-rule;<br>
+         start of work on physiologically structured pop. dynamics with Hans Metz & Odo Diekmann;<br>
+       </td></tr>
+			
+       <tr class="1970"><td><b>1978</b></td> <td>
+         No Effect Concentration (NEC) as tox parameter;<br>
+       </td></tr>
+
+       <tr class="1970"><td><b>1977</b></td> <td>
+         Effects of toxicants on survival depend in internal concentration;<br>
+         one compartment model as basic transport model (first TKTD model) ;<br>
+         LC50 as function of exposure time;<br>
+       </td></tr>
+
+      </table>
+    </div> <!-- end of cal -->
+  </div> <!-- end of content -->
+ 
+  <div w3-include-html="sys/footer_amp.html"></div>
+  <script>w3IncludeHTML();</script>
+	
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+
+</BODY>
+</HTML>
+
