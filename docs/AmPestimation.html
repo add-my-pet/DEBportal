@@ -13,10 +13,10 @@
 </HEAD>
 <BODY>
 
-  <div w3-include-html="wallpaper_DEBwiki.html"></div>
+  <div w3-include-html="wallpaper_DEBportal.html"></div>
   <script>w3IncludeHTML();</script>
 
-  <div w3-include-html="toolbar_DEBwiki.html"></div>
+  <div w3-include-html="toolbar_DEBportal.html"></div>
   <script>w3IncludeHTML();</script>
 
 <div id = "main">
@@ -276,15 +276,17 @@
       The free/fix setting is always taken from the pars_init file, even with 'pars_init_method' 2, when the parameter values are taken from the .mat file.
       
       <h2>Parameter estimation in practice</h2>
-      To obtain the estimates, you have to prepare a script-file run_my_pet and three function files mydata_my_pet,pars_init_my_pet and predict_my_pet.
-      This can be done by the <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPeps.html">AmP entry prepare system (AmPeps)</a>,
+      To obtain the estimates, you have to prepare a script-file run_my_pet and three function files mydata_my_pet,pars_init_my_pet and predict_my_pet
+      (where "my_pet" is replaced by the name of your entry).
+      This can be done by the <a href="AmPeps.html">AmP entry prepare system (AmPeps)</a>,
       which writes these files on the basis of a graphical user interface (gui).
+      Application in a course-context is given by <a href="AmP@DEB2021.html">AmP@DEB2021</a>.
 
       <p>
-      You can follow the instructions to start an Add-my-pet estimation for a single species.
-      The DEBtool also enables you to estimate parameters for two or more species simultaneously.
-      This can be interesting in the case that different species share particular parameter values, and/or parameter values have particular assumed relationships.
-      The general idea is that the total number of parameters to be estimated for the group is (considerably) smaller than the sum of the parameters to be estimated for each species.
+      Estimation options are set via DEBtool_M function <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
+      Some options relate to details of the minimization algorithm, others to where to find initial values or what to output as result.
+      
+	
 
       <h2>Evaluation of estimates</h2>
       To judge parameter values, you can study the implied properties, setting 'results_output' at 3,
