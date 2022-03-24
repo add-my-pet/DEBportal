@@ -311,7 +311,7 @@
       </ul>
       There are many ways to interact with the estimation process, such as first keeping particular parameters fixed and later release them.
       Finding the global minimum of the loss function rapidly becoms more complex the more parameters are estimated simultanously.
-      The free-setting is always taken from the pars_init file (independent of the pars_init_method setting).
+      The free-setting is always taken from the pars_init file (irrespective of the pars_init_method setting).
       If paricular predictions deviate too much from the data, you can increase the weight-coefficients of this data in the mydata-file by
       multiplying the current weight coeffcients for this data by a factor, say 3 to 10; avoid large values.
       Realize that by making a data-set more important, the rest becomes less-important.
@@ -322,11 +322,19 @@
       As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
 
       <p>
-      If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which predictions are most off,
-      and change the parameters that cause it in the pars_init-file.						 
+      If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
+      and change the parameters that cause it in the pars_init-file.
+      Difficulties in finding a satisfying global minimum are frequently caused by inconsistencies of data in the mydata-file.
+      If age and size at puberty are specified as zero-variate data, and also age-size data as uni-variate data, check if the puberty-point is consistent with the age-size data.
+      If age-size data indicates an asymptote, is this asymptote consistent with the zero-variate data-point?
+      If not, consider a data-set-specific parameter for the scaled functional response.
+      If both lengths and weights are used, check if cubed length over weight does not vary too much.
+      If the maximim weight is off, change the zoom factor; then change the maximum length by the shape-coefficient (the smaller the shape-coefficient,
+      the larger the length; different length-measures require different shape coefficients).
+      
 							       
       <h2>Evaluation of estimates</h2>
-      To judge parameter values, you can study the implied properties, setting 'results_output' at 3,
+      To judge parameter values, you can study the implied properties, setting <code>estim_options('results_output', 3);</code>,
       and an html-page is automatically opened in your system browser at the end of an iteration (or directly if 'method' 'no' is specified).
       If all looks OK, you can specify 'results_output' 4, and implied properties of related species in the collection are included in the table in the html-page.
 
