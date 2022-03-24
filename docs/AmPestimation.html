@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<HTML>
-<HEAD>
-  <TITLE>Estimation</TITLE>
+<html>
+<head>
+  <title>Estimation</title>
   <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"> 
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
@@ -10,8 +10,8 @@
       padding-right: 20px;
     }
   </style>
-</HEAD>
-<BODY>
+</head>
+<body>
 
   <div w3-include-html="wallpaper_DEBportal.html"></div>
   <script>w3IncludeHTML();</script>
@@ -23,546 +23,546 @@
   <div id = "main-wrapper">    
     <div id="contentFull">
 
-    <h1>
-      AmP parameter estimation
-      <a href="https://youtu.be/hIJtytohzIs" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:22"></a>
-    </h1>
+      <h1>
+        AmP parameter estimation
+        <a href="https://youtu.be/hIJtytohzIs" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:22"></a>
+      </h1>
     
-    <div>
+      <div>
 
-      <h2>Introduction <a href="https://youtu.be/E4ag2-WzhmQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
-      This page aims to describe the methodology that is used in the AmP project for the  estimation of parameters of DEB models from data:
-      the practice and getting started, technical aspects, i.e. code-specifications and how to use it to arrive at parameter estimates,
-      evaluation of estimation results, accuracy of parameter estimates.
-      An introduction to modelling and statistics is given in the document <a href="https://www.bio.vu.nl/thb/deb/deblab/tb/tb.pdf">Basic methods for Theoretical Biology</a>.
-      The described procedure is coded in the DEBtool software (<a heref="https://github.com/add-my-pet/DEBtool_M">download from GitHub</a>)
-      and follows the <a href="https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_n.pdf">DEB notation</a>.
+        <h2>Introduction <a href="https://youtu.be/E4ag2-WzhmQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
+        This page aims to describe the methodology that is used in the AmP project for the  estimation of parameters of DEB models from data:
+        the practice and getting started, technical aspects, i.e. code-specifications and how to use it to arrive at parameter estimates,
+        evaluation of estimation results, accuracy of parameter estimates.
+        An introduction to modelling and statistics is given in the document <a href="https://www.bio.vu.nl/thb/deb/deblab/tb/tb.pdf">Basic methods for Theoretical Biology</a>.
+        The described procedure is coded in the DEBtool software (<a heref="https://github.com/add-my-pet/DEBtool_M">download from GitHub</a>)
+        and follows the <a href="https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_n.pdf">DEB notation</a>.
 
-      <p>
-      Parameter estimation is the procedure to use data to arrive at parameter estimates by minimizing some loss function that quantifies the distance between data and model predictions,        known as the <b>estimation criterion</b>.
-      A loss function is a function of data, model predictions and weight coefficients, so the problem is to find the combination of parameter values that correspond with the minimum,
-      starting from one or more initial guesses.
-      Several methods (algorithms) can be used for this, but the result should be independent of the algorithm.
-      A complicating factor is that the loss function typically has several local minima rather than a single one,
-      meaning that neighbouring parameter values have higher values of the loss function.
-      One of the local minima is the global minimum, which is usually at the parameter estimate that we are looking for.
-      But the difference between the global and local minima might be small, and a local minimum might be at parameter values that have a much better eco-physiological interpretation.
-      Typical for parameter estimation in an AmP context is that we not have a single data set, but several to many, which are all used simultaneously to estimate all parameters
-      in a single estimation step;
-      the predictions for e.g. respiration and reproduction share particular parameters and must, therefore, be considered simulataneously.
-      This feature poses strong constraints on the choice of loss function.
-      Although it is satifyling to arrive at a good fit, the interpretation of parameter values is at least as important.
-      This inspired us to develop the notion of parameter estimation-in-context.
+        <p>
+        Parameter estimation is the procedure to use data to arrive at parameter estimates by minimizing some loss function that quantifies the distance between data and model predictions,        known as the <b>estimation criterion</b>.
+        A loss function is a function of data, model predictions and weight coefficients, so the problem is to find the combination of parameter values that correspond with the minimum,
+        starting from one or more initial guesses.
+        Several methods (algorithms) can be used for this, but the result should be independent of the algorithm.
+        A complicating factor is that the loss function typically has several local minima rather than a single one,
+        meaning that neighbouring parameter values have higher values of the loss function.
+        One of the local minima is the global minimum, which is usually at the parameter estimate that we are looking for.
+        But the difference between the global and local minima might be small, and a local minimum might be at parameter values that have a much better eco-physiological interpretation.
+        Typical for parameter estimation in an AmP context is that we not have a single data set, but several to many, which are all used simultaneously to estimate all parameters
+        in a single estimation step;
+        the predictions for e.g. respiration and reproduction share particular parameters and must, therefore, be considered simulataneously.
+        This feature poses strong constraints on the choice of loss function.
+        Although it is satifyling to arrive at a good fit, the interpretation of parameter values is at least as important.
+        This inspired us to develop the notion of parameter estimation-in-context.
 
-      <p>
-      Times and rates depend on (body) temperature and temperatures can differ between data sets.
-      For this reason, and for comparison, all parameters are estimated for the chosen reference temperature of 20 &deg;C and need to be converted to the current temperature.	
+        <p>
+        Times and rates depend on (body) temperature and temperatures can differ between data sets.
+        For this reason, and for comparison, all parameters are estimated for the chosen reference temperature of 20 &deg;C and need to be converted to the current temperature.	
 
-      <h2>Typified DEB models <a href="https://youtu.be/um1_hCPP7WQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
-      <img class="myImg" src="img/empir_cycle.png" alt="The emirical cycle from tb-doc in DEBlab" width="100px" align="left">
-      <div id="myModal" class="modal">
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-      </div>
-      A set of coherent and consistent assumptions define models and models define parameters.
-      These parameters, in combination with the model structure, determine what data is required to estimate these parameters.
-      Different models of DEB theory have been applied to different organisms but all are related and consistent with the theory.
-      Some of the most used models have been formalized and are called typified models and all are simple extensions of the most simple one: the standard (std) model.
-      The are described on the page <a href="Typified_models.html">Typified_models</a>.
-      The main distinction between the models is whether or not metabolic acceleration occurs during ontogeny.
+        <h2>Typified DEB models <a href="https://youtu.be/um1_hCPP7WQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
+        <img class="myImg" src="img/empir_cycle.png" alt="The emirical cycle from tb-doc in DEBlab" width="100px" align="left">
+        <div id="myModal" class="modal">
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
+        A set of coherent and consistent assumptions define models and models define parameters.
+        These parameters, in combination with the model structure, determine what data is required to estimate these parameters.
+        Different models of DEB theory have been applied to different organisms but all are related and consistent with the theory.
+        Some of the most used models have been formalized and are called typified models and all are simple extensions of the most simple one: the standard (std) model.
+        The are described on the page <a href="Typified_models.html">Typified_models</a>.
+        The main distinction between the models is whether or not metabolic acceleration occurs during ontogeny.
 
-      <p>
-      Species specific details that are not included in the computation of implied properties:
-      <ul>
-        <li>Acanthocephalans live in the micro-aerobic environment of the gut of their host.
-	  They don't use dioxygen, but ferment.
-	  It is possible to model this (see Section 4.9.1, Kooijman 2010), but this is not yet implemented in the code behind the calculation of the statistics.
-	  These particular respiration predictions should, therefore, be ignored.
-        <li>Cephalopods are typically semelparous (death at first spawning) and die well before approaching ultimate body size.
-	  For practical purposes, this early death is included as an effect of ageing, but ageing has probably nothing to do with this.
-	  The asymptotic size is calculated in the pars-file and some of the listed properties are not realistic as a consequence.
-        <li>The toadlets Crinia lower their allocation fraction to soma between hatch and birth (Mueller et al 2012).
-	<li>Mammals take milk during their baby-stage, weaning is included in all stx models for mammals as a maturity threshold, but the change in diet is not taken into account.
-	<li>Many birds first reproduce in their second year under (seasonal) field conditions.
-	  They apparently have a relatively long juvenile period during most of which they are fully grown.
-	  This trait leads to high values for maturity maintenance at puberty and low values for maturity maintenance.
-	  Husbandry data indicates that birds potentially reproduce much earlier, which questions the realism of these two parameters.
-      </ul>
+        <p>
+        Species specific details that are not included in the computation of implied properties:
+        <ul>
+          <li>Acanthocephalans live in the micro-aerobic environment of the gut of their host.
+	    They don't use dioxygen, but ferment.
+	    It is possible to model this (see Section 4.9.1, Kooijman 2010), but this is not yet implemented in the code behind the calculation of the statistics.
+	    These particular respiration predictions should, therefore, be ignored.
+          <li>Cephalopods are typically semelparous (death at first spawning) and die well before approaching ultimate body size.
+	    For practical purposes, this early death is included as an effect of ageing, but ageing has probably nothing to do with this.
+	    The asymptotic size is calculated in the pars-file and some of the listed properties are not realistic as a consequence.
+          <li>The toadlets Crinia lower their allocation fraction to soma between hatch and birth (Mueller et al 2012).
+	  <li>Mammals take milk during their baby-stage, weaning is included in all stx models for mammals as a maturity threshold, but the change in diet is not taken into account.
+	  <li>Many birds first reproduce in their second year under (seasonal) field conditions.
+	    They apparently have a relatively long juvenile period during most of which they are fully grown.
+	    This trait leads to high values for maturity maintenance at puberty and low values for maturity maintenance.
+	    Husbandry data indicates that birds potentially reproduce much earlier, which questions the realism of these two parameters.
+        </ul>
 
-      <h2>Data and data types</h2>
-      Data can be classified as
-      <ul>
-	<li><b>dependent data</b>, i.e. data that need to be predicted, while these predictions depend on independent data and parameter values
-	<li><b>independent data</b>, i.e. data that are considered as given, do not depend on parameter values, but modifies predictions for dependent data
-      </ul>
-      Notice that these definitions imply that predictions cannot depend on dependent data, only on independent data and parameters.
+        <h2>Data and data types</h2>
+        Data can be classified as
+        <ul>
+    	  <li><b>dependent data</b>, i.e. data that need to be predicted, while these predictions depend on independent data and parameter values
+	  <li><b>independent data</b>, i.e. data that are considered as given, do not depend on parameter values, but modifies predictions for dependent data
+        </ul>
+        Notice that these definitions imply that predictions cannot depend on dependent data, only on independent data and parameters.
 
-      <p>
-      A data set can be of several types:
-      <ul>
-	<li><a href="Zero-variate_data.html">zero-variate data</a>, i.e. independent data in the form of a single number
-	<li><a href="Uni-variate_data.html">uni-variate data</a>, i.e. independent data in the form of a vector of numbers
-	<li><a href="Bi-variate_data.html">bi-varate data</a>, i.e. independent data in the form of a matrix of numbers
-	<li><a href="Tri-variate_data.html">tri-variate data</a>, i.e. independent data in the form of an 3-dim array of numbers
-	<li><a href="Pseudo_data.html">pseudo-data</a>, theoretical zero-variate (so indepenent) data for a generalized animal
-	  that is added (with small weight coefficients) to avoid unrealistic parameter estimates 
-	<li><a href="Auxiliary_data.html">auxiliary data</a>, dependent data of any type (which, therefore, do not need to be predicted, for instance temperature)
-      </ul>
-      The data that is used to arrive at DEB parameter estimates consists of a collection of such data sets.
-      Increasing the number of (real as opposed to pseudo) data sets, so information, reduces the role of the pseudo-data in the parameter estimation.
-      But if environmental conditions (feeding situation, temperature) differ between data sets in ways that are not taken into account properly,
-      the accuracy of parameter estimates might or might not be increased by including more data.
+        <p>
+        A data set can be of several types:
+        <ul>
+	  <li><a href="Zero-variate_data.html">zero-variate data</a>, i.e. independent data in the form of a single number
+	  <li><a href="Uni-variate_data.html">uni-variate data</a>, i.e. independent data in the form of a vector of numbers
+	  <li><a href="Bi-variate_data.html">bi-varate data</a>, i.e. independent data in the form of a matrix of numbers
+	  <li><a href="Tri-variate_data.html">tri-variate data</a>, i.e. independent data in the form of an 3-dim array of numbers
+	  <li><a href="Pseudo_data.html">pseudo-data</a>, theoretical zero-variate (so indepenent) data for a generalized animal
+	    that is added (with small weight coefficients) to avoid unrealistic parameter estimates 
+	  <li><a href="Auxiliary_data.html">auxiliary data</a>, dependent data of any type (which, therefore, do not need to be predicted, for instance temperature)
+        </ul>
+        The data that is used to arrive at DEB parameter estimates consists of a collection of such data sets.
+        Increasing the number of (real as opposed to pseudo) data sets, so information, reduces the role of the pseudo-data in the parameter estimation.
+        But if environmental conditions (feeding situation, temperature) differ between data sets in ways that are not taken into account properly,
+        the accuracy of parameter estimates might or might not be increased by including more data.
       
-      <p>
-      Pseudo-data are parameter values corresponding to a generalized animal, but treated as dependent data, i.e. typical values for a wide variety of animals (Lika et al 2011).
-      These values may change as the AmP collection increases.
-      Pseudo-data serve to fill possible gaps in information that is contained in the real data.
-      Only intensive parameters can play the role of pseudo-data points, i.e. parameters that are independent of body size.
-      Species-specific parameters should not be included in the pseudo-data, especially the zoom factor, the shape coefficient and the maturity levels at birth and puberty.
-      Since the value for specific cost for structure (E_G) is sensitive for the water content of tissue, which differs between jelly fish and vertebrates,
-      it is replaced by the growth efficiency kap_G: energy fixed in new tissue as fraction that energy that was required for its symthesis.
-      Pseudo-data, if used properly, can play several roles.
-      It serves the task of increasing the identifiability of parameters and, thus, preventing the ambiguous determination of parameter values.
-      It can also improve the eco-physiological interpretation.
+        <p>
+        Pseudo-data are parameter values corresponding to a generalized animal, but treated as dependent data, i.e. typical values for a wide variety of animals (Lika et al 2011).
+        These values may change as the AmP collection increases.
+        Pseudo-data serve to fill possible gaps in information that is contained in the real data.
+        Only intensive parameters can play the role of pseudo-data points, i.e. parameters that are independent of body size.
+        Species-specific parameters should not be included in the pseudo-data, especially the zoom factor, the shape coefficient and the maturity levels at birth and puberty.
+        Since the value for specific cost for structure (E_G) is sensitive for the water content of tissue, which differs between jelly fish and vertebrates,
+        it is replaced by the growth efficiency kap_G: energy fixed in new tissue as fraction that energy that was required for its symthesis.
+        Pseudo-data, if used properly, can play several roles.
+        It serves the task of increasing the identifiability of parameters and, thus, preventing the ambiguous determination of parameter values.
+        It can also improve the eco-physiological interpretation.
 
-      <p>
-      The difference between independent data and parameters can be subtle, as illustrated by the chemical parameters:
-      chemical potentials and coefficients, specific densities.
-      All entries have such parameters (which are typically kept fixed at default values), but most do not use them.
-      If respiration data must be predicted, for instance, while DEB theory uses the conservation laws for chemical elements for these predictions, these parameters are used.
-      Although all chemical elements can be used in DEB theory, only C, H, O and N are used for simplicity's sake.
-      The composition of N-waste and the specific densities (roughly the dry-wet weight ratio's) are taxon-specific.
-      These parameters are set at default values, but can be oberwritten by the user, and can also be estimated (from data), which is why we call them parameters, 
-      rather than independent data.
+        <p>
+        The difference between independent data and parameters can be subtle, as illustrated by the chemical parameters:
+        chemical potentials and coefficients, specific densities.
+        All entries have such parameters (which are typically kept fixed at default values), but most do not use them.
+        If respiration data must be predicted, for instance, while DEB theory uses the conservation laws for chemical elements for these predictions, these parameters are used.
+        Although all chemical elements can be used in DEB theory, only C, H, O and N are used for simplicity's sake.
+        The composition of N-waste and the specific densities (roughly the dry-wet weight ratio's) are taxon-specific.
+        These parameters are set at default values, but can be oberwritten by the user, and can also be estimated (from data), which is why we call them parameters, 
+        rather than independent data.
 
-      <p>
-      The difference between dependent and independent data depends on the context of the research and of data availability.
-      Food intake is rarely known, for instance, and the value of the maximum weight (as zero-variate data) is frequently inconsistent with uni-variate time-weight data.
-      Correct or not, the hypothesis is that food intake (and/or quality) differed, and the data are made consistent by considering the (constant) scaled functional response
-      as dependent data (or parameter, if you wish), while, if known, it would have been independent data.
-      The feeding or temperature trajectory during ontogeny, for instance, is typically treated as independent data,
-      but if the research problem includes the reconstruction of such trajectories, is becomes dependent data, where the species parameters can be treated as given,
-      or estimated simultaneously as well.
-      See, for instance, the entries for the <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Aptenodytes_forsteri/Aptenodytes_forsteri_res.html">emperor penguin</a>
-      or the <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Puffinus_puffinus/Puffinus_puffinus_res.html">Manx shearwater</a>, but many examples exist.
+        <p>
+        The difference between dependent and independent data depends on the context of the research and of data availability.
+        Food intake is rarely known, for instance, and the value of the maximum weight (as zero-variate data) is frequently inconsistent with uni-variate time-weight data.
+        Correct or not, the hypothesis is that food intake (and/or quality) differed, and the data are made consistent by considering the (constant) scaled functional response
+        as dependent data (or parameter, if you wish), while, if known, it would have been independent data.
+        The feeding or temperature trajectory during ontogeny, for instance, is typically treated as independent data,
+        but if the research problem includes the reconstruction of such trajectories, is becomes dependent data, where the species parameters can be treated as given,
+        or estimated simultaneously as well.
+        See, for instance, the entries for the <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Aptenodytes_forsteri/Aptenodytes_forsteri_res.html">emperor penguin</a>
+        or the <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Puffinus_puffinus/Puffinus_puffinus_res.html">Manx shearwater</a>, but many examples exist.
       
-      <p>
-      The real (as opposed to pseudo) data should at least contain the maximum adult weight.
-      However, it is preferable to also include weight and age at birth and puberty as well as the maximum reproduction rate.
-      Notice that times and rates without temperature are meaningless.
-      This combination already fixes the growth curve in a crude way, specifies allocation fraction kappa and the maturity thresholds at birth and puberty.
-      The weight can be dry, ash-free dry or wet weight, the conversion involves specific densities, which belong to the chemical parameters.
-      Assuming that the specific density of wet mass is close to 1 g/cm3, check the values for d_V and d_E that refer to dry weight.
+        <p>
+        The real (as opposed to pseudo) data should at least contain the maximum adult weight.
+        However, it is preferable to also include weight and age at birth and puberty as well as the maximum reproduction rate.
+        Notice that times and rates without temperature are meaningless.
+        This combination already fixes the growth curve in a crude way, specifies allocation fraction kappa and the maturity thresholds at birth and puberty.
+        The weight can be dry, ash-free dry or wet weight, the conversion involves specific densities, which belong to the chemical parameters.
+        Assuming that the specific density of wet mass is close to 1 g/cm3, check the values for d_V and d_E that refer to dry weight.
 
-      <h3>Data quality and availability</h3>
-      The quality and availability of data varies enormously over species, which has consequences for the entries.
-      Data of most entries were taken from the literature, and collected by workers with widely different prior knowledge.
-      This situation is far from ideal and we hope that future data acquisition is done with the DEB context in mind.
+        <h3>Data quality and availability</h3>
+        The quality and availability of data varies enormously over species, which has consequences for the entries.
+        Data of most entries were taken from the literature, and collected by workers with widely different prior knowledge.
+        This situation is far from ideal and we hope that future data acquisition is done with the DEB context in mind.
 
-      <p>
-      Data from field conditions suffer from the problem that temperature and feeding profiles are generally unknown.
-      To a lesser extent, this also applies to laboratory conditions.
-      Only a few species can be cultured successfully and detailed (chemical) knowledge about nutritional requirements hardly exists for any species.
-      The idea that `some prediction is better than no prediction' fueled the collection (e.g. for management purposes),
-      but where data are guessed is clearly indicated in the mydata-files.
-      The hope is that such weak entries will improve over time by supplementing data and re-estimate parameters.
-      Predictions might help to prioritize further research.
+        <p>
+        Data from field conditions suffer from the problem that temperature and feeding profiles are generally unknown.
+        To a lesser extent, this also applies to laboratory conditions.
+        Only a few species can be cultured successfully and detailed (chemical) knowledge about nutritional requirements hardly exists for any species.
+        The idea that `some prediction is better than no prediction' fueled the collection (e.g. for management purposes),
+        but where data are guessed is clearly indicated in the mydata-files.
+        The hope is that such weak entries will improve over time by supplementing data and re-estimate parameters.
+        Predictions might help to prioritize further research.
 
-      <p>
-      Another motivation to include weak entries is that predictions for situations that have not yet been studied empirically can be used to test the theory rigorously.
-      It is encouraging to see how few data already allows for an estimation of parameters.
-      That results are not fully random is supported by the observation that similar species (in terms of body size, habitat and taxonomy) have similar parameter values,
-      despite lack of advanced data.
-      See, for instance, the different species of tardigrades.
-      The reliability of the resulting estimates and predictions should always be evaluated in the context of the data on which they are based.
-      Generally, the more types of data, the more reliable are the results.
+        <p>
+        Another motivation to include weak entries is that predictions for situations that have not yet been studied empirically can be used to test the theory rigorously.
+        It is encouraging to see how few data already allows for an estimation of parameters.
+        That results are not fully random is supported by the observation that similar species (in terms of body size, habitat and taxonomy) have similar parameter values,
+        despite lack of advanced data.
+        See, for instance, the different species of tardigrades.
+        The reliability of the resulting estimates and predictions should always be evaluated in the context of the data on which they are based.
+        Generally, the more types of data, the more reliable are the results.
 
-      <p>
-      Where many different data sources are used, however, conditions can vary to the extent that variations cannot be ignored.
-      In some mydata-files this is taken into account by assigning different feeding conditions to different data sets.
-      The scaled functional reponse is the food intake as fraction of the maximum possible one for an individual of that size;
-      this food intake flux is multiplied by the digestion efficiency to arrive at the assimilation flux.
-      The scaled functional response only takes differences in food density into account, not differences in food quality.
-      If food qualities differ, the scaled function response is no longer less or equal to 1, but might be larger.
-      If feeding densities and qualities are not specified with the data, this "repair" is far from ideal, however.
+        <p>
+        Where many different data sources are used, however, conditions can vary to the extent that variations cannot be ignored.
+        In some mydata-files this is taken into account by assigning different feeding conditions to different data sets.
+        The scaled functional reponse is the food intake as fraction of the maximum possible one for an individual of that size;
+        this food intake flux is multiplied by the digestion efficiency to arrive at the assimilation flux.
+        The scaled functional response only takes differences in food density into account, not differences in food quality.
+        If food qualities differ, the scaled function response is no longer less or equal to 1, but might be larger.
+        If feeding densities and qualities are not specified with the data, this "repair" is far from ideal, however.
 
-      <p>
-      The variation not only concerns environmental conditions, but also differences in parameter values among individuals that have been used.
-      Parameter values tend to vary across the geographical range of a species, a problem that applies to many fish entries.
-      Although parameter values are better fixed with a growing number of data types, the inherent variability works in the opposite direction.
-      This is why marks have been given for both completeness of data and goodness of fit.
+        <p>
+        The variation not only concerns environmental conditions, but also differences in parameter values among individuals that have been used.
+        Parameter values tend to vary across the geographical range of a species, a problem that applies to many fish entries.
+        Although parameter values are better fixed with a growing number of data types, the inherent variability works in the opposite direction.
+        This is why marks have been given for both completeness of data and goodness of fit.
 
-      <p>
-      Generally the use of statistics derived from observations, such as the von Bertalanffy growth rate or the half saturation coefficient,
-      as data from which DEB parameters are estimated, is discouraged.
-      It is far better to base the parameter estimation directly on the measurements, avoiding manipulation or interpretation.
-      For instance, if wet weights were measured, use wet weights as data and do not convert them first to dry weights (or vice versa).
+        <p>
+        Generally the use of statistics derived from observations, such as the von Bertalanffy growth rate or the half saturation coefficient,
+        as data from which DEB parameters are estimated, is discouraged.
+        It is far better to base the parameter estimation directly on the measurements, avoiding manipulation or interpretation.
+        For instance, if wet weights were measured, use wet weights as data and do not convert them first to dry weights (or vice versa).
 
-      <p>
-      Although DEB theory concerns all organisms, the collection is only about animals, for the reason that they can live off a single (chemically complex)
-      resource and thus can be modeled with a single reserve and resource availability is relatively simple to characterize.
-      Within the animals, we made an effort to maximize coverage, given limitations imposed by data availability.
+        <p>
+        Although DEB theory concerns all organisms, the collection is only about animals, for the reason that they can live off a single (chemically complex)
+        resource and thus can be modeled with a single reserve and resource availability is relatively simple to characterize.
+        Within the animals, we made an effort to maximize coverage, given limitations imposed by data availability.
 
-      <h3>Data completeness</h3>
-      For comparative purposes, it helps to judge the completeness of the data using a marking system from 1 (low) to 10 (high)
-      <a href="Completeness.html">(See Table)</a>.
+        <h3>Data completeness</h3>
+        For comparative purposes, it helps to judge the completeness of the data using a marking system from 1 (low) to 10 (high)
+        <a href="Completeness.html">(See Table)</a>.
       
 
-      <h2>Weight coefficients</h2>
-      The weight coefficients serve to (subjectively) quantify the confidence of the user in the data-sets as well as for specific data points.
-      The AmP procedure distinguishes between real and pseudo data.
-      The weight coefficients are automatically set to Weight coeff.png where i designates the data set and j the point on data set i,
-      where ni designates the number of points in data set i.
-      The motivation is to ensure that each data set contributes equally to the loss function (instead of each data point contributing equally).
-      The default weight coefficients for pseudo-data are handled differently).
+        <h2>Weight coefficients</h2>
+        The weight coefficients serve to (subjectively) quantify the confidence of the user in the data-sets as well as for specific data points.
+        The AmP procedure distinguishes between real and pseudo data.
+        The weight coefficients are automatically set to Weight coeff.png where i designates the data set and j the point on data set i,
+        where ni designates the number of points in data set i.
+        The motivation is to ensure that each data set contributes equally to the loss function (instead of each data point contributing equally).
+        The default weight coefficients for pseudo-data are handled differently).
 
-      <p>
-      The user can overwrite default weight values (for either the whole data set or else particular values.
-      This is done in the mydata file.
-      The overwriting of the weight coefficient is done by multiplying the default value by a dimensionless factor. See Setting weight coefficients.
+        <p>
+        The user can overwrite default weight values (for either the whole data set or else particular values.
+        This is done in the mydata file.
+        The overwriting of the weight coefficient is done by multiplying the default value by a dimensionless factor. See Setting weight coefficients.
 
-      <h2>Loss function</h2>
-      A loss function is a distance measure between data and predictions, so
-      <ul>
-	<li> the distance between (multi-dim) points A and B equals the distance between B and A
-	<li> if A equals B, the distance should be zero
-	<li> distances are non-negative
-      </ul>
-      It only depends on data, predictions and weight coefficients.
-      The AmP estimation procedure includes several loss functions, which can selected via the estimation options.
+        <h2>Loss function</h2>
+        A loss function is a distance measure between data and predictions, so
+        <ul>
+ 	  <li> the distance between (multi-dim) points A and B equals the distance between B and A
+	  <li> if A equals B, the distance should be zero
+	  <li> distances are non-negative
+        </ul>
+        It only depends on data, predictions and weight coefficients.
+        The AmP estimation procedure includes several loss functions, which can selected via the estimation options.
 
-      <p>
-      <img class="myImg" src="img/360px-Lossfunction_F.png" alt="loss function sb" width="200px" align="left">
-      The default loss function is the symmetric bounded one: sb.
-      It is symmetric because is values is unaffected by interchanging data and predictions
-      and bounded because, if predictions go to inifinite, their contribution to the loss function  remains limited.
-      The latter property is absent in the symmetric unbounded loss function su.
-      The rationale is discussed in <a href="http://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-details">Marques et al 2019</a>.
+        <p>
+        <img class="myImg" src="img/360px-Lossfunction_F.png" alt="loss function sb" width="200px" align="left">
+        The default loss function is the symmetric bounded one: sb.
+        It is symmetric because is values is unaffected by interchanging data and predictions
+        and bounded because, if predictions go to inifinite, their contribution to the loss function  remains limited.
+        The latter property is absent in the symmetric unbounded loss function su.
+        The rationale is discussed in <a href="http://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-details">Marques et al 2019</a>.
 
-      <p>
-      The default values for the weight-coefficients for the pseudo-data depend on the choice of loss function to ensure that they play a minor role in the estimation.	
+        <p>
+        The default values for the weight-coefficients for the pseudo-data depend on the choice of loss function to ensure that they play a minor role in the estimation.	
 
-      <h2>Minimization of loss function</h2>
-      Estimation of some 15 parameters simultaneously from a variety of data cannot be routine work.
-      You can only expect useful results if your initial estimates are not too far from the resulting estimates.
-      It is best to either use a time-length-energy framework (as done here) or a time-length-mass framework in the selection of primary parameters and not mix them.
-      Both frameworks can be used to predict energies and masses, using conversion factors.
+        <h2>Minimization of loss function</h2>
+        Estimation of some 15 parameters simultaneously from a variety of data cannot be routine work.
+        You can only expect useful results if your initial estimates are not too far from the resulting estimates.
+        It is best to either use a time-length-energy framework (as done here) or a time-length-mass framework in the selection of primary parameters and not mix them.
+        Both frameworks can be used to predict energies and masses, using conversion factors.
 
-      <p>
-      The minimum is found using a Nelder-Mead simplex method.
-      A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters.
-      One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
-      The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.
-      During the procedure the parameter are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain (Lika et al 2014).
+        <p>
+        The minimum is found using a Nelder-Mead simplex method.
+        A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters.
+        One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
+        The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.
+        During the procedure the parameter are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain (Lika et al 2014).
 
-      <p>
-      Your best option is to use a series of short iteration runs, setting 'max_step_number' at 500, say, rather than a single long run, using continuation:
-      continue with the previously obtained results.
-      You can do this by first selecting 'pars_init_method' 2, meaning that you start from the values as specified in the pars_init file,
-      in combination with 'results_output' 3 (which produces and html page with results), meaning that a .mat file is saved, and then select 'pars_init_method' 1,
-      meaning that you continue with values as specified in the .mat file that was previously written.
-      The significance of a series of short runs is that with each restart, the simplex has a relatively large volume, which shirks during iteration,
-      meaning that valleys in the surface of the lossfunction are more easily detected, and the risk is reduced to arrive at a local minimum that is not the global minimum.
-      For this reason, it is always a good idea to restart from the result, even in the case of successful convergence.
-      Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
-      For this reason, it is not always possible to arrive at a successful convergence, i.e. the lossfunction has a rough surface.
-      As long as the resulting fit is good, and the parameter values seem acceptable, this does not need to be a problem.
-      When you think that the result is better than the values in the pars_init file, use mat2pars_init (this function does not need further input),
-      to copy the values of the .mat file to the pars_init file.
+        <p>
+        Your best option is to use a series of short iteration runs, setting 'max_step_number' at 500, say, rather than a single long run, using continuation:
+        continue with the previously obtained results.
+        You can do this by first selecting 'pars_init_method' 2, meaning that you start from the values as specified in the pars_init file,
+        in combination with 'results_output' 3 (which produces and html page with results), meaning that a .mat file is saved, and then select 'pars_init_method' 1,
+        meaning that you continue with values as specified in the .mat file that was previously written.
+        The significance of a series of short runs is that with each restart, the simplex has a relatively large volume, which shirks during iteration,
+        meaning that valleys in the surface of the lossfunction are more easily detected, and the risk is reduced to arrive at a local minimum that is not the global minimum.
+        For this reason, it is always a good idea to restart from the result, even in the case of successful convergence.
+        Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
+        For this reason, it is not always possible to arrive at a successful convergence, i.e. the lossfunction has a rough surface.
+        As long as the resulting fit is good, and the parameter values seem acceptable, this does not need to be a problem.
+        When you think that the result is better than the values in the pars_init file, use mat2pars_init (this function does not need further input),
+        to copy the values of the .mat file to the pars_init file.
 
-      <p>
-      In many cases, convergence will be smooth and easy, but sometimes convergence is more reluctant.
-      In such cases it helps to first fix parameters in the pars_init that turn out to run to unrealistic values, and release them again if predictions are closer to data.
-      The free/fix setting is always taken from the pars_init file, even with 'pars_init_method' 2, when the parameter values are taken from the .mat file.
+        <p>
+        In many cases, convergence will be smooth and easy, but sometimes convergence is more reluctant.
+        In such cases it helps to first fix parameters in the pars_init that turn out to run to unrealistic values, and release them again if predictions are closer to data.
+        The free/fix setting is always taken from the pars_init file, even with 'pars_init_method' 2, when the parameter values are taken from the .mat file.
       
-      <h2>Parameter estimation in practice</h2>
-      To obtain the estimates, you have to prepare a script-file run_my_pet and three function files mydata_my_pet,pars_init_my_pet and predict_my_pet
-      (where "my_pet" is replaced by the name of your entry).
-      This can be done by the <a href="AmPeps.html">AmP entry prepare system (AmPeps)</a>,
-      which writes these files on the basis of a graphical user interface (gui).
-      Always work from your own directory outside of the DEBtool folder.
-      Application in a course-context is given by <a href="AmP@DEB2021.html">AmP@DEB2021</a>.
-      Just type <code>AmPeps</code> and have a look in the manual that will load in your browser; you need to be connected to the internet.
-      The AmPeps selects a related species in the AmP collection to copy the initial values of the parameters, from which the estimation starts.
-      The tast of AmPeps is to produce a proposal for the 4 required source-files, which you can edit befor use.
+        <h2>Parameter estimation in practice</h2>
+        To obtain the estimates, you have to prepare a script-file run_my_pet and three function files mydata_my_pet,pars_init_my_pet and predict_my_pet
+        (where "my_pet" is replaced by the name of your entry).
+        This can be done by the <a href="AmPeps.html">AmP entry prepare system (AmPeps)</a>,
+        which writes these files on the basis of a graphical user interface (gui).
+        Always work from your own directory outside of the DEBtool folder.
+        Application in a course-context is given by <a href="AmP@DEB2021.html">AmP@DEB2021</a>.
+        Just type <code>AmPeps</code> and have a look in the manual that will load in your browser; you need to be connected to the internet.
+        The AmPeps selects a related species in the AmP collection to copy the initial values of the parameters, from which the estimation starts.
+        The tast of AmPeps is to produce a proposal for the 4 required source-files, which you can edit befor use.
 
-      <p>
-      Alternatively, but more risky, download the files of a similar species online and modify them, not forgetting to edit all data. One way to be sure of that,
-      start by deleting all bibkeys in the mydata-file.
-      If your species is already in the collection, download the 4 files, add your name in the mydata-files as modification author,
-      and a discussion point that explains what changed and why.
+        <p>
+        Alternatively, but more risky, download the files of a similar species online and modify them, not forgetting to edit all data. One way to be sure of that,
+        start by deleting all bibkeys in the mydata-file.
+        If your species is already in the collection, download the 4 files, add your name in the mydata-files as modification author,
+        and a discussion point that explains what changed and why.
 
-      <p>
-      Estimation options are set via DEBtool_M function <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
-      Some options relate to details of the minimization algorithm, others to where to find initial values or what to output as result.
-      The standard way to proceed is
-      <ul>
-	<li>start by editing the run-file with
-	  <ul>
-	    <li> <code>estim_options('default');</code>, meaning select all defaults 
-            <li> <code>estim_options('max_step_number', 5e2);</code> meaning that the algorithm stops after 500 steps
-	      (which will probably not enough to reach convergence, but see below)
-            <li> <code>estim_options('pars_init_method', 2);</code>, meaning select initial parameter values from the pars_init-file
-	    <li> <code>estim_options('results_output', 3);</code>, meaning write results_my_pet.mat, save figures, write hmtl-file of results
-	    <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimized the lossfunction
-	  </ul>
-	  Then run the run-file in the MatLab commend window; the progress is printed to the screen with the step-number and the smallest
-	  and the largest value of the lossfunction at the simplex points.
-	  This results_my_pet.mat file can be read with printmat('my_pet'), but this is rarely necessary (see below).
-	<li> then continue by selecting in the run-file
-	  <ul>
-	    <li> <code>estim_options('pars_init_method', 1);</code>, meaning select initial parameter values from the results_my_pet.mat-file
- 	  </ul>
-          Then run the run-file again in the MatLab commend window (arrow-up + enter).
-	  The significance of this procedure of multiple runs of a small number of steps is that the simplex shrinks during iteration,
-	  and the simplex-size is restored in this way.
-	  This reduces the risk of ending up in a local minimum.
-	  Repeat as many times as necessary.
-	<li> then run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file (no input required).
-      </ul>
-      There are many ways to interact with the estimation process, such as first keeping particular parameters fixed and later release them.
-      Finding the global minimum of the loss function rapidly becoms more complex the more parameters are estimated simultanously.
-      The free-setting is always taken from the pars_init file (irrespective of the pars_init_method setting).
-      If paricular predictions deviate too much from the data, you can increase the weight-coefficients of this data in the mydata-file by
-      multiplying the current weight coeffcients for this data by a factor, say 3 to 10; avoid large values.
-      Realize that by making a data-set more important, the rest becomes less-important.
+        <p>
+        Estimation options are set via DEBtool_M function <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
+        Some options relate to details of the minimization algorithm, others to where to find initial values or what to output as result.
+        The standard way to proceed is
+        <ul>
+	  <li>start by editing the run-file with
+	    <ul>
+	      <li> <code>estim_options('default');</code>, meaning select all defaults 
+              <li> <code>estim_options('max_step_number', 5e2);</code> meaning that the algorithm stops after 500 steps
+	       (which will probably not enough to reach convergence, but see below)
+              <li> <code>estim_options('pars_init_method', 2);</code>, meaning select initial parameter values from the pars_init-file
+	      <li> <code>estim_options('results_output', 3);</code>, meaning write results_my_pet.mat, save figures, write hmtl-file of results
+	      <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimized the lossfunction
+	    </ul>
+	    Then run the run-file in the MatLab commend window; the progress is printed to the screen with the step-number and the smallest
+	    and the largest value of the lossfunction at the simplex points.
+	    This results_my_pet.mat file can be read with printmat('my_pet'), but this is rarely necessary (see below).
 
-      <p>
-      The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
-      In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
-      As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
+ 	  <li> then continue by selecting in the run-file
+	    <ul>
+	      <li> <code>estim_options('pars_init_method', 1);</code>, meaning select initial parameter values from the results_my_pet.mat-file
+ 	    </ul>
+            Then run the run-file again in the MatLab commend window (arrow-up + enter).
+	    The significance of this procedure of multiple runs of a small number of steps is that the simplex shrinks during iteration,
+	    and the simplex-size is restored in this way.
+	    This reduces the risk of ending up in a local minimum.
+	    Repeat as many times as necessary.
 
-      <p>
-      If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
-      and change the parameters that cause it in the pars_init-file.
-      Difficulties in finding a satisfying global minimum are frequently caused by inconsistencies of data in the mydata-file.
-      Check all units and preferably use the default units for time, length, weight.
-      If age and size at puberty are specified as zero-variate data, and also age-size data as uni-variate data, check if the puberty-point is consistent with the age-size data.
-      If age-size data indicates an asymptote, is this asymptote consistent with the zero-variate data-point?
-      If not, consider a data-set-specific parameter for the scaled functional response.
-      If both lengths and weights are used, check if weight over cubed length (= condition index) does not vary too much.
-      If the maximim weight is off, change the zoom factor; then change the maximum length by the shape-coefficient (the smaller the shape-coefficient,
-      the larger the length; different length-measures require different shape coefficients).
-      Only if both the reproduction rate and the weight at birth are realistic, the allocation to reproduction is realistic; mass fluxes are key to DEB theory.
+  	  <li> then run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file (no input required).
+        </ul>
+        There are many ways to interact with the estimation process, such as first keeping particular parameters fixed and later release them.
+        Finding the global minimum of the loss function rapidly becoms more complex the more parameters are estimated simultanously.
+        The free-setting is always taken from the pars_init file (irrespective of the pars_init_method setting).
+        If paricular predictions deviate too much from the data, you can increase the weight-coefficients of this data in the mydata-file by
+        multiplying the current weight coeffcients for this data by a factor, say 3 to 10; avoid large values.
+        Realize that by making a data-set more important, the rest becomes less-important.
 
-      <p>
-      The presentation of results can (optionally) be customized with file <code>custom_results_my_pet</code>, see <code>DEBtool_M/lib/pet/custom_results_template</code>.      
-      If such afile exists in the same folder as the other four user defined files ( mydata, predict, pars_init, and run files),
-      it will be called automatically by the DEBtool_M routines.
-      It is important to note that only those uni-variate data which are specified in the custom_results_my_pet file will be plotted,
-      even though all uni-variate data will be used for parameter estimation.
+        <p>
+        The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
+        In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
+        As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
+
+        <p>
+        If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
+        and change the parameters that cause it in the pars_init-file.
+        Difficulties in finding a satisfying global minimum are frequently caused by inconsistencies of data in the mydata-file.
+        Check all units and preferably use the default units for time, length, weight.
+        If age and size at puberty are specified as zero-variate data, and also age-size data as uni-variate data, check if the puberty-point is consistent with the age-size data.
+        If age-size data indicates an asymptote, is this asymptote consistent with the zero-variate data-point?
+        If not, consider a data-set-specific parameter for the scaled functional response.
+        If both lengths and weights are used, check if weight over cubed length (= condition index) does not vary too much.
+        If the maximim weight is off, change the zoom factor; then change the maximum length by the shape-coefficient (the smaller the shape-coefficient,
+        the larger the length; different length-measures require different shape coefficients).
+        Only if both the reproduction rate and the weight at birth are realistic, the allocation to reproduction is realistic; mass fluxes are key to DEB theory.
+
+        <p>
+        The presentation of results can (optionally) be customized with file <code>custom_results_my_pet</code>, see <code>DEBtool_M/lib/pet/custom_results_template</code>.      
+        If such afile exists in the same folder as the other four user defined files ( mydata, predict, pars_init, and run files),
+        it will be called automatically by the DEBtool_M routines.
+        It is important to note that only those uni-variate data which are specified in the custom_results_my_pet file will be plotted,
+        even though all uni-variate data will be used for parameter estimation.
 							       
-      <h2>Evaluation of estimates</h2>
-      To judge parameter values, you can study the implied properties, setting <code>estim_options('results_output', 3);</code>,
-      and an html-page is automatically opened in your system browser at the end of an iteration (or directly if 'method' 'no' is specified).
-      If all looks OK, you can specify 'results_output' 4, and implied properties of related species in the collection are included in the table in the html-page.
+        <h2>Evaluation of estimates</h2>
+        To judge parameter values, you can study the implied properties, setting <code>estim_options('results_output', 3);</code>,
+        and an html-page is automatically opened in your system browser at the end of an iteration (or directly if 'method' 'no' is specified).
+        If all looks OK, you can specify 'results_output' 4, and implied properties of related species in the collection are included in the table in the html-page.
 
-      <h3>Goodness of fit criterion</h3>
-      The match between data and predictions is quantified by the goodness of fit using the mean relative error (MRE) and the symmetric mean squared error (SMSE).
-      MRE can have values from 0 to infinity, while SMSE has values from 0 to 1.
-      In both cases, 0 means predictions match data exactly.
-      MRE assesses the differences between data and predictions additively, judging equally an overestimation and underestimation of the same relative size
-      (e.g, +20% or -20% will give the same contribution), while SMSE assesses the difference multiplicatively,
-      judging overestimation and underestimation by the same factor equally (e.g. x2 or x/2 will give the same contribution).
-      Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE or SMSE (unless the fit is perfect).
+        <h3>Goodness of fit criterion</h3>
+        The match between data and predictions is quantified by the goodness of fit using the mean relative error (MRE) and the symmetric mean squared error (SMSE).
+        MRE can have values from 0 to infinity, while SMSE has values from 0 to 1.
+        In both cases, 0 means predictions match data exactly.
+        MRE assesses the differences between data and predictions additively, judging equally an overestimation and underestimation of the same relative size
+        (e.g, +20% or -20% will give the same contribution), while SMSE assesses the difference multiplicatively,
+        judging overestimation and underestimation by the same factor equally (e.g. x2 or x/2 will give the same contribution).
+        Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE or SMSE (unless the fit is perfect).
 
-      <p>
-      Relative errors in a univariate data set are summarized to that of a single data-point by taking the MRE for all data-points.
-      Only real data, not pseudo-data, are included in the assessment.
-      If all weight coefficients of a data set are zero, it is not included in the computation of the MRE. The best situation is, of course, that of a small MRE.
-      It is likely that the marks for completeness and goodness of fit will be negatively correlated.
+        <p>
+        Relative errors in a univariate data set are summarized to that of a single data-point by taking the MRE for all data-points.
+        Only real data, not pseudo-data, are included in the assessment.
+        If all weight coefficients of a data set are zero, it is not included in the computation of the MRE. The best situation is, of course, that of a small MRE.
+        It is likely that the marks for completeness and goodness of fit will be negatively correlated.
 
-      <p>
-      The problem of a good fit for the wrong reasons is always present. It is, therefore, important to judge the realism of parameter values as well.
-      Remember that parameters might be poorly fixed by data, and very different values can, sometimes, result in a tiny difference in goodness of fit.
+        <p>
+        The problem of a good fit for the wrong reasons is always present. It is, therefore, important to judge the realism of parameter values as well.
+        Remember that parameters might be poorly fixed by data, and very different values can, sometimes, result in a tiny difference in goodness of fit.
 
+        <h3>Confidence intervals</h3>
+        Uncertainty of the point estimates of parameter values can be assessed by computing the marginal confidence intervals using the profile method,
+        as described in Marques et al 2019 (development) and Stavrakidis-Zachou et al. 2018 (application).
+        The profile method is a two-step procedure.
+        In the first step, the profile (of the loss function) for a parameter is obtained.
+        In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed.
+        See a more detailed tutorial here.
 
-      <h3>Confidence intervals</h3>
-      Uncertainty of the point estimates of parameter values can be assessed by computing the marginal confidence intervals using the profile method,
-      as described in Marques et al 2019 (development) and Stavrakidis-Zachou et al. 2018 (application).
-      The profile method is a two-step procedure.
-      In the first step, the profile (of the loss function) for a parameter is obtained.
-      In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed.
-      See a more detailed tutorial here.
-
-      <h2>Multi-species parameter estimation</h2>
-
-      DEBtool (download from GitHub in DEBlab) enables you to estimate parameters for two or more species simultaneously.
-      This can be interesting in the case that different species share particular parameter values, and/or parameter values have particular assumed relationships.
-      The general idea is that the total number of parameters to be estimated for the group is (considerably) smaller than the sum of the parameters to be estimated for each species.
-
-      <p>
-      A simple example of the required multi-species files is provided in DEBtool_M/lib/pet/example_group_estimation.zip.
-
-      <p>
-      The general setup of the multi-species estimation is the same as for single species.
-      There must be 4 types of files:
-      <ul>
-        <li>mydata-files:
-          Each species must have a mydata-file, identical to the single-species situation; the types of data are not restricted and independent for each species.
-
-        <li>predict-files:
-          Each species must have a predict-file (which computes predictions for all data, given parameter values), identical to the single-species situation.
-	  You can, therefore, copy any mydata-and-predict pairs from the AmP collection; no changes required, no restrictions apply.
-
-        <li>pars_init_group-file:
-          A single (combined) file to initiate all parameters for estimation, named <code>pars_init_group.m</code>.
-	  It specifies which parameters are the same, and which are different for each species.
-	  Since this file needs extra attention, it is discussed in more detail below.
-
-	<li>run-file:
-	  A single (combined) file to run the estimation procedure; the name is free.
-	  The only difference with a typical one-species run-file is that the cell-string of the global <code>pets</code> now has several names, rather than a single one e.g.
-	  <code>pets = {'Daphnia_magna','Daphnia_pulex'};</code>.
-	  The species names should exactly match the species-names in the mydata-files (see above).
-      </ul>
-
-      Now more about the pars_init_group-file.
-      The choice of which parameters are the same for all species and which are different is made by the specification of parameter values,
-      which can be scalar (for parameters that are the same for all species), or vector-valued.
-      If parameter are different, but should be not that different, see the subsection "Augmented loss functions". 
-      The length of the vectors must be equal to the number of species and the values must also be in the corresponding sequence.
-      The free-setting (zeros or ones) should correspond with the value setting, so also either scalar or vector-valued.
-
-      <p>
-      The general idea is to copy-paste-modify an existing single-species pars_init-file and use it as a template with an eye on the provided example.
-      The above-mentioned example shows that the call of addchem to add chemical parameters is slightly different from the single-species setting,
-      since the method allows that the species in the group differ in classification (phylum and class, as specified in the mydata-files, see above).
-      This might have consequences for the specific densities of biomass (i.e. water content) and the nitrogen-wastes.
-      If the phyla and classes of all species in the group are the same, the default values for these two parameters are again scalars, like in the single-species case.
-      Notice that the default-settings for the chemical parameters can be overwritten in pars_init_group, also in the multi-species situation (using scalars or vectors).
-      If the species do differ in water content, it is best to choose the specific cost for structure, [E_G], vector-valued and free.
-
-      <p>
-      The method also allows that the model types for the different species are different.
-      In that case, the model-specification in pars_init_group must be a string of cells, e.g. <code>metaPar.model = {'std','abj'};</code> for two species.
-      Again, the length of the cell string should equal the number of species.
-      If all models are the same a simple character string will do, as for the single-species situation, e.g. <code>metaPar.model = 'std';</code>,
-      but a cell string of length one also works.
-      The specification of the predict-files (see above) should be consistent with that of the model type.
-      If the predict-files were copied from the AmP collection, please observe the model type that has been used in the corresponding pars_init files.
-      These model-types are also given in the species-list of the AmP website.
-      The model types are of relevance if filters are used (which is the default);
-      these filters avoid that the parameters walk outside their logical domain during the estimation procedure,
-      which substantially contribute to the stability of the estimation process.
-
-      <p>
-      An example of a customized plotting-file is given in <code>DEBtool_M\lib\pet\custom_results_group</code>.
-      The presence of a file with this name in the local directory suppresses other plotting of the estimation results, as specified in <code>results_pets</code>.      
-
-      <h3>co-variation rules</h3>
-      The co-variation rules of parameters are specified by <code>metaPar.covRules = 'no';</code> or <code>metaPar.covRules = 'maturities';.</code>
-      <ul>
-        <li>'no': no relationships between different parameters are assumed.
-          This is the default option, which is selected in the case that an explicit option setting of covRules is missing.
-	  
-        <li>'maturities': maturity levels are assumed to be proportional to the cubed zoom factors, using pets{1} as reference (pets are defined in the run_file).
-	  This only makes sense if the zoom factor in the pars_init file is specified as a vector.
-	  For example: maturity at birth for pets{2} is that for pets{1} times the ratio of the cubed zoom factors for pets{2} and pets{1}.
-	  The free-setting of the maturity levels of all species depends on that for pets{1}, irrespective of the actual settings.
-	  Also the maturity settings themselves for species pets{2} and higher are ignored with this estim_options setting.
-      </ul>
-      The code first executes the 'no'-rule, then any other rule using overwrite.
-      In case of conflict, the other rules take, therefore, priority.
-      Even if the maturity levels in the pars_init file are scalar-valued, they will (generally) not stay the same for all species with 'maturities' as co-variation rule.
-      User-defined co-variation options can be added in function parGrp2Pets, which maps the parameter setting for the group,
-      like in pars_init_group, to that for each species, where all parameters are scalar;
-      just define a new case, using that for 'maturities' as example.
-      The co-variation rules, like 'maturities', are always on top of the rules for 'no', and take priority in the case of any conflict.
-
-      <p>
-      Parameters can be specific for a particular species, as used in their predict-files.
-      If a single species uses this parameter, for instance, the specification in pars_init_group can be either scalar (to be preferred), or vector-valued.
-      In that latter case, the free-setting for species that do not use this parameter must be zero, i.e. these parameters are fixed,
-      else they make a random walk during estimation that hampers conversion to the global minimum of the loss-function and takes unnecessary computation time.
-      To avoid misunderstandings in the interpretation of the results, the values of parameters for species that do not use them can best be set to NaN (Not-a-Number).
-
-      <p>
-      Notice that, with the simplex method, it is not that easy to see the difference between the results of a random walk and a proper estimation for any particular parameter;
-      if a changed parameter value results in the same MRE, the result was that of a random walk.
-
-      <h3>Augmented loss function</h3>
-      If you specify one or more <code>metaPar.weights</code> fields in the pars_init_group file for particular parameters,
-      these weights are applied to the variance as fraction of the squared mean for these parameters and the result is added the loss function that is minimized to arrive
-      at parameter estimates.
-      The paper <a href="https://www.zotero.org/groups/500643/deb_library/search/augment/titleCreatorYear/items/JPQ4L6YD/item-list">Lika et al 2020</a>
-      gives the philosophy and brackground.
-      This construct allows to smoothly vary between no relationship between the parameter values of the group members
-      (weights zero, which is the default weight value) and all group members have the same parameter value (a high weight).
-      An example of such a setting is <code>metaPar.weights.p_M = 5; metaPar.weights.v = 5;</code>.
-
-      <h3>General remarks</h3>
-      If you start multi-species estimation for the first time, use <code>estim_options('pars_init_method', 2);</code>
-      and estim_options('results_output', 3);.
-      This has the effect that pars_init_group is used to specify parameter values, file results_group.mat (see below) is written, and the result is printed on a html-page.
-      After this start you might select <code>estim_options('pars_init_method', 1);</code> for continuation, meaning that you restart from the previous result.
-      See all estim_options.
-
-      <p>
-      Results of the estimation are stored in the file results_group.mat, while mat2par_init converts the contents to pars_init_group.m, like in the single-species situation.
-      These resulting files also specify the covRules setting, even if this has not been done explicitly by the user.
-      If the model specification as specified in pars_init_group is a cell-string (e.g., {'std', 'abj'}) rather then a character string (e.g., 'std'),
-      the sequence of the parameters in the file that results from mat2par_init might differ from the original file.
-      This is due to the fact that the models might be different and each model has particular core parameters.
-
-      <p>
-      The names pars_init_group and results_group.mat are fixed, so you need to park different group-estimations in different directories
-      if you are working on more than one multi-species estimation.
-
-      <p>
-      If you found the global minimum, you can copy the result, stored in results_group.mat to the pars_init_group.m file using mat2pars_init, just like the single-species case.
-      Option setting 3 for results_output shows an html-page with all results for all species, which facilitates comparison.
-      Option 4 combines the result with related species in the collection, just like the single-species case.
-      The default plotting of figures can be overwritten with a custom_results_group file; an example is given in DEBtool_M/lib/pet.
-
-      <p>
-      The idea is that the multi-species estimation is done in a dedicated subdirectory, which has copies of all mydata, predict and pars_init files of the species in the group.
-      Apart from the strategy to use a particular pars_init file as template for the pars_init_group file, it is possible to generate such a file,
-      as well as the run_group file from the set of pars_init files with pars_init2mat; mat2pars_init.
-      Function pars_init2mat uses all mydata and pars_init files in the subdirectory and if no pars_init_group files exists, it writes one.
-      The resulting file still needs some editing, since all parameters are now vector-valued,
-      while the crux of the exercise is that at least some parameters are the same for all species, to arrive at a reduction in the number of parameters that needs to be estimated.
-
-      <p>
-      Generally, the worse is the best fit, the more rugged is the surface of the loss-function, the more local minima exist and the harder it becomes to find the global one.
-      If you think you found a global minimum, you might try to restart from there to check that the parameters do not move again.
-      This restart restores the size of the simplex, which generally shrinks during estimation, increasing the probability to arrive at a local minimum that is not global.
-      (A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters.
-      One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
-      The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.)
-      This is one of the reasons why a series of short runs with continuation, using estim_options('pars_init_method', 1);
-      in the run-file (see below), is to be preferred above a single long run.
-      We suggest to use <code>estim_options('max_step_number',500);</code>.
-      With key `arrow-up' you can go back to your previous Matlab-command; 
-      pressing key `enter' you continue estimation.
-      So it takes just two key-hits to continue estimation. 
-      Sometimes a small simplex size is required to reach the global minimum (e.g. to squeeze through the "key-hole"), 
-      motivating a larger maximum step number in the direct neighborhood of that minimum.
-
-      <p>
-      The MRE's and SMSE's of the species in the group must be higher than for each species separately, since fewer free parameters are used, giving further constraints on their values. 
-      The general idea of a successful multi-species estimation is that the decrease in number of estimated parameters more than compensates the decrease in goodness of fit, 
-      with the hope that the parameter values increase in realism (especially relevant for poorly-determined parameters).
-
-      <p>
-      Structure metaPar becomes available after load results_group.mat and has (among others) fields MRE, SMSE, cv and weights. 
-      The latter two, so metaPar.weights and metaPar.cv, have the names of the various parameters and their weights, as set in pars_init_group and corresponding variation coefficients, 
-      respectively. 
-      This can be used to study the trait off between a reduction of the variation coefficient and an increase in mean MRE and SMSE, 
-      as a result of increasing the weights for one or more parameters. The command addCV initiates or adds to a table with this information. 
-      The browser opens automatically at initiation of the table, hit refresh for additional rows in the table.
-
-      <p>
-      Although multi-species parameter estimation can be scientifically important, the AmP data base has presently no system to accommodate the cross-linking between different entries. 
-      This means only results from single-species estimation can be submitted for publication in the AmP data base, 
-      since we want to maximize clarity about the step from data to parameter values.
-
-    </div> <!-- end of content -->
+        <h2>Multi-species parameter estimation</h2>
  
-    <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/footer_amp.html"></div>
-    <script>w3IncludeHTML();</script>
+        DEBtool (download from GitHub in DEBlab) enables you to estimate parameters for two or more species simultaneously.
+        This can be interesting in the case that different species share particular parameter values, and/or parameter values have particular assumed relationships.
+        The general idea is that the total number of parameters to be estimated for the group is (considerably) smaller than the sum of the parameters to be estimated for each species.
 
+        <p>
+        A simple example of the required multi-species files is provided in DEBtool_M/lib/pet/example_group_estimation.zip.
+
+        <p>
+        The general setup of the multi-species estimation is the same as for single species.
+        There must be 4 types of files:
+        <ul>
+          <li>mydata-files:
+            Each species must have a mydata-file, identical to the single-species situation; the types of data are not restricted and independent for each species.
+
+          <li>predict-files:
+            Each species must have a predict-file (which computes predictions for all data, given parameter values), identical to the single-species situation.
+   	    You can, therefore, copy any mydata-and-predict pairs from the AmP collection; no changes required, no restrictions apply.
+
+          <li>pars_init_group-file:
+            A single (combined) file to initiate all parameters for estimation, named <code>pars_init_group.m</code>.
+  	    It specifies which parameters are the same, and which are different for each species.
+	    Since this file needs extra attention, it is discussed in more detail below.
+
+	  <li>run-file:
+	    A single (combined) file to run the estimation procedure; the name is free.
+	    The only difference with a typical one-species run-file is that the cell-string of the global <code>pets</code> now has several names, rather than a single one e.g.
+	    <code>pets = {'Daphnia_magna','Daphnia_pulex'};</code>.
+	    The species names should exactly match the species-names in the mydata-files (see above).
+        </ul>
+
+        Now more about the pars_init_group-file.
+        The choice of which parameters are the same for all species and which are different is made by the specification of parameter values,
+        which can be scalar (for parameters that are the same for all species), or vector-valued.
+        If parameter are different, but should be not that different, see the subsection "Augmented loss functions". 
+        The length of the vectors must be equal to the number of species and the values must also be in the corresponding sequence.
+        The free-setting (zeros or ones) should correspond with the value setting, so also either scalar or vector-valued.
+
+        <p>
+        The general idea is to copy-paste-modify an existing single-species pars_init-file and use it as a template with an eye on the provided example.
+        The above-mentioned example shows that the call of addchem to add chemical parameters is slightly different from the single-species setting,
+        since the method allows that the species in the group differ in classification (phylum and class, as specified in the mydata-files, see above).
+        This might have consequences for the specific densities of biomass (i.e. water content) and the nitrogen-wastes.
+        If the phyla and classes of all species in the group are the same, the default values for these two parameters are again scalars, like in the single-species case.
+        Notice that the default-settings for the chemical parameters can be overwritten in pars_init_group, also in the multi-species situation (using scalars or vectors).
+        If the species do differ in water content, it is best to choose the specific cost for structure, [E_G], vector-valued and free.
+
+        <p>
+        The method also allows that the model types for the different species are different.
+        In that case, the model-specification in pars_init_group must be a string of cells, e.g. <code>metaPar.model = {'std','abj'};</code> for two species.
+        Again, the length of the cell string should equal the number of species.
+        If all models are the same a simple character string will do, as for the single-species situation, e.g. <code>metaPar.model = 'std';</code>,
+        but a cell string of length one also works.
+        The specification of the predict-files (see above) should be consistent with that of the model type.
+        If the predict-files were copied from the AmP collection, please observe the model type that has been used in the corresponding pars_init files.
+        These model-types are also given in the species-list of the AmP website.
+        The model types are of relevance if filters are used (which is the default);
+        these filters avoid that the parameters walk outside their logical domain during the estimation procedure,
+        which substantially contribute to the stability of the estimation process.
+
+        <p>
+        An example of a customized plotting-file is given in <code>DEBtool_M\lib\pet\custom_results_group</code>.
+        The presence of a file with this name in the local directory suppresses other plotting of the estimation results, as specified in <code>results_pets</code>.      
+
+        <h3>co-variation rules</h3>
+        The co-variation rules of parameters are specified by <code>metaPar.covRules = 'no';</code> or <code>metaPar.covRules = 'maturities';.</code>
+        <ul>
+          <li>'no': no relationships between different parameters are assumed.
+            This is the default option, which is selected in the case that an explicit option setting of covRules is missing.
+	  
+          <li>'maturities': maturity levels are assumed to be proportional to the cubed zoom factors, using pets{1} as reference (pets are defined in the run_file).
+  	    This only makes sense if the zoom factor in the pars_init file is specified as a vector.
+	    For example: maturity at birth for pets{2} is that for pets{1} times the ratio of the cubed zoom factors for pets{2} and pets{1}.
+	    The free-setting of the maturity levels of all species depends on that for pets{1}, irrespective of the actual settings.
+	    Also the maturity settings themselves for species pets{2} and higher are ignored with this estim_options setting.
+        </ul>
+        The code first executes the 'no'-rule, then any other rule using overwrite.
+        In case of conflict, the other rules take, therefore, priority.
+        Even if the maturity levels in the pars_init file are scalar-valued, they will (generally) not stay the same for all species with 'maturities' as co-variation rule.
+        User-defined co-variation options can be added in function parGrp2Pets, which maps the parameter setting for the group,
+        like in pars_init_group, to that for each species, where all parameters are scalar;
+        just define a new case, using that for 'maturities' as example.
+        The co-variation rules, like 'maturities', are always on top of the rules for 'no', and take priority in the case of any conflict.
+
+        <p>
+        Parameters can be specific for a particular species, as used in their predict-files.
+        If a single species uses this parameter, for instance, the specification in pars_init_group can be either scalar (to be preferred), or vector-valued.
+        In that latter case, the free-setting for species that do not use this parameter must be zero, i.e. these parameters are fixed,
+        else they make a random walk during estimation that hampers conversion to the global minimum of the loss-function and takes unnecessary computation time.
+        To avoid misunderstandings in the interpretation of the results, the values of parameters for species that do not use them can best be set to NaN (Not-a-Number).
+
+        <p>
+        Notice that, with the simplex method, it is not that easy to see the difference between the results of a random walk and a proper estimation for any particular parameter;
+        if a changed parameter value results in the same MRE, the result was that of a random walk.
+
+        <h3>Augmented loss function</h3>
+        If you specify one or more <code>metaPar.weights</code> fields in the pars_init_group file for particular parameters,
+        these weights are applied to the variance as fraction of the squared mean for these parameters and the result is added the loss function that is minimized to arrive
+        at parameter estimates.
+        The paper <a href="https://www.zotero.org/groups/500643/deb_library/search/augment/titleCreatorYear/items/JPQ4L6YD/item-list">Lika et al 2020</a>
+        gives the philosophy and brackground.
+        This construct allows to smoothly vary between no relationship between the parameter values of the group members
+        (weights zero, which is the default weight value) and all group members have the same parameter value (a high weight).
+        An example of such a setting is <code>metaPar.weights.p_M = 5; metaPar.weights.v = 5;</code>.
+
+        <h3>General remarks</h3>
+        If you start multi-species estimation for the first time, use <code>estim_options('pars_init_method', 2);</code>
+        and estim_options('results_output', 3);.
+        This has the effect that pars_init_group is used to specify parameter values, file results_group.mat (see below) is written, and the result is printed on a html-page.
+        After this start you might select <code>estim_options('pars_init_method', 1);</code> for continuation, meaning that you restart from the previous result.
+        See all estim_options.
+
+        <p>
+        Results of the estimation are stored in the file results_group.mat, while mat2par_init converts the contents to pars_init_group.m, like in the single-species situation.
+        These resulting files also specify the covRules setting, even if this has not been done explicitly by the user.
+        If the model specification as specified in pars_init_group is a cell-string (e.g., {'std', 'abj'}) rather then a character string (e.g., 'std'),
+        the sequence of the parameters in the file that results from mat2par_init might differ from the original file.
+        This is due to the fact that the models might be different and each model has particular core parameters.
+
+        <p>
+        The names pars_init_group and results_group.mat are fixed, so you need to park different group-estimations in different directories
+        if you are working on more than one multi-species estimation.
+
+        <p>
+        If you found the global minimum, you can copy the result, stored in results_group.mat to the pars_init_group.m file using mat2pars_init, just like the single-species case.
+        Option setting 3 for results_output shows an html-page with all results for all species, which facilitates comparison.
+        Option 4 combines the result with related species in the collection, just like the single-species case.
+        The default plotting of figures can be overwritten with a custom_results_group file; an example is given in DEBtool_M/lib/pet.
+
+        <p>
+        The idea is that the multi-species estimation is done in a dedicated subdirectory, which has copies of all mydata, predict and pars_init files of the species in the group.
+        Apart from the strategy to use a particular pars_init file as template for the pars_init_group file, it is possible to generate such a file,
+        as well as the run_group file from the set of pars_init files with pars_init2mat; mat2pars_init.
+        Function pars_init2mat uses all mydata and pars_init files in the subdirectory and if no pars_init_group files exists, it writes one.
+        The resulting file still needs some editing, since all parameters are now vector-valued,
+        while the crux of the exercise is that at least some parameters are the same for all species, to arrive at a reduction in the number of parameters that needs to be estimated.
+
+        <p>
+        Generally, the worse is the best fit, the more rugged is the surface of the loss-function, the more local minima exist and the harder it becomes to find the global one.
+        If you think you found a global minimum, you might try to restart from there to check that the parameters do not move again.
+        This restart restores the size of the simplex, which generally shrinks during estimation, increasing the probability to arrive at a local minimum that is not global.
+        (A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters.
+        One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
+        The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.)
+        This is one of the reasons why a series of short runs with continuation, using estim_options('pars_init_method', 1);
+        in the run-file (see below), is to be preferred above a single long run.
+        We suggest to use <code>estim_options('max_step_number',500);</code>.
+        With key `arrow-up' you can go back to your previous Matlab-command; 
+        pressing key `enter' you continue estimation.
+        So it takes just two key-hits to continue estimation. 
+        Sometimes a small simplex size is required to reach the global minimum (e.g. to squeeze through the "key-hole"), 
+        motivating a larger maximum step number in the direct neighborhood of that minimum.
+
+        <p>
+        The MRE's and SMSE's of the species in the group must be higher than for each species separately, since fewer free parameters are used, giving further constraints on their values. 
+        The general idea of a successful multi-species estimation is that the decrease in number of estimated parameters more than compensates the decrease in goodness of fit, 
+        with the hope that the parameter values increase in realism (especially relevant for poorly-determined parameters).
+
+        <p>
+        Structure metaPar becomes available after load results_group.mat and has (among others) fields MRE, SMSE, cv and weights. 
+        The latter two, so metaPar.weights and metaPar.cv, have the names of the various parameters and their weights, as set in pars_init_group and corresponding variation coefficients, 
+        respectively. 
+        This can be used to study the trait off between a reduction of the variation coefficient and an increase in mean MRE and SMSE, 
+        as a result of increasing the weights for one or more parameters. The command addCV initiates or adds to a table with this information. 
+        The browser opens automatically at initiation of the table, hit refresh for additional rows in the table.
+
+        <p>
+        Although multi-species parameter estimation can be scientifically important, the AmP data base has presently no system to accommodate the cross-linking between different entries. 
+        This means only results from single-species estimation can be submitted for publication in the AmP data base, 
+        since we want to maximize clarity about the step from data to parameter values.
+ 
+        <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/footer_amp.html"></div>
+        <script>w3IncludeHTML();</script>
+	
+    </div> <!-- end of content -->
   </div> <!-- end of main wrapper -->
 </div> <!-- end of main -->
-</BODY>
-</HTML>
+</body>
+</html>
