@@ -24,7 +24,7 @@
     <div id="contentFull">
 
     <h1>
-      AmP parameter estimation procedure 
+      AmP parameter estimation
       <a href="https://youtu.be/hIJtytohzIs" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:22"></a>
     </h1>
     
@@ -281,13 +281,50 @@
       This can be done by the <a href="AmPeps.html">AmP entry prepare system (AmPeps)</a>,
       which writes these files on the basis of a graphical user interface (gui).
       Application in a course-context is given by <a href="AmP@DEB2021.html">AmP@DEB2021</a>.
+      The AmPeps selects a related species in the AmP collection to copy the initial values of the parameters, from which the estimation starts.
 
       <p>
       Estimation options are set via DEBtool_M function <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
       Some options relate to details of the minimization algorithm, others to where to find initial values or what to output as result.
-      
-	
+      The standard way to proceed is
+      <ul>
+	<li>start by editing the run-file with
+	  <ul>
+	    <li> <code>estim_options('default');</code>, meaning select all defaults 
+            <li> <code>estim_options('max_step_number', 5e2);</code> meaning that the algorithm stops after 500 steps (which will probably not enough to reach convergence)
+            <li> <code>estim_options('pars_init_method', 2);</code>, meaning select initial parameter values from the pars_init-file
+	    <li> <code>estim_options('results_output', 3);</code>, meaning write results_my_pet.mat, save figures, write hmtl-file of results
+	    <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimized the lossfunction
+	  </ul>
+	  Then run the run-file in the MatLab commend window; the progress is printed to the screen with the step-number and the smallest
+	  and the largest value of the lossfunction at the simplex points.
+	<li> then continue by selecting in the run-file
+	  <ul>
+	    <li> <code>estim_options('pars_init_method', 1);</code>, meaning select initial parameter values from the results_my_pet.mat-file
+ 	  </ul>
+          Then run the run-file again in the MatLab commend window (arrow-up + enter).
+	  The significance of this procedure of multiple runs of a small number of steps is that the simplex shrinks during iteration,
+	  and the simplex-size is restored in this way.
+	  This reduces the risk of ending up in a local minimum.
+	  Repeat as many times as necessary.
+	<li> then run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file.
+      </ul>
+      There are many ways to interact with the estimation process, such as first keeping particular parameters fixed and later release them.
+      Finding the global minimum of the loss function rapidly becoms more complex the more parameters are estimated simultanously.
+      The free-setting is always taken from the pars_init file (independent of the pars_init_method setting).
+      If paricular predictions deviate too much from the data, you can increase the weight-coefficients of this data in the mydata-file by
+      multiplying the current weight coeffcients for this data by a factor, say 3 to 10; avoid large values.
+      Realize that by making a data-set more important, the rest becomes less-important.
 
+      <p>
+      The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
+      In addition to these filters, you can specify user-defied filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
+      As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
+
+      <p>
+      If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which predictions are most off,
+      and change the parameters that cause it in the pars_init-file.						 
+							       
       <h2>Evaluation of estimates</h2>
       To judge parameter values, you can study the implied properties, setting 'results_output' at 3,
       and an html-page is automatically opened in your system browser at the end of an iteration (or directly if 'method' 'no' is specified).
@@ -318,11 +355,12 @@
       as described in Marques et al 2019 (development) and Stavrakidis-Zachou et al. 2018 (application).
       The profile method is a two-step procedure.
       In the first step, the profile (of the loss function) for a parameter is obtained.
-      In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed. See a more detailed tutorial here.
+      In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed.
+      See a more detailed tutorial here.
 
       <h2>Multi-species parameter estimation</h2>
 
-      DEBtool (download from GitHub) enables you to estimate parameters for two or more species simultaneously.
+      DEBtool (download from GitHub in DEBlab) enables you to estimate parameters for two or more species simultaneously.
       This can be interesting in the case that different species share particular parameter values, and/or parameter values have particular assumed relationships.
       The general idea is that the total number of parameters to be estimated for the group is (considerably) smaller than the sum of the parameters to be estimated for each species.
 
