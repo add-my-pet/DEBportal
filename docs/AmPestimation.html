@@ -291,7 +291,8 @@
 	<li>start by editing the run-file with
 	  <ul>
 	    <li> <code>estim_options('default');</code>, meaning select all defaults 
-            <li> <code>estim_options('max_step_number', 5e2);</code> meaning that the algorithm stops after 500 steps (which will probably not enough to reach convergence)
+            <li> <code>estim_options('max_step_number', 5e2);</code> meaning that the algorithm stops after 500 steps
+	      (which will probably not enough to reach convergence, but see below)
             <li> <code>estim_options('pars_init_method', 2);</code>, meaning select initial parameter values from the pars_init-file
 	    <li> <code>estim_options('results_output', 3);</code>, meaning write results_my_pet.mat, save figures, write hmtl-file of results
 	    <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimized the lossfunction
@@ -307,7 +308,7 @@
 	  and the simplex-size is restored in this way.
 	  This reduces the risk of ending up in a local minimum.
 	  Repeat as many times as necessary.
-	<li> then run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file.
+	<li> then run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file (no input required).
       </ul>
       There are many ways to interact with the estimation process, such as first keeping particular parameters fixed and later release them.
       Finding the global minimum of the loss function rapidly becoms more complex the more parameters are estimated simultanously.
@@ -318,19 +319,21 @@
 
       <p>
       The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
-      In addition to these filters, you can specify user-defied filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
+      In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
       As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
 
       <p>
       If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
       and change the parameters that cause it in the pars_init-file.
       Difficulties in finding a satisfying global minimum are frequently caused by inconsistencies of data in the mydata-file.
+      Check all units and preferably use the default units for time, length, weight.
       If age and size at puberty are specified as zero-variate data, and also age-size data as uni-variate data, check if the puberty-point is consistent with the age-size data.
       If age-size data indicates an asymptote, is this asymptote consistent with the zero-variate data-point?
       If not, consider a data-set-specific parameter for the scaled functional response.
       If both lengths and weights are used, check if cubed length over weight does not vary too much.
       If the maximim weight is off, change the zoom factor; then change the maximum length by the shape-coefficient (the smaller the shape-coefficient,
       the larger the length; different length-measures require different shape coefficients).
+      Only if both the reproduction rate and the weight at birth are realistic, the allocation to reproduction is realistic; mass fluxes are key to DEB theory.
       
 							       
       <h2>Evaluation of estimates</h2>
