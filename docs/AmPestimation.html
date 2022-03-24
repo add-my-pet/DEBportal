@@ -280,8 +280,17 @@
       (where "my_pet" is replaced by the name of your entry).
       This can be done by the <a href="AmPeps.html">AmP entry prepare system (AmPeps)</a>,
       which writes these files on the basis of a graphical user interface (gui).
+      Always work from your own directory outside of the DEBtool folder.
       Application in a course-context is given by <a href="AmP@DEB2021.html">AmP@DEB2021</a>.
+      Just type <code>AmPeps</code> and have a look in the manual that will load in your browser; you need to be connected to the internet.
       The AmPeps selects a related species in the AmP collection to copy the initial values of the parameters, from which the estimation starts.
+      The tast of AmPeps is to produce a proposal for the 4 required source-files, which you can edit befor use.
+
+      <p>
+      Alternatively, but more risky, download the files of a similar species online and modify them, not forgetting to edit all data. One way to be sure of that,
+      start by deleting all bibkeys in the mydata-file.
+      If your species is already in the collection, download the 4 files, add your name in the mydata-files as modification author,
+      and a discussion point that explains what changed and why.
 
       <p>
       Estimation options are set via DEBtool_M function <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
@@ -299,6 +308,7 @@
 	  </ul>
 	  Then run the run-file in the MatLab commend window; the progress is printed to the screen with the step-number and the smallest
 	  and the largest value of the lossfunction at the simplex points.
+	  This results_my_pet.mat file can be read with printmat('my_pet'), but this is rarely necessary (see below).
 	<li> then continue by selecting in the run-file
 	  <ul>
 	    <li> <code>estim_options('pars_init_method', 1);</code>, meaning select initial parameter values from the results_my_pet.mat-file
@@ -330,11 +340,17 @@
       If age and size at puberty are specified as zero-variate data, and also age-size data as uni-variate data, check if the puberty-point is consistent with the age-size data.
       If age-size data indicates an asymptote, is this asymptote consistent with the zero-variate data-point?
       If not, consider a data-set-specific parameter for the scaled functional response.
-      If both lengths and weights are used, check if cubed length over weight does not vary too much.
+      If both lengths and weights are used, check if weight over cubed length (= condition index) does not vary too much.
       If the maximim weight is off, change the zoom factor; then change the maximum length by the shape-coefficient (the smaller the shape-coefficient,
       the larger the length; different length-measures require different shape coefficients).
       Only if both the reproduction rate and the weight at birth are realistic, the allocation to reproduction is realistic; mass fluxes are key to DEB theory.
-      
+
+      <p>
+      The presentation of results can (optionally) be customized with file <code>custom_results_my_pet</code>, see <code>DEBtool_M/lib/pet/custom_results_template</code>.      
+      If such afile exists in the same folder as the other four user defined files ( mydata, predict, pars_init, and run files),
+      it will be called automatically by the DEBtool_M routines.
+      It is important to note that only those uni-variate data which are specified in the custom_results_my_pet file will be plotted,
+      even though all uni-variate data will be used for parameter estimation.
 							       
       <h2>Evaluation of estimates</h2>
       To judge parameter values, you can study the implied properties, setting <code>estim_options('results_output', 3);</code>,
@@ -430,6 +446,10 @@
       these filters avoid that the parameters walk outside their logical domain during the estimation procedure,
       which substantially contribute to the stability of the estimation process.
 
+      <p>
+      An example of a customized plotting-file is given in <code>DEBtool_M\lib\pet\custom_results_group</code>.
+      The presence of a file with this name in the local directory suppresses other plotting of the estimation results, as specified in <code>results_pets</code>.      
+
       <h3>co-variation rules</h3>
       The co-variation rules of parameters are specified by <code>metaPar.covRules = 'no';</code> or <code>metaPar.covRules = 'maturities';.</code>
       <ul>
@@ -455,7 +475,7 @@
       If a single species uses this parameter, for instance, the specification in pars_init_group can be either scalar (to be preferred), or vector-valued.
       In that latter case, the free-setting for species that do not use this parameter must be zero, i.e. these parameters are fixed,
       else they make a random walk during estimation that hampers conversion to the global minimum of the loss-function and takes unnecessary computation time.
-      To avoid misunderstandings in the interpretation of the results, the values of parameters for species that don't use them can best be set to NaN (Not-a-Number).
+      To avoid misunderstandings in the interpretation of the results, the values of parameters for species that do not use them can best be set to NaN (Not-a-Number).
 
       <p>
       Notice that, with the simplex method, it is not that easy to see the difference between the results of a random walk and a proper estimation for any particular parameter;
@@ -504,11 +524,8 @@
       while the crux of the exercise is that at least some parameters are the same for all species, to arrive at a reduction in the number of parameters that needs to be estimated.
 
       <p>
-      The finding the global minimum of the loss-function rapidly becomes harder with the number of parameters to be estimated, since the number of local minima increases,
-      and the rate of conversion generally decreases.
-      Although no theoretical limitations apply to the maximum group size, this principle poses a soft ceiling.
       Generally, the worse is the best fit, the more rugged is the surface of the loss-function, the more local minima exist and the harder it becomes to find the global one.
-      If you think you found a global minimum, you might try to restart from there to check that the parameters don't move again.
+      If you think you found a global minimum, you might try to restart from there to check that the parameters do not move again.
       This restart restores the size of the simplex, which generally shrinks during estimation, increasing the probability to arrive at a local minimum that is not global.
       (A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters.
       One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
@@ -517,7 +534,8 @@
       in the run-file (see below), is to be preferred above a single long run.
       We suggest to use <code>estim_options('max_step_number',500);</code>.
       With key `arrow-up' you can go back to your previous Matlab-command; 
-      pressing key `enter' you continue estimation. So it takes just two key-hits to continue estimation. 
+      pressing key `enter' you continue estimation.
+      So it takes just two key-hits to continue estimation. 
       Sometimes a small simplex size is required to reach the global minimum (e.g. to squeeze through the "key-hole"), 
       motivating a larger maximum step number in the direct neighborhood of that minimum.
 
