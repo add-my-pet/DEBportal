@@ -58,7 +58,7 @@
         For this reason, and for comparison, all parameters are estimated for the chosen reference temperature of 20 &deg;C and need to be converted to the current temperature.	
 
         <h2>Typified DEB models <a href="https://youtu.be/um1_hCPP7WQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
-        <img class="myImg" src="img/empir_cycle.png" alt="The emirical cycle from tb-doc in DEBlab" align="left">
+        <img class="myImg" src="img/empir_cycle.png" alt="The emirical cycle from tb-document in DEBlab" align="left">
         A set of coherent and consistent assumptions define models and models define parameters.
         These parameters, in combination with the model structure, determine what data is required to estimate these parameters.
         Different models of DEB theory have been applied to different organisms but all are related and consistent with the theory.
@@ -78,7 +78,7 @@
 	    For practical purposes, this early death is included as an effect of ageing, but ageing has probably nothing to do with this.
 	    The asymptotic size is calculated in the pars-file and some of the listed properties are not realistic as a consequence.
           <li>The toadlets Crinia lower their allocation fraction to soma between hatch and birth
-	    (<a href="https://www.zotero.org/groups/500643/deb_library/search/muell/titleCreatorYear/items/4ZMA4WX3/item-list">Mueller et al 2012</a>).
+	    (<a href="https://www.zotero.org/groups/500643/deb_library/items/4ZMA4WX3/item-list">Mueller et al 2012</a>).
 	  <li>Mammals take milk during their baby-stage, weaning is included in all stx models for mammals as a maturity threshold, but the change in diet is not taken into account.
 	  <li>Many birds first reproduce in their second year under (seasonal) field conditions.
 	    They apparently have a relatively long juvenile period during most of which they are fully grown.
@@ -267,7 +267,7 @@
         Application in a course-context is given by <a href="AmP@DEB2021.html">AmP@DEB2021</a>.
         Just type <code>AmPeps</code> and have a look in the manual that will load in your browser; you need to be connected to the internet.
         The AmPeps selects a related species in the AmP collection to copy the initial values of the parameters, from which the estimation starts.
-        The task of AmPeps is to produce a proposal for the 4 required source-files, which you can edit in the MatLab editor befor use for estimation.
+        The task of AmPeps is to produce a proposal for the 4 required source-files, which you can edit in the MatLab editor before use for estimation.
 
         <p>
         Alternatively, but more risky, download the files of a similar species in the AmP collection and modify them, not forgetting to edit all data.
@@ -289,8 +289,8 @@
 	      <li> <code>estim_options('results_output', 3);</code>, meaning write results_my_pet.mat, save figures, write hmtl-file of results
 	      <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimized the lossfunction
 	    </ul>
-	    Then run the run-file in the MatLab commend window;
-	    the progress is printed to the screen with the step-number and the smallest and the largest value of the lossfunction at the simplex points.
+	    Then run the run-file in the MatLab commend window, which first starts with checking the files for specification errors.
+	    The progress of the estimation is printed to the screen with the step-number and the smallest and the largest value of the lossfunction at the simplex points.
 	    The results_my_pet.mat file can be read with <code>printmat('my_pet')</code>, but this is rarely necessary (see below).
 
  	  <li> then continue by selecting in the run-file
@@ -317,7 +317,8 @@
         The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
         In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
         As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
-
+        The options allow to switch-off filters, but it then becomes likely that the predict-file reports an error if the algorithm tries an illegal combination of parameters values..
+								 
         <p>
         If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
         and change the parameters that cause it in the pars_init-file.
@@ -334,10 +335,14 @@
 
         <p>
         The presentation of results can (optionally) be customized with file <code>custom_results_my_pet</code>, see <code>DEBtool_M/lib/pet/custom_results_template</code>.      
-        If such afile exists in the same folder as the other four user defined files ( mydata, predict, pars_init, and run files),
+        If such a file exists in the same folder as the other four user defined files ( mydata, predict, pars_init, and run files),
         it will be called automatically by the DEBtool_M routines.
         It is important to note that only those uni-variate data which are specified in the custom_results_my_pet file will be plotted,
         even though all uni-variate data will be used for parameter estimation.
+
+	<p>
+	If the estimation was successful and you like to submit your entry to the AmP collection (by email to debtheory.org@gmail.com) a curator will run
+	<code>AmPtool/curation/curation_report(my_pet)</code> for checking, which you can also do yourself, of course. 
 							       
         <h2>Evaluation of estimates</h2>
         To judge parameter values, you can study the implied properties, setting <code>estim_options('results_output', 3);</code>,
@@ -368,8 +373,9 @@
 
         <h3>Confidence intervals</h3>
         Uncertainty of the point estimates of parameter values can be assessed by computing the marginal confidence intervals using the profile method,
-        as described in Marques et al 2019 (development) and Stavrakidis-Zachou et al. 2018 (application).
-        The profile method is a two-step procedure.
+        as described in <a href="https://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-list">Marques et al 2019</a>
+	(development) and <a href="https://www.zotero.org/groups/500643/deb_library/items/G5UZ4PC7/item-list">Stavrakidis-Zachou et al. 2019</a> (application).
+        The profile method is a two-step procedure, see <a href="Confidence_interval.html">page Confidence Interval</a>.
         In the first step, the profile (of the loss function) for a parameter is obtained.
         In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed.
         See a more detailed tutorial here.
@@ -474,7 +480,7 @@
         If you specify one or more <code>metaPar.weights</code> fields in the pars_init_group file for particular parameters,
         these weights are applied to the variance as fraction of the squared mean for these parameters and the result is added the loss function that is minimized to arrive
         at parameter estimates.
-        The paper <a href="https://www.zotero.org/groups/500643/deb_library/search/augment/titleCreatorYear/items/JPQ4L6YD/item-list">Lika et al 2020</a>
+        The paper <a href="https://www.zotero.org/groups/500643/deb_library/items/JPQ4L6YD/item-list">Lika et al 2020</a>
         gives the philosophy and brackground.
         This construct allows to smoothly vary between no relationship between the parameter values of the group members
         (weights zero, which is the default weight value) and all group members have the same parameter value (a high weight).
