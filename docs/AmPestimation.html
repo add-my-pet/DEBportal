@@ -253,24 +253,10 @@
         During the procedure the parameter are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain (Lika et al 2014).
 
         <p>
-        Your best option is to use a series of short iteration runs, setting 'max_step_number' at 500, say, rather than a single long run, using continuation:
-        continue with the previously obtained results.
-        You can do this by first selecting 'pars_init_method' 2, meaning that you start from the values as specified in the pars_init file,
-        in combination with 'results_output' 3 (which produces and html page with results), meaning that a .mat file is saved, and then select 'pars_init_method' 1,
-        meaning that you continue with values as specified in the .mat file that was previously written.
-        The significance of a series of short runs is that with each restart, the simplex has a relatively large volume, which shirks during iteration,
-        meaning that valleys in the surface of the lossfunction are more easily detected, and the risk is reduced to arrive at a local minimum that is not the global minimum.
-        For this reason, it is always a good idea to restart from the result, even in the case of successful convergence.
         Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
         For this reason, it is not always possible to arrive at a successful convergence, i.e. the lossfunction has a rough surface.
         As long as the resulting fit is good, and the parameter values seem acceptable, this does not need to be a problem.
-        When you think that the result is better than the values in the pars_init file, use mat2pars_init (this function does not need further input),
-        to copy the values of the .mat file to the pars_init file.
-
-        <p>
         In many cases, convergence will be smooth and easy, but sometimes convergence is more reluctant.
-        In such cases it helps to first fix parameters in the pars_init that turn out to run to unrealistic values, and release them again if predictions are closer to data.
-        The free/fix setting is always taken from the pars_init file, even with 'pars_init_method' 2, when the parameter values are taken from the .mat file.
       
         <h2>Parameter estimation in practice</h2>
         To obtain the estimates, you have to prepare a script-file run_my_pet and three function files mydata_my_pet,pars_init_my_pet and predict_my_pet
@@ -305,7 +291,7 @@
 	    </ul>
 	    Then run the run-file in the MatLab commend window;
 	    the progress is printed to the screen with the step-number and the smallest and the largest value of the lossfunction at the simplex points.
-	    The results_my_pet.mat file can be read with printmat('my_pet'), but this is rarely necessary (see below).
+	    The results_my_pet.mat file can be read with <code>printmat('my_pet')</code>, but this is rarely necessary (see below).
 
  	  <li> then continue by selecting in the run-file
 	    <ul>
@@ -495,13 +481,6 @@
         An example of such a setting is <code>metaPar.weights.p_M = 5; metaPar.weights.v = 5;</code>.
 
         <h3>General remarks</h3>
-        If you start multi-species estimation for the first time, use <code>estim_options('pars_init_method', 2);</code>
-        and estim_options('results_output', 3);.
-        This has the effect that pars_init_group is used to specify parameter values, file results_group.mat (see below) is written, and the result is printed on a html-page.
-        After this start you might select <code>estim_options('pars_init_method', 1);</code> for continuation, meaning that you restart from the previous result.
-        See all estim_options.
-
-        <p>
         Results of the estimation are stored in the file results_group.mat, while mat2par_init converts the contents to pars_init_group.m, like in the single-species situation.
         These resulting files also specify the covRules setting, even if this has not been done explicitly by the user.
         If the model specification as specified in pars_init_group is a cell-string (e.g., {'std', 'abj'}) rather then a character string (e.g., 'std'),
@@ -530,17 +509,6 @@
         Generally, the worse is the best fit, the more rugged is the surface of the loss-function, the more local minima exist and the harder it becomes to find the global one.
         If you think you found a global minimum, you might try to restart from there to check that the parameters do not move again.
         This restart restores the size of the simplex, which generally shrinks during estimation, increasing the probability to arrive at a local minimum that is not global.
-        (A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters.
-        One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
-        The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.)
-        This is one of the reasons why a series of short runs with continuation, using estim_options('pars_init_method', 1);
-        in the run-file (see below), is to be preferred above a single long run.
-        We suggest to use <code>estim_options('max_step_number',500);</code>.
-        With key `arrow-up' you can go back to your previous Matlab-command; 
-        pressing key `enter' you continue estimation.
-        So it takes just two key-hits to continue estimation. 
-        Sometimes a small simplex size is required to reach the global minimum (e.g. to squeeze through the "key-hole"), 
-        motivating a larger maximum step number in the direct neighborhood of that minimum.
 
         <p>
         The MRE's and SMSE's of the species in the group must be higher than for each species separately, since fewer free parameters are used, giving further constraints on their values. 
