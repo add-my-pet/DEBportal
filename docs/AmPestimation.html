@@ -54,7 +54,7 @@
         This inspired us to develop the notion of parameter estimation-in-context.
 
         <p>
-        Times and rates depend on (body) temperature and temperatures can differ between data sets.
+        Times and rates depend on <a href="Temperature.html">(body) <b>temperature</b> and temperatures can differ between data sets</a>.
         For this reason, and for comparison, all parameters are estimated for the chosen reference temperature of 20 &deg;C and need to be converted to the current temperature.	
 
         <h2>Typified DEB models <a href="https://youtu.be/um1_hCPP7WQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
@@ -257,6 +257,13 @@
         For this reason, it is not always possible to arrive at a successful convergence, i.e. the lossfunction has a rough surface.
         As long as the resulting fit is good, and the parameter values seem acceptable, this does not need to be a problem.
         In many cases, convergence will be smooth and easy, but sometimes convergence is more reluctant.
+
+	<p>
+	It is not always easy to see in the result that a particular free parameter does not occur in the predict-file
+	and the reported value is a result of a random walk, rather than of an estimation.
+	The command <code>prt_elas([],1)</code> shows the first and second order elasticities of the lossfunction at the result.
+	Such parameters have elasticity zero.
+	The "1" means that an html-page with the elasticities is opened in your browser.
       
         <h2>Parameter estimation in practice</h2>
         To obtain the estimates, you have to prepare a script-file run_my_pet and three function files mydata_my_pet,pars_init_my_pet and predict_my_pet
@@ -358,7 +365,7 @@
 	
 
         <h3>Goodness of fit criterion</h3>
-        <img class="myImg" src="img/Errors.jpg" alt="loss function in AmP" width="200px" align="left">
+        <img class="myImg" src="img/Errors.jpg" alt="errors used in AmP" width="200px" align="left">
         The match between data and predictions is quantified by the goodness of fit using the mean relative error (MRE) and the symmetric mean squared error (SMSE).
         MRE can have values from 0 to infinity, while SMSE has values from 0 to 1.
         In both cases, 0 means predictions match data exactly.
@@ -374,7 +381,8 @@
         It is likely that the marks for completeness and goodness of fit will be negatively correlated.
 
         <p>
-        The problem of a good fit for the wrong reasons is always present. It is, therefore, important to judge the realism of parameter values as well.
+        The problem of a good fit for the wrong reasons is always present.
+	It is, therefore, important to judge the realism of parameter values as well.
         Remember that parameters might be poorly fixed by data, and very different values can, sometimes, result in a tiny difference in goodness of fit.
 
         <h3>Confidence intervals</h3>

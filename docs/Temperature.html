@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>Temperature</TITLE>
+  <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"> 
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
+</HEAD>
+<BODY>
+
+  <div w3-include-html="wallpaper_DEBportal.html"></div>
+  <script>w3IncludeHTML();</script>
+
+  <div w3-include-html="toolbar_DEBportal.html"></div>
+  <script>w3IncludeHTML();</script>
+
+<div id = "main">
+  <div id = "main-wrapper">    
+    <div id="contentFull">
+
+      <h1>
+        Temperature
+        <a href="https://youtu.be/vqHmIW1kfQo" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="12:15"></a>
+      </h1>
+
+      <h2>Background and Motivation</h2>
+      All rates and ages depend on temperature.
+      The body temperature of aquatic ectotherms is (almost) equal to the water temperature, but that of  terrestrial ones depend on a large number of factors.
+      <a href="https://youtu.be/HWcPzZ23p5s" target="_blank"><img src="img/YouTube.png"  height = "25px"></a>
+      Endotherms regulate their body temperature after birth at species-specific levels, but that of neonates can deviate substantially;
+      the temperature in bird Eggs typically follows a trajectory. 
+      Temperature is stored as auxilliary data in the mydata file, and used for calculating model predictions.
+
+      <p>
+      <a href="https://add-my-pet.github.io/DEBtool_M/lib/misc/html/tempcorr.html">Correcting for temperature using the Arrhenius temperature correction model</a>
+      amounts to a simple transformation of ages and rates by multiplying or dividing by temperature correction factor (c_T).
+      What is important to keep in mind though is that metabolic rates depend on temperature in a non linear way.
+      If the temperature was fluctuating rather than constant, the mean temperature has a non-straight-forward relationship with the mean c_T.
+
+      <p>
+      A number of data sets (field or laboratory) are acquired at non-constant (fluctuating) temperatures.
+      One is tempted to calculate the mean value of temperatures
+      (T_mean) and then correct the metabolic rates with the c_T for that (T_mean) temperature. The problem arises, however,
+      when the experienced (fluctuating) temperatures had a larger effect in low or high part of the range, which is often the case.
+
+      <p>
+      The presented procedure shows how to:
+      <ol>
+        <li>Obtain environmental temperature values if temperatures are not reported but the geographic location is known;
+        <li>Use the temperature values in combination with the Arrhenius temperature correction model
+	<li>Obtain and use c_T as a function of time.
+      </ol>
+      For a concrete example including code for R see below.
+
+      <p>
+      The final result is either a (single) temperature (for zero-variate data) or a vector of temperatures (for Uni-variate data) that are taking
+      into account species-specific metabolic traits, and are thus more appropriate in the context of energetic modeling.
+    
+      <h2>Method</h2>
+    
+      <h3>
+        Environmental temperature as a function of time 
+        <a href="https://youtu.be/wxZm9cDdBRY" target="_blank"><img src="img/YouTube.png"  height = "25px" title="12:32"></a>
+      </h3>
+      If you do not have data about environmental temperature associated with your dataset, you can use one of these options.
+      <ul>
+        <li>Option 1: Use R package link RNCEP: global weather and climate data at your fingertips to make a query and download environmental temperature data
+  	  for a given geographic location and a specific timeframe.
+	
+        <li>Option 2: Use R to query a global microclimate dataset. These estimates are for the middle day of each month, based on long-term average macroclimates.
+	
+        <li>Option 3: If working with a terrestrial ectotherm, you can improve accuracy of your temperature data (obtained via any of the previous steps)
+  	  by simulating behavior of the species of interest with the NicheMapR microclimate model.
+      </ul>
+
+      <h3>Defining parameters of the Arrhenius temperature correction model</h3>
+      <ul>
+        <li>Option 1: Use data on (developmental, metabolic, or other) rates at several different temperatures to estimate parameters of the Arrhenius temperature correction model
+ 	  (T_ref, T_A, T_AL, T_AH, T_L, T_H).
+
+        <li>Option 2: Find the Arrhenius parameters for your species in literature, and input them directly into your script.
+      </ul>
+    	
+      <h3>c_T as a function of time and using the back-calculated temperature</h3>
+      Using the temperature correction model, calculate the temperature correction (c_T) for each temperature point obtained in Step 1.
+
+      <p>
+      For associating a temperature with a zero-variate data (e.g. age at puberty at a given food level) calculate the mean of all c_T values.
+      Then convert the obtained mean(c_T) to the equivalent temperature using again the Arrhenius parameters.
+      The back-calculated temperature is the 'constant temperature equivalent'.
+
+      <p>
+      For obtaining temperatures for specific time points in Uni-variate data, you will need to interpolate using the pairs of time-c_T values you have obtained in previous steps.
+      It is possible to save either the c_T values or back calculated temperature values as a .csv file. This can then be called in the mydata file and stored in the auxData structure.
+
+      <h2>Example</h2>
+      <a href"Field_body_temperature.html">Here</a> you can find an example where we use the sand lizard, Lacerta agilis,
+      which is in the AmP collection and has field growth observations for a number of locations in Russia.
+      The document describes step-by-step the procedure (including NicheMapR)and provides R code you can use and modify.     
+    
+    </div> <!-- end of content -->
+ 
+    <div w3-include-html="footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+</BODY>
+</HTML>
