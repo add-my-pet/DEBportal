@@ -259,14 +259,14 @@
         In many cases, convergence will be smooth and easy, but sometimes convergence is more reluctant.
 
 	<p>
-	It is not always easy to see in the result that a particular free parameter does not occur in the predict-file
+	It is not always easy to see in the result of an estimation-run that a particular free parameter does not occur in the predict-file
 	and the reported value is a result of a random walk, rather than of an estimation.
 	The command <code>prt_elas([],1)</code> shows the first and second order elasticities of the lossfunction at the result.
 	Such parameters have elasticity zero.
 	The "1" means that an html-page with the elasticities is opened in your browser.
       
         <h2>Parameter estimation in practice</h2>
-        To obtain the estimates, you have to prepare a script-file run_my_pet and three function files mydata_my_pet,pars_init_my_pet and predict_my_pet
+        To obtain the estimates, you have to prepare a script-file run_my_pet and three function files: mydata_my_pet,pars_init_my_pet and predict_my_pet
         (where "my_pet" is replaced by the name of your entry).
         This can be done by the <a href="AmPeps.html">AmP entry prepare system (AmPeps)</a>,
         which writes these files on the basis of a graphical user interface (gui).

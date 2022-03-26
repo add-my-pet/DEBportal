@@ -8,17 +8,16 @@
 name & formula\\ 
 \hline
 symm bounded & 
-$F_{sb} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}^0} {n_i} \frac{(d_{ij} - p_{ij})^2} {d_i^2 + p_i^2}$\\
+$F_{sb} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}^0} {n_i} \frac{(d_{ij} - p_{ij})^2} {d_i^2 + p_i^2}$\\[2mm]
 	
 symm unbounded & 
-$F_{ub} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{++}} (d_{ij} - p_{ij})^2 (d_i^{-2} + p_i^{-2})$\\
+$F_{ub} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}^0} {n_i} (d_{ij} - p_{ij})^2 (d_i^{-2} + p_i^{-2})$\\[2mm]
 
 relative error & 
-$F_{re} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{++}} \frac{(d_{ij} - p_{ij})^2} {d_i^2}$\\
+$F_{re} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}^0} {n_i} \frac{(d_{ij} - p_{ij})^2} {d_i^2}$\\[2mm]
 	
 symm mean abs error &	
-$F_{SMAE} = 2 \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{++}} \frac{|d _{ij}- p_{ij}|} {|d_{ij}| + |p_{ij}|}$\\	
-\\
+$F_{SMAE} = 2 \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}^0} {n_i} \frac{|d _{ij}- p_{ij}|} {|d_{ij}| + |p_{ij}|}$\\	
 \hline
 \end{tabular}\\
 
