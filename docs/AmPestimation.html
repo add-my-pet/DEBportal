@@ -287,6 +287,21 @@
         If your species is already in the collection, download the 4 files, add your name in the mydata-files as modification author,
         and a discussion point that explains what changed and why.
 
+	<p>
+	The mydata-file has the line <code>[data, units, label, weights] = addpseudodata(data, units, label, weights);</code>.
+	This line adds <a href="Pseudo_data.html">pseudo-data</a> to the data and (small) weight coefficients to the weights.
+	The weights can be overwritten and set to zero, for instance, if you want to avoid its use in the estimation.
+
+	<p>
+	The pars_init file has the line <code>[par, units, label, free] = addchem(par, units, label, free, metaData.phylum, metaData.class);</code>.
+	This line adds chemical parameters to the specified parameters and keeps them fixed by default.
+	The specific densities of dry mass (i.e. the dry/wet weight ratios if the specific density for wet weight equals 1 g/cm<sup>3</sup>) is set taxon-specifically in
+	<a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/get_d_V.html"><code>get_d_V</code></a>.
+	The composition of the nitrogen-waste is set taxon-specifically in <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/get_N_waste.html"><code>get_N_waste</code></a>.
+	The other chemical parameters are set in <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/addchem.html"><code>addchem</code></a>,
+	but all these settings can be overwritten in the pars_init file.
+	The latter class of parameters rarely varies much across species.
+	      
         <p>
         Estimation options are set via DEBtool_M function <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
         Some options relate to details of the minimization algorithm, others to where to find initial values or what to output as result.
