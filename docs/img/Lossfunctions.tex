@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}\usepackage{a4wide}
+\begin{document}
+
+\noindent
+\begin{center}
+{\large\bf Loss functions}\\[2mm]
+\begin{tabular}{lll}\hline
+name & formula\\ 
+\hline
+symm bounded & 
+$F_{sb} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}^0} {n_i} \frac{(d_{ij} - p_{ij})^2} {d_i^2 + p_i^2}$\\
+	
+symm unbounded & 
+$F_{ub} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{++}} (d_{ij} - p_{ij})^2 (d_i^{-2} + p_i^{-2})$\\
+
+relative error & 
+$F_{re} = \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{++}} \frac{(d_{ij} - p_{ij})^2} {d_i^2}$\\
+	
+symm mean abs error &	
+$F_{SMAE} = 2 \sum_{i=1}^n \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{++}} \frac{|d _{ij}- p_{ij}|} {|d_{ij}| + |p_{ij}|}$\\	
+\\
+\hline
+\end{tabular}\\
+
+\[
+  w_{ij}^0 = 1 (\mbox{by default});  \quad
+  d_i = \frac{1}{n_i} \sum_{j=1}^{n_i} d_{ij}; \quad
+  p_i = \frac{1}{n_i} \sum_{j=1}^{n_i} p_{ij}
+\]
+	
+\end{center}
+\end{document}

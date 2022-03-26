@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}\usepackage{a4wide}
+\begin{document}
+
+\noindent
+\begin{center}
+{\large\bf Error quantifiers}\\
+\begin{tabular}{lll}\hline
+name & formula\\ 
+\hline
+relative & 
+$\mbox{RE}_i = \sum_{j=1}^{n_i} \frac{w_{ij}}{w_{i+}} \frac{|d_{ij} - p_{ij}|}{|d_i|}$\\
+	
+mean relative & 
+$\mbox{MRE} = \frac{1}{n^\prime} \sum_{i=1}^{n^\prime} \mbox{RE}_i$\\
+	
+symm squared &
+$\mbox{SSE}_i = 2 \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{i+}} \frac{(d_{ij} - p_{ij})^2} {d_i^2 + p_i^2}$\\
+	
+symm mean squared & 
+$\mbox{SMSE} = \frac{1}{n^\prime} \sum_{i=1}^{n^\prime} \mbox{SSE}_i$\\
+
+symm absolute & 
+$\mbox{SAE}_i = 2 \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{i+}} \frac{|d_{ij} - p_{ij}|} {|d_{ij}| + |p_{ij}|}$\\
+
+symm mean absolute & 
+$\mbox{SMAE} = \frac{1}{n^\prime} \sum_{i=1}^{n^\prime} \mbox{SAE}_i$\\
+\hline
+\end{tabular}\\
+
+\[
+  w_{i+} = \sum_{j=1}^{n_i} w_{ij} > 0;  \quad
+  d_i = \frac{1}{n_i} \sum_{j=1}^{n_i} d_{ij}; \quad
+  p_i = \frac{1}{n_i} \sum_{j=1}^{n_i} p_{ij}
+\]
+	
+\end{center}
+\end{document}

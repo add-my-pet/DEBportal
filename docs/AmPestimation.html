@@ -229,7 +229,7 @@
         The AmP estimation procedure includes several loss functions, which can selected via the estimation options.
 
         <p>
-        <img src="img/360px-Lossfunction_F.png" alt="loss function sb" width="200px" align="left">
+        <img class="myImg" src="img/Lossfunctions.jpg" alt="loss function in AmP" width="200px" align="left">
         The default loss function is the symmetric bounded one: sb.
         It is symmetric because is values is unaffected by interchanging data and predictions
         and bounded because, if predictions go to inifinite, their contribution to the loss function  remains limited.
@@ -275,7 +275,8 @@
 	You can used <code>get_id(my_pet,1)</code> to get the id's of all sites that need to be specified in the "links" section of the mydata-file;
 	the "1" means that all these sites are opened in your browser, which might help to specify the
 	<a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPeco.html">ecoCodes</a>.
-	Some of the sites are general, other taxon-specific; the selection is automatized based on the classification of my_pet.
+	Some of the sites are general, other taxon-specific; the selection is automatized based on the taxonomic classification of my_pet
+	(which is done via the Catalog of Life in the background).
         If your species is already in the collection, download the 4 files, add your name in the mydata-files as modification author,
         and a discussion point that explains what changed and why.
 
@@ -357,6 +358,7 @@
 	
 
         <h3>Goodness of fit criterion</h3>
+        <img class="myImg" src="img/Errors.jpg" alt="loss function in AmP" width="200px" align="left">
         The match between data and predictions is quantified by the goodness of fit using the mean relative error (MRE) and the symmetric mean squared error (SMSE).
         MRE can have values from 0 to infinity, while SMSE has values from 0 to 1.
         In both cases, 0 means predictions match data exactly.
