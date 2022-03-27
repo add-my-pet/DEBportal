@@ -116,13 +116,14 @@
         the accuracy of parameter estimates might or might not be increased by including more data.
       
         <p>
-        Pseudo-data are parameter values corresponding to a generalized animal, but treated as dependent data, i.e. typical values for a wide variety of animals (Lika et al 2011).
+        Pseudo-data are parameter values (or functions of them) corresponding to a generalized animal, but treated as independent data,
+	i.e. typical values for a wide variety of animals (<a href="https://www.zotero.org/groups/500643/deb_library/items/JBBPNHDS/item-list">Lika et al 2011</a>).
         These values may change as the AmP collection increases.
         Pseudo-data serve to fill possible gaps in information that is contained in the real data.
         Only intensive parameters can play the role of pseudo-data points, i.e. parameters that are independent of body size.
         Species-specific parameters should not be included in the pseudo-data, especially the zoom factor, the shape coefficient and the maturity levels at birth and puberty.
         Since the value for specific cost for structure (E_G) is sensitive for the water content of tissue, which differs between jelly fish and vertebrates,
-        it is replaced by the growth efficiency kap_G: energy fixed in new tissue as fraction that energy that was required for its symthesis.
+        it is replaced by the growth efficiency kap_G: energy fixed in new tissue as fraction that energy that was required for its synthesis.
         Pseudo-data, if used properly, can play several roles.
         It serves the task of increasing the identifiability of parameters and, thus, preventing the ambiguous determination of parameter values.
         It can also improve the eco-physiological interpretation.
@@ -154,7 +155,7 @@
         Notice that times and rates without temperature are meaningless.
         This combination already fixes the growth curve in a crude way, specifies allocation fraction kappa and the maturity thresholds at birth and puberty.
         The weight can be dry, ash-free dry or wet weight, the conversion involves specific densities, which belong to the chemical parameters.
-        Assuming that the specific density of wet mass is close to 1 g/cm3, check the values for d_V and d_E that refer to dry weight.
+        Assuming that the specific density of wet mass is close to 1 g/cm3, the values for d_V and d_E equal dry/wet weight ratios.
 
         <h3>Data quality and availability</h3>
         The quality and availability of data varies enormously over species, which has consequences for the entries.
@@ -216,7 +217,7 @@
         <h2>Weight coefficients</h2>
         The weight coefficients serve to (subjectively) quantify the confidence of the user in the data-sets as well as for specific data points.
         The AmP procedure distinguishes between real and pseudo data.
-        The weight coefficients are automatically in the mydata-file, weighing each data-set equally, but are 10 times as small for spseudo-data.
+        The weight coefficients are automatically set in the mydata-file, weighing each data-set equally, but are 10 times as small for spseudo-data.
 	So a large uni-variate data set has (by default) the same weight as a zero-variate data-point.
 	If the resulting fit is very good, changes in weight coefficients hardly have an effect;
 	if the fit is not very good, however, such changes can have big effects. 
@@ -256,10 +257,10 @@
         <p>
         The minimum is found using a Nelder-Mead simplex method.
         A simplex is a set of parameter-combinations with a number of elements that is one more than the number of free parameters.
-        One of the elements in the set is the specified initial parameter combination, the seed, the others are generated automatically in its "neighbourhood",
+        One of the elements in the set is the specified initial parameter-combination, the seed, the others are generated automatically in its "neighbourhood",
 	i.e. each parameter value is multiplied by a factor close to 1, one-by-one, which can be set in the estimation options.
         The simplex method tries to replace the worst parameter combination by one that is better than the best one, i.e. gives a smaller value of the loss-function.
-        During the procedure the parameter are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain
+        During the iteration, the parameters are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain
 	(<a href="http://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/item-details">Marques et al 2018</a>).
 
         <p>
