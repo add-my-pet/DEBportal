@@ -352,7 +352,7 @@
 	in the pars_init_file) and later release them.
         Finding the global minimum of the loss function rapidly becoms more complex the more parameters are estimated simultanously.
         The free-setting is always taken from the pars_init file (irrespective of the pars_init_method setting).
-        If paricular predictions deviate too much from the data, you can increase the weight-coefficients of this data in the mydata-file by
+        If particular predictions deviate too much from the data, you can increase the weight-coefficients of this data in the mydata-file by
         multiplying the current weight coefficients for this data by a factor, say 3 to 10; avoid large values.
         Realize that by making a data-set more important, the rest becomes less-important.
 
@@ -360,7 +360,7 @@
         The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
         In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
         As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
-        The options allow to switch-off filters, but it then becomes likely that the predict-file reports an error if the algorithm tries an illegal combination of parameters values..
+        The options allow to switch-off filters, but it then becomes likely that the predict-file reports an error if the algorithm tries an illegal combination of parameters values.
 								 
         <p>
         If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
@@ -378,9 +378,9 @@
 
         <p>
         The presentation of results can (optionally) be customized with file <code>custom_results_my_pet</code>, see <code>DEBtool_M/lib/pet/custom_results_template</code>.      
-        If such a file exists in the same folder as the other four user defined files ( mydata, predict, pars_init, and run files),
+        If such a file exists in the same folder as the other four user defined files (mydata, predict, pars_init, and run files),
         it will be called automatically by the DEBtool_M routines.
-        It is important to note that only those uni-variate data which are specified in the custom_results_my_pet file will be plotted,
+        It is important to note that only those uni-variate data sets are will be plotted that are specified in the custom_results_my_pet file,
         even though all uni-variate data will be used for parameter estimation.
 
 	<p>
@@ -411,7 +411,8 @@
         <p>
         Relative errors in a univariate data set are summarized to that of a single data-point by taking the MRE for all data-points.
         Only real data, not pseudo-data, are included in the assessment.
-        If all weight coefficients of a data set are zero, it is not included in the computation of the MRE. The best situation is, of course, that of a small MRE.
+        If all weight coefficients of a data set are zero, it is not included in the computation of the MRE.
+	The best situation is, of course, that of a small MRE.
         It is likely that the marks for completeness and goodness of fit will be negatively correlated.
 
         <p>
