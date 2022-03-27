@@ -26,10 +26,10 @@
 
         <h1>
           AmP parameter estimation
-          <a href="https://youtu.be/hIJtytohzIs" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:22"></a>
+          <a href="https://youtu.be/xLrIZZDZTB0" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:46"></a>
         </h1>
     
-        <h2>Introduction <a href="https://youtu.be/E4ag2-WzhmQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
+        <h2>Introduction</h2>
         This page aims to describe the methodology that is used in the AmP project for the  estimation of parameters of DEB models from data:
         the practice and getting started, technical aspects, i.e. code-specifications and how to use it to arrive at parameter estimates,
         evaluation of estimation results, accuracy of parameter estimates.
@@ -57,7 +57,11 @@
         Times and rates depend on <a href="Temperature.html">(body) <b>temperature</b> and temperatures can differ between data sets</a>.
         For this reason, and for comparison, all parameters are estimated for the chosen reference temperature of 20 &deg;C and need to be converted to the current temperature.	
 
-        <h2>Typified DEB models <a href="https://youtu.be/um1_hCPP7WQ" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right"></a></h2>
+        <h2>
+	  Typified DEB models
+	  <a href="https://youtu.be/um1_hCPP7WQ" target="_blank"><img src="img/YouTube.png"  height = "25px" title="8:34" align="right"></a>
+	  <a href="https://youtu.be/E4ag2-WzhmQ" target="_blank"><img src="img/YouTube.png"  height = "25px" title="14:14" align="right"></a>
+	</h2>
         <img class="myImg" src="img/empir_cycle.png" alt="The emirical cycle from tb-document in DEBlab" align="left">
         A set of coherent and consistent assumptions define models and models define parameters.
         These parameters, in combination with the model structure, determine what data is required to estimate these parameters.
@@ -200,7 +204,10 @@
         resource and thus can be modeled with a single reserve and resource availability is relatively simple to characterize.
         Within the animals, we made an effort to maximize coverage, given limitations imposed by data availability.
 
-        <h3>Data completeness</h3>
+        <h3>
+	  Data completeness
+	  <a href="https://youtu.be/WKtPWGmJzJI" target="_blank"><img src="img/YouTube.png" title="13:54" height="25px" align="right">
+	</h3>
         For comparative purposes, it helps to judge the completeness of the data using a marking system from 1 (low) to 10 (high)
         <a href="Completeness.html">(See Table)</a>.
       
@@ -210,6 +217,8 @@
         The AmP procedure distinguishes between real and pseudo data.
         The weight coefficients are automatically in the mydata-file, weighing each data-set equally, but are 10 times as small for spseudo-data.
 	So a large uni-variate data set has (by default) the same weight as a zero-variate data-point.
+	If the resulting fit is very good, changes in weight coefficients hardly have an effect;
+	if the fit is not very good, however, such changes can have big effects. 
 
         <p>
         The user can overwrite default weight values (for either the whole data set or else particular values) in the mydata-file.
@@ -234,7 +243,8 @@
         The rationale is discussed in <a href="http://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-details">Marques et al 2019</a>.
 
         <p>
-        The default values for the weight-coefficients for the pseudo-data depend on the choice of loss function to ensure that they play a minor role in the estimation.	
+        The default values for the weight-coefficients for the pseudo-data depend on the choice of loss function to ensure that they play a minor role in the estimation
+	if data contains the required information.	
 
         <h2>Minimization of loss function</h2>
         Estimation of some 15 parameters simultaneously from a variety of data sets cannot be routine work.
@@ -244,10 +254,12 @@
 
         <p>
         The minimum is found using a Nelder-Mead simplex method.
-        A simplex is a set of parameter-sets with a number of elements that is one more than the number of free parameters.
-        One of the elements in the set is the specified initial parameter set, the seed, the others are generated automatically in its "neighbourhood".
-        The simplex method tries to replace the worst parameter set by one that is better than the best one, i.e. gives a smaller value of the loss-function.
-        During the procedure the parameter are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain (Lika et al 2014).
+        A simplex is a set of parameter-combinations with a number of elements that is one more than the number of free parameters.
+        One of the elements in the set is the specified initial parameter combination, the seed, the others are generated automatically in its "neighbourhood",
+	i.e. each parameter value is multiplied by a factor close to 1, one-by-one, which can be set in the estimation options.
+        The simplex method tries to replace the worst parameter combination by one that is better than the best one, i.e. gives a smaller value of the loss-function.
+        During the procedure the parameter are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain
+	(<a href="http://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/item-details">Marques et al 2018</a>).
 
         <p>
         Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
@@ -262,7 +274,10 @@
 	Such parameters have elasticity zero.
 	The "1" means that an html-page with the elasticities is opened in your browser.
       
-        <h2>Parameter estimation in practice</h2>
+        <h2>
+	  Parameter estimation in practice
+	  <a href="https://youtu.be/ZhTQtgyN3XI" target="_blank"><img src="img/YouTube.png" title="8:25" height="25px" align="right">
+	</h2>
         To obtain the estimates, you have to prepare a script-file run_my_pet and three function files: mydata_my_pet,pars_init_my_pet and predict_my_pet
         (where "my_pet" is replaced by the name of your entry).
         This can be done by the <a href="AmPeps.html">AmP entry prepare system (AmPeps)</a>,
@@ -272,6 +287,7 @@
         Just type <code>AmPeps</code> and have a look in the manual that will load in your browser; you need to be connected to the internet.
         The AmPeps selects a related species in the AmP collection to copy the initial values of the parameters, from which the estimation starts.
         The task of AmPeps is to produce a proposal for the 4 required source-files, which you can edit in the MatLab editor before use for estimation.
+        <a href="https://youtu.be/HhtO4AwDvuI" target="_blank"><img src="img/YouTube.png"  height = "25px" align="right" title="2:57"></a>
 
         <p>
         Alternatively, but more risky, download the files of a similar species in the AmP collection and modify them, not forgetting to edit all data.
@@ -281,6 +297,7 @@
 	<a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPeco.html">ecoCodes</a>.
 	Some of the sites are general, other taxon-specific; the selection is automatized based on the taxonomic classification of my_pet
 	(which is done via the Catalog of Life in the background).
+	<a href="https://youtu.be/m1iweHbdOBg" target="_blank"><img src="img/YouTube.png"  height = "15px" title="3:05"></a>
         If your species is already in the collection, download the 4 files, add your name in the mydata-files as modification author,
         and a discussion point that explains what changed and why.
 
@@ -311,9 +328,9 @@
 	       (which will probably not enough to reach convergence, but see below)
               <li> <code>estim_options('pars_init_method', 2);</code>, meaning select initial parameter values from the pars_init-file
 	      <li> <code>estim_options('results_output', 3);</code>, meaning write results_my_pet.mat, save figures, write html-file of results
-	      <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimized the lossfunction
+	      <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimize the lossfunction
 	    </ul>
-	    Then run the run-file in the MatLab commend window, which first starts with checking the files for specification errors.
+	    Then run the run-file in the MatLab commend window, which first starts with checking the files for specification errors in the 3 function-files.
 	    The progress of the estimation is printed to the screen with the step-number and the smallest and the largest value of the lossfunction at the simplex points.
 	    The results_my_pet.mat file can be read with <code>printmat('my_pet')</code>, but this is rarely necessary (see below).
 
@@ -327,7 +344,7 @@
 	    This reduces the risk of ending up in a local minimum.
 	    Repeat as many times as necessary.
 
-  	  <li> then run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file (no input required).
+  	  <li> finally run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file (no input required).
         </ul>
         There are many ways to interact with the estimation process, such as first keeping particular parameters fixed (select <code>free.some_parameter = 0</code>
 	in the pars_init_file) and later release them.
@@ -346,7 +363,7 @@
         <p>
         If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
         and change the parameters that cause it in the pars_init-file.
-	If a parameter is far off, the algorithm has poblems to find the global minimum with loss function sb.
+	If a parameter is far off, say by 2 or 3 orders of magnitude, the algorithm has poblems to find the global minimum with loss function sb.
         Difficulties in finding a satisfying global minimum are frequently caused by inconsistencies of data in the mydata-file.
         Check all units and preferably use the default units for time, length, weight.
         If age and size at puberty are specified as zero-variate data, and also age-size data as uni-variate data, check if the puberty-point is consistent with the age-size data.
@@ -368,7 +385,10 @@
 	If the estimation was successful and you like to submit your entry to the AmP collection (by email to debtheory.org@gmail.com) a curator will run
 	<code>AmPtool/curation/curation_report(my_pet)</code> for checking, which you can also do yourself, of course. 
 							       
-        <h2>Evaluation of estimates</h2>
+        <h2>
+	  Evaluation of estimates
+	  <a href="https://youtu.be/LchBb8oC8Ng" target="_blank"><img src="img/YouTube.png" title="11:08" height="25px" align="right"></a>
+	</h2>
         To judge parameter values, you can study the implied properties, setting <code>estim_options('results_output', 3);</code>,
         and an html-page is automatically opened in your system browser at the end of an iteration (or directly if 'method' 'no' is specified).
         If all looks OK, you can specify 'results_output' 4 or till 6, and implied properties of related species in the collection are included in the table in the html-page.
@@ -376,8 +396,8 @@
 	You can add a global <code>refPets</code> to the run-file and fill it with a cell-string of names of species to compare with (so over-writing the automatized selection).
 	
 
-        <h3>Goodness of fit criterion</h3>
-        <img class="myImg" src="img/Errors.jpg" alt="errors used in AmP" width="200px" align="left">
+        <h3>Goodness of fit</h3>
+        <img class="myImg" src="img/Errors.jpg" alt="errors used in AmP" align="left">
         The match between data and predictions is quantified by the goodness of fit using the mean relative error (MRE) and the symmetric mean squared error (SMSE).
         MRE can have values from 0 to infinity, while SMSE has values from 0 to 1.
         In both cases, 0 means predictions match data exactly.
@@ -397,7 +417,10 @@
 	It is, therefore, important to judge the realism of parameter values as well.
         Remember that parameters might be poorly fixed by data, and very different values can, sometimes, result in a tiny difference in goodness of fit.
 
-        <h3>Confidence intervals</h3>
+        <h3>
+	  Confidence intervals
+	  <a href="https://youtu.be/sGsnJDDeE1Q" target="_blank"><img src="img/YouTube.png" title="11:08" height="25px" align="right"></a>
+	</h3>
         Uncertainty of the point estimates of parameter values can be assessed by computing the marginal confidence intervals using the profile method,
         as described in <a href="https://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-list">Marques et al 2019</a>
 	(development) and <a href="https://www.zotero.org/groups/500643/deb_library/items/G5UZ4PC7/item-list">Stavrakidis-Zachou et al. 2019</a> (application).
@@ -406,7 +429,10 @@
         In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed.
         See a more detailed tutorial here.
 
-        <h2>Multi-species parameter estimation</h2>
+        <h2>
+	  Multi-species parameter estimation
+	  <a href="https://youtu.be/PdD6OHNkN5k" target="_blank"><img src="img/YouTube.png"  height="25px" title="9:33" align="right"></a>
+	</h2>
  
         DEBtool (download from GitHub in DEBlab) enables you to estimate parameters for two or more species simultaneously.
         This can be interesting in the case that different species share particular parameter values, and/or parameter values have particular assumed relationships.
