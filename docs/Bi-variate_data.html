@@ -3,6 +3,7 @@
 <HEAD>
   <TITLE>Bi-variate_data</TITLE>
   <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"> 
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/modal.js"></script>
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
 </HEAD>
@@ -18,47 +19,55 @@
   <div id = "main-wrapper">    
     <div id="contentFull">
 
-    <h1>Bi-variate data</h1>
+      <h1>Bi-variate data</h1>
     
-    Bi-variate data is a matrix of dependent variables, but since each row typically has an associated independent data point,
-    bi-variate data is specified with the associated first independent variable specified as first column of the matrix.
-    The second independent variable is specified as auxiliary data of the type <code>treat</code>, not as a first row of the data-matrix.
-    The reason is that it can be quantitative or qualitative, such as "female" and "male".
-    This might also apply to the first independent variable, which needs to be numeric, but we might not allow interpolation for presentation purposes.
-    An extra complicating factor is that particular data-points might be missing.
-    For this reason the code accepts such missing data if specified as <code>NaN</code> (Not a Number).
-    Other auxiliary data might be associated to any data, so also to bi-variate data.
-    The predict-file should specify the prediction for all dependent variables in matrix-form (and not include the independent variables).
-    Bi-variate data does not have a separate coding system, since the underscore-extension of uni-variate data gives suffient possibilities to specify codes.
+      Bi-variate data is a matrix of dependent variables, but since each row typically has an associated independent data point,
+      bi-variate data is specified with the associated first independent variable specified as first column of the matrix.
+      The second independent variable is specified as auxiliary data of the type <code>treat</code>, not as a first row of the data-matrix.
+      The reason is that it can be quantitative or qualitative, such as "female" and "male".
+      This might also apply to the first independent variable, which needs to be numeric, but we might not allow interpolation for presentation purposes.
+      An extra complicating factor is that particular data-points might be missing.
+      For this reason the code accepts such missing data if specified as <code>NaN</code> (Not a Number).
+      Other auxiliary data might be associated to any data, so also to bi-variate data.
+      The predict-file should specify the prediction for all dependent variables in matrix-form (and not include the independent variables).
+      Bi-variate data does not have a separate coding system, since the underscore-extension of uni-variate data gives suffient possibilities to specify codes.
 
-    <h2>Specifying bi-variate data</h2>
-    The entries <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Cuon_alpinus/Cuon_alpinus_res.html">Cuon alpinus</a> and
-    <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Culex_pipiens/Culex_pipiens_res.html">Culex_pipiens</a>
-    give examples of specification of bi-variate data in the mydata-file.
-    Suppose that we want to specify time-weight data for females and males in data matrix <code>data.tW</code>, which now has 3 columns.
-    The auxiliary data of the type <code>treat</code> is specified as a cell-string of 2 elements: <code>auxData.treat.tW = {1, {'f', 'm'})</code>.
-    The second element specifies the second independent variable, which can be a vector of values, but is here a cell-string of labels.
-    The first element is a scalar, which controls the way in which the results are presented.
-    It can have the values
-    <ul>
-      <li> 0 for no interpolating the first as well as the second independent variable; the result is a plot with markers;
-	filled dots for data, open ones for predictions.
-	A legend will be plotted in a separate figure.
-      <li> 1 for interpolating the first independent variablem but not the second one: the results is a plot with filled dots for the data and curves for the predictions;
-	A legend will be plotted in a separate figure.
-      <li> 2 for interpolating the first as well as the second independent variable; the result is a plot with filled dots for the data and a 3-dim mesh for the predictions.
-	The data-points are connected to the mesh in red if above the mesh, or blue under.
-	Matlab allows rotation of the plot in the tool-bar of the figure.
-    </ul>
-    In the example <code>treat</code> is added directly to <code>auxData</code>, but this is more typically done in 2 steps, by first filling <code>treat</code>
-    and later in the mydata-file adding <code>treat</code> to <code>auxData</code> by <code>auxData.treat = treat</code>.
-    You can specify a title for the legend by <code>label.treat.tW = 'gender';</code> and later add <code>label</code> to <code>txtData</code> (as usual).
+      <h2>Specifying bi-variate data</h2>
+      <img class="myImg" src="img/results_OECD202_dichromate_01.png" alt="Example of a bi-variate data set with predictions" align="left">
+      The entries <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Cuon_alpinus/Cuon_alpinus_res.html">Cuon alpinus</a> and
+      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Culex_pipiens/Culex_pipiens_res.html">Culex_pipiens</a>
+      give examples of specification of bi-variate data in the mydata-file.
+      Suppose that we want to specify time-weight data for females and males in data matrix <code>data.tW</code>, which now has 3 columns.
+      The auxiliary data of the type <code>treat</code> is specified as a cell-string of 2 elements: <code>auxData.treat.tW = {1, {'f', 'm'})</code>.
+      The second element specifies the second independent variable, which can be a vector of values, but is here a cell-string of labels.
+      The first element is a scalar, which controls the way in which the results are presented.
+      It can have the values
+      <ul>
+        <li> 0 for no interpolating the first as well as the second independent variable; the result is a plot with markers;
+	  filled dots for data, open ones for predictions.
+	  A legend will be plotted in a separate figure.
+        <li> 1 for interpolating the first independent variablem but not the second one: the results is a plot with filled dots for the data and curves for the predictions;
+  	  A legend will be plotted in a separate figure.
+        <li> 2 for interpolating the first as well as the second independent variable; the result is a plot with filled dots for the data and a 3-dim mesh for the predictions.
+	  The data-points are connected to the mesh in red if above the mesh, or blue under.
+	  Matlab allows rotation of the plot in the tool-bar of the figure.
+      </ul>
+      In the example <code>treat</code> is added directly to <code>auxData</code>, but this is more typically done in 2 steps, by first filling <code>treat</code>
+      and later in the mydata-file adding <code>treat</code> to <code>auxData</code> by <code>auxData.treat = treat</code>.
+      You can specify a title for the legend by <code>label.treat.tW = 'gender';</code> and later add <code>label</code> to <code>txtData</code> (as usual).
 
-    <p>
-    Like for all plots, you can specify a title and/or a subtitle, e.g. <code>txtData.title.tW = 'data for females, males'</code>.
-    Titles are part of the plot, but subtitles only appear in the modal-presentation in html on the AmP website.
-    The latter might be more attractive if you want to use the plot for publication.
-        
+      <p>
+      Like for all plots, you can specify a title and/or a subtitle, e.g. <code>txtData.title.tW = 'data for females, males'</code>.
+      Titles are part of the plot, but subtitles only appear in the modal-presentation in html on the AmP website.
+      The latter might be more attractive if you want to use the plot for publication.
+
+      <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+	
+      <script>modal()</script>
+
     </div> <!-- end of content -->
  
     <div w3-include-html="footer_amp.html"></div>
