@@ -3,6 +3,7 @@
 <HEAD>
   <TITLE>Tri-variate_data</TITLE>
   <link rel="stylesheet" type="text/css" href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/style.css"> 
+  <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/modal.js"></script>
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/dropdown.js"></script>
   <script src="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/w3data.js"></script>
 </HEAD>
@@ -18,43 +19,49 @@
   <div id = "main-wrapper">    
     <div id="contentFull">
 
-    <h1>Tri-variate data</h1>
+      <h1>Tri-variate data</h1>
     
-    Tri-variate data is a 3-dim array of dependent variables, which Matlab labels as "row", "column" and "page".
-    The present implementation of tri-variate data implicitly assumes that the third indenpendent varable (so the "page" direction) has interpretation "time".
-    The labels along the axes is a cell string of length 4: independent variable 1 and 2, dependent variable, independent variable 3 (= time).
-    The units should be specified accordingly.
+      Tri-variate data is a 3-dim array of dependent variables, which Matlab labels as "row", "column" and "page".
+      The present implementation of tri-variate data implicitly assumes that the third indenpendent varable (so the "page" direction) has interpretation "time".
+      The labels along the axes is a cell string of length 4: independent variable 1 and 2, dependent variable, independent variable 3 (= time).
+      The units should be specified accordingly.
 
-    <p>
-    An extra complicating factor is that particular data-points might be missing.
-    For this reason the code accepts such missing data if specified as <code>NaN</code> (Not a Number).
-    Other auxiliary data might be associated to any data, so also to trii-variate data.
-    The predict-file should specify the prediction for all dependent variables in the form of a 3-dim array.
-    Tri-variate data does not have a separate coding system, since the underscore-extension of uni-variate data gives suffient possibilities to specify codes.
+      <p>
+      An extra complicating factor is that particular data-points might be missing.
+      For this reason the code accepts such missing data if specified as <code>NaN</code> (Not a Number).
+      Other auxiliary data might be associated to any data, so also to trii-variate data.
+      The predict-file should specify the prediction for all dependent variables in the form of a 3-dim array.
+      Tri-variate data does not have a separate coding system, since the underscore-extension of uni-variate data gives suffient possibilities to specify codes.
 
-    <h2>Specifying tri-variate data</h2>
-    Tri-variate data is specified page-by-page as done in <a href="https://add-my-pet.github.io/AmPtox/OECD232_Cd_Pb/mydata_OECD232_Cd_Pb.m">mydata_OECD232_Cd__Pb</a>
-    for the analysis of the toxicity of mixtures of cadmium and lead salts.
-    The three independent variables are specified in the second element of auxiliary data of the type <code>treat</code>,
-    while the first element specifies the way in which the results are presented, as for <a href="Bi-variate_data.html">bi-variate data</a>.
-    The second element of <code>treat</code> is a cell-string of three vectors of values, which length should correspond with the number of rows, columns and pages.
-    The present implementaton only accepts the scalar 2 are first element of <code>treat</code>, so allows interpolation in independent variable 1 and 2,
-    while independent variable 3 is interpolated by default.
+      <h2>Specifying tri-variate data</h2>
+      <img class="myImg" src="img/results_OECD232_Cd_Pb_01.png.png" alt="The emirical cycle from tb-document in DEBlab" align="left">
+      Tri-variate data is specified page-by-page as done in <a href="https://add-my-pet.github.io/AmPtox/OECD232_Cd_Pb/mydata_OECD232_Cd_Pb.m">mydata_OECD232_Cd__Pb</a>
+      for the analysis of the toxicity of mixtures of cadmium and lead salts.
+      The three independent variables are specified in the second element of auxiliary data of the type <code>treat</code>,
+      while the first element specifies the way in which the results are presented, as for <a href="Bi-variate_data.html">bi-variate data</a>.
+      The second element of <code>treat</code> is a cell-string of three vectors of values, which length should correspond with the number of rows, columns and pages.
+      The present implementaton only accepts the scalar 2 are first element of <code>treat</code>, so allows interpolation in independent variable 1 and 2,
+      while independent variable 3 is interpolated by default.
 
-    <p>
-    Irrespective of the specified number of time-points, 100 plots are created (called "frame000.png", ., "frame100.png") in subdirectory of the working directory.
-    The data-points in each frame is obtained by linear interpolation of the user-defined data points.
-    A clock, which is integrated in each frame monitors the time, relative to the total time.
-    The all these frames are linked in a movie, showing 10 frames per second,
-    by the open-source animated png-assembler <a href="https://sourceforge.net/projects/apngasm/files/2.91/">apngasm-2.91-bin-win64.zip</a>.
-    Extract the file apngasm64.exe and make a path to it in your operating system (so not in Matlab since the code is run from the powershell, not in Matlab itself).
+      <p>
+      Irrespective of the specified number of time-points, 100 plots are created (called "frame000.png", ., "frame100.png") in subdirectory of the working directory.
+      The data-points in each frame is obtained by linear interpolation of the user-defined data points.
+      A clock, which is integrated in each frame monitors the time, relative to the total time.
+      The all these frames are linked in a movie, showing 10 frames per second,
+      by the open-source animated png-assembler <a href="https://sourceforge.net/projects/apngasm/files/2.91/">apngasm-2.91-bin-win64.zip</a>.
+      Extract the file apngasm64.exe and make a path to it in your operating system (so not in Matlab since the code is run from the powershell, not in Matlab itself).
       
-    <p>
-    Like for all plots, you can specify a title and/or a subtitle.
-    Titles are part of the plot, but subtitles only appear in the modal-presentation in html on the AmP website.
-    The latter might be more attractive if you want to use the plot for publication.
+      <p>
+      Like for all plots, you can specify a title and/or a subtitle.
+      Titles are part of the plot, but subtitles only appear in the modal-presentation in html on the AmP website.
+      The latter might be more attractive if you want to use the plot for publication.
      
-    
+      <div id="myModal" class="modal">
+         <img class="modal-content" id="img01">
+         <div id="caption"></div>
+      </div>
+	
+   
     </div> <!-- end of content -->
  
     <div w3-include-html="footer_amp.html"></div>
