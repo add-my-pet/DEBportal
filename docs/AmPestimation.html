@@ -30,7 +30,8 @@
         </h1>
     
         <h2>Introduction</h2>
-        This page aims to describe the methodology that is used in the AmP project for the  estimation of parameters of DEB models from data:
+        This page aims to describe the methodology that is used in the <a href="https://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/">AmP project</a>
+	for the  estimation of parameters of DEB models from data:
         the practice and getting started, technical aspects, i.e. code-specifications and how to use it to arrive at parameter estimates,
         evaluation of estimation results, accuracy of parameter estimates.
         An introduction to modelling and statistics is given in the document <a href="https://www.bio.vu.nl/thb/deb/deblab/tb/tb.pdf">Basic methods for Theoretical Biology</a>.
@@ -69,7 +70,7 @@
         Some of the most used models have been formalized and are called typified models and all are simple extensions of the most simple one: the standard (std) model.
         The are described on the page <a href="Typified_models.html">Typified_models</a>.
         The main distinction between the models is whether or not metabolic acceleration occurs during ontogeny,
-	see <a href="https://www.zotero.org/groups/500643/deb_library/items/K63DEXLK/item-list">Kooijman 2014</a>.
+	see <a href="https://www.zotero.org/groups/500643/deb_library/items/K63DEXLK/">Kooijman 2014</a>.
 
         <p>
         Species-specific details that are not included in the computation of implied properties:
@@ -83,7 +84,7 @@
 	    For practical purposes, this early death is included as an effect of ageing, but ageing has probably nothing to do with this.
 	    The asymptotic size is calculated in the pars-file and some of the listed properties are not realistic as a consequence.
           <li>The toadlets Crinia lower their allocation fraction to soma between hatch and birth
-	    (<a href="https://www.zotero.org/groups/500643/deb_library/items/4ZMA4WX3/item-list">Mueller et al 2012</a>).
+	    (<a href="https://www.zotero.org/groups/500643/deb_library/items/4ZMA4WX3/">Mueller et al 2012</a>).
 	  <li>Mammals take milk during their baby-stage, weaning is included in all stx models for mammals as a maturity threshold, but the change in diet is not taken into account.
 	  <li>Many birds first reproduce in their second year under (seasonal) field conditions.
 	    They apparently have a relatively long juvenile period during most of which they are fully grown.
@@ -117,7 +118,7 @@
       
         <p>
         Pseudo-data are parameter values (or functions of them) corresponding to a generalized animal, but treated as independent data,
-	i.e. typical values for a wide variety of animals (<a href="https://www.zotero.org/groups/500643/deb_library/items/JBBPNHDS/item-list">Lika et al 2011</a>).
+	i.e. typical values for a wide variety of animals (<a href="https://www.zotero.org/groups/500643/deb_library/items/JBBPNHDS/">Lika et al 2011</a>).
         These values may change as the AmP collection increases.
         Pseudo-data serve to fill possible gaps in information that is contained in the real data.
         Only intensive parameters can play the role of pseudo-data points, i.e. parameters that are independent of body size.
@@ -261,7 +262,7 @@
 	i.e. each parameter value is multiplied by a factor close to 1, one-by-one, which can be set in the estimation options.
         The simplex method tries to replace the worst parameter combination by one that is better than the best one, i.e. gives a smaller value of the loss-function.
         During the iteration, the parameters are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain
-	(<a href="http://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/item-details">Marques et al 2018</a>).
+	(<a href="http://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/">Marques et al 2018</a>).
 
         <p>
         Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
@@ -425,8 +426,8 @@
 	  <a href="https://youtu.be/sGsnJDDeE1Q" target="_blank"><img src="img/YouTube.png" title="11:08" height="25px" align="right"></a>
 	</h3>
         Uncertainty of the point estimates of parameter values can be assessed by computing the marginal confidence intervals using the profile method,
-        as described in <a href="https://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-list">Marques et al 2019</a>
-	(development) and <a href="https://www.zotero.org/groups/500643/deb_library/items/G5UZ4PC7/item-list">Stavrakidis-Zachou et al. 2019</a> (application).
+        as described in <a href="https://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/">Marques et al 2019</a>
+	(development) and <a href="https://www.zotero.org/groups/500643/deb_library/items/G5UZ4PC7/">Stavrakidis-Zachou et al. 2019</a> (application).
         The profile method is a two-step procedure, see <a href="Confidence_interval.html">page Confidence Interval</a>.
         In the first step, the profile (of the loss function) for a parameter is obtained.
         In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed.
@@ -535,7 +536,7 @@
         If you specify one or more <code>metaPar.weights</code> fields in the pars_init_group file for particular parameters,
         these weights are applied to the variance as fraction of the squared mean for these parameters and the result is added the loss function that is minimized to arrive
         at parameter estimates.
-        The paper <a href="https://www.zotero.org/groups/500643/deb_library/items/JPQ4L6YD/item-list">Lika et al 2020</a>
+        The paper <a href="https://www.zotero.org/groups/500643/deb_library/items/JPQ4L6YD/">Lika et al 2020</a>
         gives the philosophy and brackground.
         This construct allows to smoothly vary between no relationship between the parameter values of the group members
         (weights zero, which is the default weight value) and all group members have the same parameter value (a high weight).
