@@ -68,12 +68,36 @@
       padding-right: 20px;
     }
   </style>
+  
+  <script>
+    function IncludeHTML() {
+      var z, a, file, xhttp;
+      z = document.getElementsByTagName("*");
+      if (z.getAttribute("w3-include-html")) {
+        a = z.cloneNode(false);
+        file = z.getAttribute("w3-include-html");
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          a.removeAttribute("w3-include-html");
+          a.innerHTML = xhttp.responseText;
+          z.parentNode.replaceChild(a);
+          IncludeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      return;
+      } 
+    }
+  </script>
 </head>
 <body>
 
-  <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/wallpaper_DEBportal.html"></div>
-  <div w3-include-html="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/toolbar_DEBportal.html"></div>
-  <script>w3IncludeHTML();</script>
+  <div include-html="wallpaper_DEBportal.html"></div>
+  <script>IncludeHTML("https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/"+'include-html');</script>
+  <div w3-include-html="toolbar_DEBportal.html"></div>
+  <script>IncludeHTML("https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/sys/"+'include-html');</script>
 
 <div id = "main">
   <div id = "main-wrapper">    
