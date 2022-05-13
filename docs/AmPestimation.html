@@ -39,7 +39,8 @@
         and follows the <a href="https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_n.pdf">DEB notation</a>.
 
         <p>
-        Parameter estimation is the procedure to use data to arrive at parameter estimates by minimizing some loss function that quantifies the distance between data and model predictions,        known as the <b>estimation criterion</b>.
+        Parameter estimation is the procedure to use data to arrive at parameter estimates by minimizing some loss function
+	that quantifies the distance between data and model predictions, known as the <b>estimation criterion</b>.
         A loss function is a function of data, model predictions and weight coefficients, so the problem is to find the combination of parameter values that correspond with the minimum,
         starting from one or more initial guesses.
         Several methods (algorithms) can be used for this, but the result should be independent of the algorithm.
@@ -234,8 +235,9 @@
 	  <li> if A equals B, the distance should be zero
 	  <li> distances are non-negative
         </ul>
-        It only depends on data, predictions and weight coefficients.
-        The AmP estimation procedure includes several loss functions, which can selected via the estimation options.
+        The loss function only depends on data, predictions and weight coefficients.
+        The AmP estimation procedure includes several loss functions, which can selected via the
+	<a href="https://debtool.debtheory.org/lib/pet/html/estim_options.html">estimation options</a>.
 
         <p>
         <img class="myImg" src="img/Lossfunctions.jpg" alt="loss function in AmP" width="200px" align="left">
@@ -313,14 +315,14 @@
 	The pars_init file has the line <code>[par, units, label, free] = addchem(par, units, label, free, metaData.phylum, metaData.class);</code>.
 	This line adds chemical parameters to the specified parameters and keeps them fixed by default.
 	The specific densities of dry mass (i.e. the dry/wet weight ratios if the specific density for wet weight equals 1 g/cm<sup>3</sup>) is set taxon-specifically in
-	<a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/get_d_V.html"><code>get_d_V</code></a>.
-	The composition of the nitrogen-waste is set taxon-specifically in <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/get_N_waste.html"><code>get_N_waste</code></a>.
-	The other chemical parameters are set in <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/addchem.html"><code>addchem</code></a>,
+	<a href="https://debtool.debtheory.org/lib/pet/html/get_d_V.html"><code>get_d_V</code></a>.
+	The composition of the nitrogen-waste is set taxon-specifically in <a href="https://debtool.debtheory.org/lib/pet/html/get_N_waste.html"><code>get_N_waste</code></a>.
+	The other chemical parameters are set in <a href="https://debtool.debtheory.org/lib/pet/html/addchem.html"><code>addchem</code></a>,
 	but all these settings can be overwritten in the pars_init file.
 	The latter class of parameters rarely varies much across species.
 	      
         <p>
-        Estimation options are set via DEBtool_M function <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
+        Estimation options are set via DEBtool_M function <a href="https://debtool.debtheory.org/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
         Some options relate to details of the minimization algorithm, others to where to find initial values or what to output as result.
         The standard way to proceed is
         <ul>
