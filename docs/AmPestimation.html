@@ -17,7 +17,7 @@
   <div w3-include-html="wallpaper_DEBportal.html"></div>
   <script>w3IncludeHTML();</script>
 
-  <div w3-include-html="toolbar_DEBportal.html"></div>
+  <div w3-include-html="toolbar_AmPestimation.html"></div>
   <script>w3IncludeHTML();</script>
 
   <div id="main">
@@ -29,7 +29,7 @@
           <a href="https://youtu.be/xLrIZZDZTB0" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="10:46"></a>
         </h1>
     
-        <h2>Introduction</h2>
+        <h2 name="Introduction">Introduction</h2>
         This page aims to describe the methodology that is used in the <a href="https://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/">AmP project</a>
 	for the  estimation of parameters of DEB models from data:
         the practice and getting started, technical aspects, i.e. code-specifications and how to use it to arrive at parameter estimates,
@@ -92,7 +92,7 @@
 	    Husbandry data indicates that birds potentially reproduce much earlier, which questions the realism of these two parameters.
         </ul>
 
-        <h2>Data and data types</h2>
+        <h2 name="Data">Data and data types</h2>
         Data can be classified as
         <ul>
     	  <li><b>dependent data</b>, i.e. data that needs to be predicted, while these predictions depend on independent data and parameter values
@@ -158,7 +158,7 @@
         The weight can be dry, ash-free dry or wet weight, the conversion involves specific densities, which belong to the chemical parameters.
         Assuming that the specific density of wet mass is close to 1 g/cm3, the values for d_V and d_E equal dry/wet weight ratios.
 
-        <h3>Data quality and availability</h3>
+        <h3 name="Data_quality">Data quality and availability</h3>
         The quality and availability of data varies enormously over species, which has consequences for the entries.
         Data of most entries were taken from the literature, and collected by workers with widely different prior knowledge.
         This situation is far from ideal and we hope that future data acquisition is done with the DEB context in mind.
@@ -207,7 +207,7 @@
         resource and thus can be modeled with a single reserve and resource availability is relatively simple to characterize.
         Within the animals, we made an effort to maximize coverage, given limitations imposed by data availability.
 
-        <h3>
+        <h3 name="Data_completeness">
 	  Data completeness
 	  <a href="https://youtu.be/WKtPWGmJzJI" target="_blank"><img src="img/YouTube.png" title="13:54" height="25px" align="right"></a>
 	</h3>
@@ -215,7 +215,7 @@
         <a href="Completeness.html">(See Table)</a>.
       
 
-        <h2>Weight coefficients</h2>
+        <h2 name="Weight">Weight coefficients</h2>
         The weight coefficients serve to (subjectively) quantify the confidence of the user in the data-sets as well as for specific data points.
         The AmP procedure distinguishes between real and pseudo data.
         The weight coefficients are automatically set in the mydata-file, weighing each data-set equally, but are 10 times as small for spseudo-data.
@@ -227,7 +227,7 @@
         The user can overwrite default weight values (for either the whole data set or else particular values) in the mydata-file.
         The overwriting of the weight coefficient is done by multiplying the default value by a dimensionless factor.
 
-        <h2>Loss function</h2>
+        <h2 name="Loss">Loss function</h2>
         A loss function is a distance measure between data and predictions, so
         <ul>
  	  <li> the distance between (multi-dim) points A and B equals the distance between B and A
@@ -249,7 +249,7 @@
         The default values for the weight-coefficients for the pseudo-data depend on the choice of loss function to ensure that they play a minor role in the estimation
 	if data contains the required information.	
 
-        <h2>Minimization of loss function</h2>
+        <h2 name="Minimization">Minimization of loss function</h2>
         Estimation of some 15 parameters simultaneously from a variety of data sets cannot be routine work.
         You can only expect useful results if your initial estimates are not too far from the resulting estimates.
         It is best to either use a time-length-energy framework (as done here) or a time-length-mass framework in the selection of primary parameters and not mix them.
@@ -388,7 +388,7 @@
 	If the estimation was successful and you like to submit your entry to the AmP collection (by email to debtheory.org@gmail.com) a curator will run
 	<code>AmPtool/curation/curation_report(my_pet)</code> for checking, which you can also do yourself, of course. 
 							       
-        <h2>
+        <h2 name="Evaluation">
 	  Evaluation of estimates
 	  <a href="https://youtu.be/LchBb8oC8Ng" target="_blank"><img src="img/YouTube.png" title="11:08" height="25px" align="right"></a>
 	</h2>
@@ -399,7 +399,7 @@
 	You can add a global <code>refPets</code> to the run-file and fill it with a cell-string of names of species to compare with (so over-writing the automatized selection).
 	
 
-        <h3>Goodness of fit</h3>
+        <h3 name="Goodness">Goodness of fit</h3>
         <img class="myImg" src="img/Errors.jpg" alt="errors used in AmP" align="left">
         The match between data and predictions is quantified by the goodness of fit using the mean relative error (MRE) and the symmetric mean squared error (SMSE).
         MRE can have values from 0 to infinity, while SMSE has values from 0 to 1.
@@ -421,7 +421,7 @@
 	It is, therefore, important to judge the realism of parameter values as well.
         Remember that parameters might be poorly fixed by data, and very different values can, sometimes, result in a tiny difference in goodness of fit.
 
-        <h3>
+        <h3 name="Confidence">
 	  Confidence intervals
 	  <a href="https://youtu.be/sGsnJDDeE1Q" target="_blank"><img src="img/YouTube.png" title="11:08" height="25px" align="right"></a>
 	</h3>
@@ -433,7 +433,7 @@
         In the second, which is the calibration step, the level of the loss function that corresponds to uncertainty is computed.
         See a more detailed tutorial here.
 
-        <h2>
+        <h2 name="Multi-species">
 	  Multi-species parameter estimation
 	  <a href="https://youtu.be/PdD6OHNkN5k" target="_blank"><img src="img/YouTube.png"  height="25px" title="9:33" align="right"></a>
 	</h2>
@@ -501,7 +501,7 @@
         An example of a customized plotting-file is given in <code>DEBtool_M\lib\pet\custom_results_group</code>.
         The presence of a file with this name in the local directory suppresses other plotting of the estimation results, as specified in <code>results_pets</code>.      
 
-        <h3>co-variation rules</h3>
+        <h3 name="Co-variation">Co-variation rules</h3>
         The co-variation rules of parameters are specified by <code>metaPar.covRules = 'no';</code> or <code>metaPar.covRules = 'maturities';.</code>
         <ul>
           <li>'no': no relationships between different parameters are assumed.
@@ -532,7 +532,7 @@
         Notice that, with the simplex method, it is not that easy to see the difference between the results of a random walk and a proper estimation for any particular parameter;
         if a changed parameter value results in the same MRE, the result was that of a random walk.
 
-        <h3>Augmented loss function</h3>
+        <h3 name="Augmented">Augmented loss function</h3>
         If you specify one or more <code>metaPar.weights</code> fields in the pars_init_group file for particular parameters,
         these weights are applied to the variance as fraction of the squared mean for these parameters and the result is added the loss function that is minimized to arrive
         at parameter estimates.
@@ -542,7 +542,7 @@
         (weights zero, which is the default weight value) and all group members have the same parameter value (a high weight).
         An example of such a setting is <code>metaPar.weights.p_M = 5; metaPar.weights.v = 5;</code>.
 
-        <h3>General remarks</h3>
+        <h3 name="Remarks">General remarks</h3>
         Results of the estimation are stored in the file results_group.mat, while mat2par_init converts the contents to pars_init_group.m, like in the single-species situation.
         These resulting files also specify the covRules setting, even if this has not been done explicitly by the user.
         If the model specification as specified in pars_init_group is a cell-string (e.g., {'std', 'abj'}) rather then a character string (e.g., 'std'),
