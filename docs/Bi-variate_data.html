@@ -34,23 +34,22 @@
 
       <h2>Specifying bi-variate data</h2>
       <img class="myImg" src="img/results_OECD202_dichromate_01.png" alt="Example of a bi-variate data set with predictions" align="left">
-      The entries
-      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Cuon_alpinus/Cuon_alpinus_res.html">Cuon alpinus</a>,
-      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Culex_pipiens/Culex_pipiens_res.html">Culex_pipiens</a> and
-      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Dolioletta_gegenbauri/Dolioletta_gegenbauri_res.html">Dolioletta gegenbauri</a>
-      give examples of specification of bi-variate data in the mydata-file.
       Suppose that we want to specify time-weight data for females and males in data matrix <code>data.tW</code>, which now has 3 columns.
       The auxiliary data of the type <code>treat</code> is specified as a cell-string of 2 elements: <code>auxData.treat.tW = {1, {'f', 'm'})</code>.
       The second element specifies the second independent variable, which can be a vector of values, but is here a cell-string of labels.
       The first element is a scalar, which controls the way in which the results are presented.
       It can have the values
       <ul>
-        <li> 0 for no interpolating the first as well as the second independent variable; the result is a plot with markers;
+        <li> 0 for no interpolation in the first as well as the second independent variable;
+	  the result is a plot with markers;
 	  filled dots for data, open ones for predictions.
+	  The second element of treat is here optional; it is used to avoid interpolation in the first independent variable.
 	  A legend will be plotted in a separate figure.
         <li> 1 for interpolating the first independent variablem but not the second one: the results is a plot with filled dots for the data and curves for the predictions;
   	  A legend will be plotted in a separate figure.
-        <li> 2 for interpolating the first as well as the second independent variable; the result is a plot with filled dots for the data and a 3-dim mesh for the predictions.
+        <li> 2 for interpolating the first as well as the second independent variable;
+	  the result is a plot with filled dots for the data and a 3-dim mesh for the predictions.
+	  The second element of treat must here be a vector of values.
 	  The data-points are connected to the mesh in red if above the mesh, or blue under.
 	  Matlab allows rotation of the plot in the tool-bar of the figure.
       </ul>
@@ -59,9 +58,20 @@
       You can specify a title for the legend by <code>label.treat.tW = 'gender';</code> and later add <code>label</code> to <code>txtData</code> (as usual).
 
       <p>
+      Entries giving examples of specification of bi-variate data in the mydata-file:
+      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Bolinopsis_mikado/Bolinopsis_mikado_res.html">Bolinopsis mikado</a> (first element of treat is 0),
+      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Cuon_alpinus/Cuon_alpinus_res.html">Cuon alpinus</a> (first element of treat is 1),
+      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Culex_pipiens/Culex_pipiens_res.html">Culex_pipiens</a> (first element of treat is 2) and
+      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Dolioletta_gegenbauri/Dolioletta_gegenbauri_res.html">Dolioletta gegenbauri</a> (first element of treat is 2).
+      The last example concerns several bi-variate data sets.
+      Notice that the predict-file needs to receive the auxiliary data treat for each bi-variate data set, even if the values are the same.
+      This is because the predict file is called several times to get predictions points as well as curves.
+
+      <p>
       Like for all plots, you can specify a title and/or a subtitle, e.g. <code>txtData.title.tW = 'data for females, males'</code>.
       Titles are part of the plot, but subtitles only appear in the modal-presentation in html on the AmP website.
       The latter might be more attractive if you want to use the plot for publication.
+
 
       <div id="myModal" class="modal">
         <img class="modal-content" id="img01">
