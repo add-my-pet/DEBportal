@@ -68,12 +68,17 @@
       The last example concerns several bi-variate data sets.
       Notice that the predict-file needs to receive the auxiliary data treat for each bi-variate data set, even if the values are the same.
       This is because the predict file is called several times to get predictions points as well as curves.
+      The predict-file should specify the prediction for all dependent variables in the form of a matrix.
 
       <p>
       Like for all plots, you can specify a title and/or a subtitle, e.g. <code>txtData.title.tW = 'data for females, males'</code>.
       Titles are part of the plot, but subtitles only appear in the modal-presentation in html on the AmP website.
       The latter might be more attractive if you want to use the plot for publication.
 
+      <p>
+      An extra complicating factor is that particular data-points might be missing.
+      For this reason the code accepts such missing data if specified as <code>NaN</code> (Not a Number).
+      Other auxiliary data might be associated to any data, so also to bi-variate data.
 
       <div id="myModal" class="modal">
         <img class="modal-content" id="img01">
