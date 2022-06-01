@@ -361,13 +361,14 @@
         Realize that by making a data-set more important, the rest becomes less-important.
 
         <p>
-          The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
-	  In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
+          The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that a parameter combination is physically impossible.
+	  In addition to these filters, you can specify user-defined filters in the predict-file e.g. to constrain the range of a parameter,
+	  like in <code>if f<0; info=0; prdData=[]; return; end</code>.
           As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
 	  The options allow to switch-off filters, but it then becomes likely that the predict-file reports an error if the algorithm tries an illegal combination of parameters values.
           DEBtool functions that involve a numerical procedure always have a flag as output that indicates success (1) or failure (0).
 	  This flag can be used as filter for failures to force other choices of parameter combinations, like in
-	  <code>[tau_p, tau_b, l_p, l_b, info] = get_tp(pars_tp, f); if ~info; prdData = []; return; end</code>.
+	  <code>[tau_p, tau_b, l_p, l_b, info]=get_tp(pars_tp, f); if ~info; prdData=[]; return; end</code>.
 								 
 								 
         <p>
