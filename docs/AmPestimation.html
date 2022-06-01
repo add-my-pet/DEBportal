@@ -298,7 +298,7 @@
         <p>
         Alternatively, but more risky, download the files of a similar species in the AmP collection and modify them, not forgetting to edit all data.
 	One way to be sure of that, start by deleting all bibkeys in the mydata-file to reduce the risk that data remains in the file that does not relate to your species.
-	You can used <code>get_id(my_pet,1)</code> to get the id's of all sites that need to be specified in the "links" section of the mydata-file;
+	You can use <code>get_id(my_pet,1)</code> to get the id's of all sites that need to be specified in the "links" section of the mydata-file;
 	the "1" means that all these sites are opened in your browser, which might help to specify the
 	<a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPeco.html">ecoCodes</a>.
 	Some of the sites are general, other taxon-specific; the selection is automatized based on the taxonomic classification of my_pet
@@ -353,23 +353,29 @@
   	  <li> finally run the function <code>mat2pars_init</code> to copy the data from the results_my_pet.mat-file to the pars_init-file (no input required).
         </ul>
         There are many ways to interact with the estimation process, such as first keeping particular parameters fixed (select <code>free.some_parameter = 0</code>
-	in the pars_init_file) and later release them.
-        Finding the global minimum of the loss function rapidly becoms more complex the more parameters are estimated simultanously.
+	in the pars_init_file) and later release them by setting <code>free.some_parameter = 1</code>.
+	Finding the global minimum of the loss function rapidly becomes more complex the more parameters are estimated simultanously.
         The free-setting is always taken from the pars_init file (irrespective of the pars_init_method setting).
         If particular predictions deviate too much from the data, you can increase the weight-coefficients of this data in the mydata-file by
         multiplying the current weight coefficients for this data by a factor, say 3 to 10; avoid large values.
         Realize that by making a data-set more important, the rest becomes less-important.
 
         <p>
-        The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
-        In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
-        As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
-        The options allow to switch-off filters, but it then becomes likely that the predict-file reports an error if the algorithm tries an illegal combination of parameters values.
+          The algorithm uses model-specific filters for pameters values during iteration by default, to avoid that parameter combination is physically impossible.
+	  In addition to these filters, you can specify user-defined filters in the predict-file, e.g. <code>if f<0; info=0; prdData=[]; return; end</code>.
+          As soon as the algorithm tries a value <code>f<0</code>, it will reject this attempt and tries another value.
+	  The options allow to switch-off filters, but it then becomes likely that the predict-file reports an error if the algorithm tries an illegal combination of parameters values.
+          DEBtool functions that involve a numerical procedure always have a flag as output that indicates success (1) or failure (0).
+	  This flag can be used as filter for failures to force other choices of parameter combinations, like in
+	  <code>[tau_p, tau_b, l_p, l_b, info] = get_tp(pars_tp, f); if ~info; prdData = []; return; end</code>.
+								 
 								 
         <p>
-        If the fit is really miserable, select <code>estim_options('method', 'no');</code>, run the run-file, view which prediction is most off,
-        and change the parameters that cause it in the pars_init-file.
-	If a parameter is far off, say by 2 or 3 orders of magnitude, the algorithm has poblems to find the global minimum with loss function sb.
+        If the fit is really miserable, select <code>estim_options('results_output', 3);</code> and <code>estim_options('method', 'no');</code>,
+	run the run-file, which will open an html-page with data and predictions, view which prediction is most off,
+        and change the parameters that cause the bad fit in the pars_init-file till the fit is no longer that miserable.
+	Then proceed by trying to estimate starting from there (possibly via fixing particular parameters initially).
+	If a parameter is far off, say by 2 or 3 orders of magnitude, the algorithm has problems to find the global minimum with loss function sb.
         Difficulties in finding a satisfying global minimum are frequently caused by inconsistencies of data in the mydata-file.
         Check all units and preferably use the default units for time, length, weight.
         If age and size at puberty are specified as zero-variate data, and also age-size data as uni-variate data, check if the puberty-point is consistent with the age-size data.
@@ -378,13 +384,14 @@
         If both lengths and weights are used, check if weight over cubed length (= condition index) does not vary too much.
         If the maximim weight is off, change the zoom factor; then change the maximum length by the shape-coefficient (the smaller the shape-coefficient,
         the larger the length; different length-measures require different shape coefficients).
-        Only if both the reproduction rate and the weight at birth are realistic, the allocation to reproduction is realistic; mass fluxes are key to DEB theory.
+        Only if both the reproduction rate and the weight at birth are realistic, the allocation to reproduction is realistic;
+	mass fluxes, i.e. reproduction rate times neonate mass, are key to DEB theory.
 
         <p>
         The presentation of results can (optionally) be customized with file <code>custom_results_my_pet</code>, see <code>DEBtool_M/lib/pet/custom_results_template</code>.      
         If such a file exists in the same folder as the other four user defined files (mydata, predict, pars_init, and run files),
-        it will be called automatically by the DEBtool_M routines.
-        It is important to note that only those uni-variate data sets are will be plotted that are specified in the custom_results_my_pet file,
+        it will be called automatically by the DEBtool routines.
+        It is important to note that only those uni-variate data sets will be plotted that are specified in the custom_results_my_pet file for plotting,
         even though all uni-variate data will be used for parameter estimation.
 
 	<p>
