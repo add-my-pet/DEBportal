@@ -28,16 +28,22 @@
     Uni-variate data is a vector of dependent variables, but since each data-point typically has an associated independent data point,
     uni-variate data is specified as set of pairs of values for an independent and associated dependent variable.
     Auxiliary data might be associated to any data, so also to uni-variate data.
-    
-   <h2>Codification of types uni-variate data</h2>
-   In the mydata file the author needs to specify which types of data are used in the entry.
-   Labels for uni-variate data are packed as metaData.data_1 in the mydata-file.
-   The codification generally follows <a href="https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_n.pdf">DEB's notation rules</a>.
-   The table below presents the labels for the different types of univariate data found in the collection (dark yellow cells to the far right of each row in the species list).
-   For the labels the independent and the dependent variables are separated by "-".
 
-   <p>
-   Optionally this can be followed by an underscore ("_"), indicating several values of a modifying factor:
+    <p>
+    Predictions are presented graphically as a curve by default, but sometimes interpolation of the independent variable is not possible.
+    Alternatively, predictions can be presented as (open blue) markers, so interpolation is avoided, by specifying auxiliary data with the name <code>treat</code> for that data set,
+    as a cell string with first element zero, like <code>auxData.treat.tW = {0};</code> for data set <code>tW</code>.
+    The mydata-file for <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Bolinopsis_mikado/Bolinopsis_mikado_res.html">Bolinopsis mikado</a> gives an example.
+    
+    <h2>Codification of types uni-variate data</h2>
+    In the mydata file the author needs to specify which types of data are used in the entry.
+    Labels for uni-variate data are packed as metaData.data_1 in the mydata-file.
+    The codification generally follows <a href="https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_n.pdf">DEB's notation rules</a>.
+    The table below presents the labels for the different types of univariate data found in the collection (dark yellow cells to the far right of each row in the species list).
+    For the labels the independent and the dependent variables are separated by "-".
+
+    <p>
+    Optionally this can be followed by an underscore ("_"), indicating several values of a modifying factor:
 
     <table  align="center">
       <tr><td>f</td> <td class="end">functional response</td> <td>T</td> <td class="end">temperature</td></tr>
