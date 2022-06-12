@@ -27,7 +27,10 @@
     
       Zero-variate data is a scalar (so a single number) that quantifies a feature of the organism at a given moment.
       Auxiliary data might be associated to any data, so also to zero-variate data.
-      Although a single data-point has little information in itself for parameter estimation, a set of different data-point can be very useful. 
+      Although a single data-point has little information for parameter estimation in itself, a set of different data-points can be very useful,
+      certainly in combination with uni- and bi-variate data sets.
+      A prediction for a zero-variate data set is typically a function of parameter values, which should be seen as removing one degree of freedom in the parameter estimation.
+      So with 10 parameters, 10 (independent) zero-variate data sets theoretically determine all 10 parameters.
 
       <h2>Codification of types zero-variate data</h2>
       In the mydata file the author needs to specify which types of data are used in the entry.
