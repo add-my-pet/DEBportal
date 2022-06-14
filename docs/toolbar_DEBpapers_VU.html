@@ -5,6 +5,24 @@
 
     <div id="navwrapper">
       <div class="dropdown">
+        <button onclick="showDropdown('topic')" class="dropbtn">TOPIC</button>
+        <div id="topic" class="dropdown-content">
+          <a onclick="OpenPageAtId('DEBlib')">DEB library</a>
+          <a onclick="OpenPageAtId('SIs')">Special issues</a>
+          <a onclick="OpenPageAtId('Editorials')">Editorials</a>
+          <a onclick="OpenPageAtId('Intros')">Introductions</a>
+          <a onclick="OpenPageAtId('Evolution')">Evolutionary context</a>
+          <a onclick="OpenPageAtId('Estimation')">Parameter estimation</a>
+          <a onclick="OpenPageAtId('Species')">Species accounts</a>
+          <a onclick="OpenPageAtId('Patterns')">Patterns in parameter values</a>
+          <a onclick="OpenPageAtId('PopDyn')">Population dynamics</a>
+          <a onclick="OpenPageAtId('Tumors')">Tumor growth</a>
+        </div>
+      </div>
+
+      <div class="dropdown">|</div>
+
+      <div class="dropdown">
         <button onclick="showDropdown('deb')" class="dropbtn">DEB</button>
         <div id="deb" class="dropdown-content">
           <a href="https://debportal.debtheory.org/docs/" target="_blank">DEB Portal</a>
@@ -43,7 +61,7 @@
           <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/authors.html">Authors</a>
           <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/pie_pSGJRi.html">Energy Budgets</a>
           <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/links.html">Links</a>
-          <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPdata/AmPdata.zip"><table><tr> <td rowspan="2"><IMG SRC="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/zipicon.png" WIDTH="30px"  BORDER="0"></td><td>AmPdata</td></tr><tr><td>20220614</td></tr></table></a>
+          <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPdata/AmPdata.zip"><table><tr> <td rowspan="2"><IMG SRC="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/zipicon.png" WIDTH="30px"  BORDER="0"></td><td>AmPdata</td></tr><tr><td>20220613</td></tr></table></a>
         </div>
       </div>
 
@@ -75,8 +93,6 @@
           <a onclick="changeServer('IUEM')">IUEM</a>
         </div>
       </div>
-
-      <div><img scr="img/server_VU.png height="30px""</div>
 
     </div> <!-- end of navwrapper -->
   </div> <!-- end of top -->
