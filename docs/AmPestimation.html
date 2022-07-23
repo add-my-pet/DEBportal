@@ -25,7 +25,7 @@
         </h1>
     
         <h2 id="Introduction">Introduction</h2>
-        This page aims to describe the methodology that is used in the <a href="https://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/">AmP project</a>
+        This page describes the methodology that is used in the <a href="https://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/">AmP project</a>
 	for the  estimation of parameters of DEB models from data:
         the practice and getting started, technical aspects, i.e. code-specifications and how to use it to arrive at parameter estimates,
         evaluation of estimation results, accuracy of parameter estimates.
@@ -102,7 +102,7 @@
 	  <li><a href="Zero-variate_data.html">zero-variate data</a>, i.e. dependent data in the form of a single number
 	  <li><a href="Uni-variate_data.html">uni-variate data</a>, i.e. dependent data in the form of a vector of numbers
 	  <li><a href="Bi-variate_data.html">bi-varate data</a>, i.e. dependent data in the form of a matrix of numbers
-	  <li><a href="Tri-variate_data.html">tri-variate data</a>, i.e. dependent data in the form of an 3-dim array of numbers
+	  <li><a href="Tri-variate_data.html">tri-variate data</a>, i.e. dependent data in the form of a 3-dim array of numbers
 	  <li><a href="Pseudo_data.html">pseudo-data</a>, theoretical dependent scalar-valued data for a generalized animal
 	    that is added (with small weight coefficients) to avoid unrealistic parameter estimates 
 	  <li><a href="Auxiliary_data.html">auxiliary data</a>, independent data of any type (which, therefore, do not need to be predicted, for instance temperature)
@@ -152,7 +152,7 @@
         Notice that times and rates without temperature are meaningless.
         This combination already fixes the growth curve in a crude way, specifies allocation fraction kappa and the maturity thresholds at birth and puberty.
         The weight can be dry, ash-free dry or wet weight, the conversion involves specific densities, which belong to the chemical parameters.
-        Assuming that the specific density of wet mass is close to 1 g/cm3, the values for d_V and d_E equal dry/wet weight ratios.
+        Assuming that the specific density of wet mass is close to 1 g/cm<sup>3</sup>, the values for d_V and d_E equal dry/wet weight ratios.
 
         <h3 id="Data_quality">Data quality and availability</h3>
         The quality and availability of data varies enormously over species, which has consequences for the entries.
@@ -160,7 +160,7 @@
         This situation is far from ideal and we hope that future data acquisition is done with the DEB context in mind.
 
         <p>
-        Data from field conditions suffer from the problem that temperature and feeding profiles are generally unknown.
+        Data from field conditions suffer from the problem that temperature and feeding trajectories are generally unknown.
         To a lesser extent, this also applies to laboratory conditions.
         Only a few species can be cultured successfully and detailed (chemical) knowledge about nutritional requirements hardly exists for any species.
         The idea that `some prediction is better than no prediction' fueled the collection (e.g. for management purposes),
@@ -199,7 +199,7 @@
         For instance, if wet weights were measured, use wet weights as data and do not convert them first to dry weights (or vice versa).
 
         <p>
-        Although DEB theory concerns all organisms, the collection is only about animals, for the reason that they can live off a single (chemically complex)
+        Although DEB theory concerns all organisms, the AmP collection is only about animals, for the reason that they can live off a single (chemically complex)
         resource and thus can be modeled with a single reserve and resource availability is relatively simple to characterize.
         Within the animals, we made an effort to maximize coverage, given limitations imposed by data availability.
 
@@ -238,7 +238,7 @@
         <img class="myImg" src="img/Lossfunctions.jpg" alt="loss function in AmP" width="200px" align="left">
         The default loss function is the symmetric bounded one: sb.
         It is symmetric because it value is unaffected by interchanging data and predictions
-        and bounded because, if predictions go to inifinite, their contribution to the loss function  remains limited.
+        and bounded because, if predictions go to inifinite, their contribution to the loss function remains limited.
         The latter property is absent in the symmetric unbounded loss function su.
         The rationale is discussed in <a href="http://www.zotero.org/groups/500643/deb_library/items/A2KFCAIK/item-details">Marques et al 2019</a>.
 
@@ -542,7 +542,7 @@
         these weights are applied to the variance as fraction of the squared mean for these parameters and the result is added the loss function that is minimized to arrive
         at parameter estimates.
         The paper <a href="https://www.zotero.org/groups/500643/deb_library/items/JPQ4L6YD/">Lika et al 2020</a>
-        gives the philosophy and brackground.
+        gives the philosophy and background.
         This construct allows to smoothly vary between no relationship between the parameter values of the group members
         (weights zero, which is the default weight value) and all group members have the same parameter value (a high weight).
         An example of such a setting is <code>metaPar.weights.p_M = 5; metaPar.weights.v = 5;</code>.
