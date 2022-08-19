@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>Multi-variate_data</TITLE>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <script src="sys/jscripts.js"></script>
+</HEAD>
+<BODY>
+
+  <div w3-include-html="sys/wallpaper_DEBportal.html"></div>
+  <div id="tb"></div><script>include_toolbar('DEBportal')</script>
+
+<div id = "main">
+  <div id = "main-wrapper">    
+    <div id="contentFull">
+
+      <h1>Multi-variate data</h1>
+
+      Multi-variate data have one or more independent variables and more than one dependent ones.
+      Think, for instance, of weight-at-time for females and males.
+      Since AmP deals (in principle) with an arbitrary number of data sets, and a collection of uni-variate data sets can have the same independent variable
+      and presented in a grouped plot, there is no need other than convenience to deal with multi-variate data explicitly.
+      Yet it can be handy to specify a multi-variate data set as a matrix where the first column is treated as the independent variable and the others are dependent ones.
+      The specification in AmP follows the rules of those for bi-variate data, where the first element of <code>auxData.treat</code> is 0 or 1.
+      See further under <a href="Bi-variate.html">bi-variate data</a>.
+
+      <p>
+      If the data-matrix has 3 columns, so 1 independent variable and 2 dependent ones, and if the units as well as the label for that data set have length 3,
+      a plot is created with 2 different y-axes.
+      The first element of treat must then be 0 or 1, not 2, and no legend is produced. 
+      All that relates to the left yaxis is plotted in red, to the right in blue.
+	
+    </div> <!-- end of content -->
+ 
+    <div w3-include-html="sys/footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+</BODY>
+</HTML>
