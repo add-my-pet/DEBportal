@@ -60,6 +60,11 @@
       You can optionally specify a title for the legend by <code>label.treat.tW = 'gender';</code> and later add <code>label</code> to <code>txtData</code> (as usual).
 
       <p>
+      So if the first element of <code>treat</code> is 0 or 1, a legend is produced, using the labels as specified in the second element of <code>treat</code>.
+      With 3 columns, the label for the independent and the dependent variable can be extended with a third label that is then used for the legend.
+      If, however, the units are also 3 cells long, no legend is produced, but two different y-axis are written, see <a href="multi_variate_data.html">multi variate data</a>. 
+
+      <p>
       Entries giving examples of specification of bi- and multi-variate data in the mydata-file:
       <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Bolinopsis_mikado/Bolinopsis_mikado_res.html">Bolinopsis mikado</a> (first element of treat is 0),
       <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Cuon_alpinus/Cuon_alpinus_res.html">Cuon alpinus</a> (first element of treat is 1),
@@ -69,10 +74,6 @@
       Notice that the predict-file needs to receive the auxiliary data treat for each bi-variate data set, even if the values are the same.
       This is because the predict file is called several times to get predictions points as well as curves.
       The predict-file should specify the prediction for all dependent variables in the form of a matrix.
-
-      <p>
-      An example of bi-variate data with two different yaxes is given in:
-      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Sialia_mexicana/Sialia_mexicana_res.html">Sialia_mexicana</a> (first element of treat is 1),
 
       <p>
       Like for all plots, you can specify a title and/or a subtitle, e.g. <code>txtData.title.tW = 'data for females, males'</code>.
