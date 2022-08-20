@@ -18,20 +18,35 @@
 
       Multi-variate data have one or more independent variables and more than one dependent ones.
       Think, for instance, of weight-at-time for females and males.
+      The concept that predictions for the various data are coupled by sharing parameters is key to DEB theory as well as to multi-variate data.
+
+      <p>
+      <a href="Uni_variate_data.html">Uni-</a>, <a href="Bi_variate_data.html">bi-</a> and <a href="Tri-variate_data.html">tri-variate</a>
+      variables have one, two or three independent variables.
+      More independent variables can be included via <a href="Auxiliary_data.html">auxiliary data</a>. 
+
+      <p>
       Since AmP deals (in principle) with an arbitrary number of data sets, and a collection of uni-variate data sets can have the same independent variable
-      and presented in a grouped plot, there is no need other than convenience to deal with multi-variate data explicitly.
+      and presented in a grouped plot, there is no need, other than convenience, to deal with multi-variate data with several dependent variables explicitly.
+      To present a set of uni-variate data in a grouped plot, they all must have the same units and labels.
+      To produce a grouped plot, the metaData as defined in a mydata-file needs to have field <code>metaData.grp.sets</code> and, optionally,
+      fields <code>metaData.grp.title</code> and <code>metaData.grp.subtitle</code>.
+      A title becomes part of the produced png-file, a subtitle not and is only shown in the modal-presentation of the plot (i.e. after clicking on it).
+      An example of a grouped plot is given in the <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Canis_familiaris/Canis_familiaris_res.html">dog-entry</a>.
+      Bi- and tri-variate data sets do not need a grouped-plot definition;
+      it is not possible to combine such data sets with other data sets in a grouped plot.
+
+      <p>
       Yet it can be handy to specify a multi-variate data set as a matrix where the first column is treated as the independent variable and the others are dependent ones.
       The specification in AmP follows the rules of those for bi-variate data, where the first element of <code>auxData.treat</code> is 0 or 1.
       See further under <a href="Bi-variate_data.html">bi-variate data</a>.
 
       <p>
-      If the data-matrix has 3 columns, i.e. 1 independent variable and 2 dependent ones, and if the units as well as the label for that data set have length 3,
+      If a data-matrix has 3 columns, i.e. 1 independent variable and 2 dependent ones, and if the units as well as the label for that data set have length 3,
       a plot is created with 2 different y-axes.
       The first element of treat must then be 0 or 1, not 2, and no legend is produced. 
       All that relates to the left yaxis is plotted in red, to the right in blue.
-
-      <p>
-      An example of bi-variate data with two different yaxes is given in:
+      An example of a plot with two different yaxes is given in:
       <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Sialia_mexicana/Sialia_mexicana_res.html">Sialia_mexicana</a> (first element of treat is 1),
 
     </div> <!-- end of content -->
