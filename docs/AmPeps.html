@@ -44,18 +44,20 @@
       <a href="https://youtu.be/FZDeftD9PcQ" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="13:21"></a>
     </h1>
     
-    This page presents guidance for how to prepare an entry for Add-my-Pet (AmP); see also the <a href="AmPeps@DEB2021.html">course context</a>.
+    This page presents guidance for how to prepare an entry for Add-my-Pet (AmP); see also the <a href="AmPeps@DEB2023.html">course context</a>.
     An AmP entry has 4 source files: 
     <ol>
-      <li><a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file" target="_blank">mydata_my_pet.m</a>: 
+      <li>mydata_my_pet.m: 
         Matlab function that sets 5 Matlab structures (data, auxData, metaData, txtData, weights) from scratch
-      <li><a href="http://www.debtheory.org/wiki/index.php?title=Setting_initial_parameter_values" target="_blank">pars_init_my_pet.m</a>: 
+      <li>pars_init_my_pet.m: 
         Matlab function that sets 3 Matlab structures  (par, metaPar, txtPar) from metaData
-      <li>predict_my_pet.m: Matlab function that sets 1 Matlab structure (prdData) and a boolean (info) from (par, data, auxData)
-      <li>run_my_pet.m: Matlab script that runs a checking procedure and the parameter estimation procedure.
+      <li>predict_my_pet.m:
+	Matlab function that sets 1 Matlab structure (prdData) and a boolean (info) from (par, data, auxData)
+      <li>run_my_pet.m:
+	Matlab script that runs a checking procedure and the parameter estimation procedure.
     </ol>
     AmP's entry prepare system (<a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/AmPeps.html" target="_blank">AmPeps</a>) 
-    does not include the <a href="http://www.debtheory.org/wiki/index.php?title=AmP_estimation_procedure">parameter estimation</a> itself, 
+    does not include the <a href="https://add-my-pet.github.io/DEBportal/docs/AmPestimation.html">parameter estimation</a> itself, 
       only the procedure that prepares for it by creating the 4 source files, but not necessarily with the correct parameter values.
     These 4 files are all you need to start the estimation procedure, with the idea that this leads to the correct parameter values, 
       starting for the initial values as specified in the pars_init file that results from AmPeps. 
@@ -124,7 +126,7 @@
         AmPeps first starts the graphical user interphase AmPgui, to fill the fields that are needed for the mydata-file, 
         then writes the run-, pars_init-, and predict-files.
         A large structure <code>prdCode</code> with Matlab code for the various data-types for all 
-        <a href="https://en.wikipedia.org/wiki/Dynamic_energy_budget_theory#DEB_models" target="_blank">10 DEB models</a> is used to compose the predict-file.
+        <a href="https://add-my-pet.github.io/DEBportal/docs/Typified_models.html" target="_blank">10 DEB models</a> is used to compose the predict-file.
         Each DEB model has a set of required 
         <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/html/get_parfields.html" target="_blank">core-parameters</a>, 
         which might be augmented with auxiliary parameters, depending on the types of data that need to be predicted, as specified in the mydata-file.
@@ -284,8 +286,8 @@
     The (body) temperature for temperature-sensitive data needs to be specified per data set.
 
     <h4>0-var data & 1-var data</h4>
-    Numerical data consist of <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" target="_blank">0-variate data</a> (just a number) and 
-    <a href="http://www.debtheory.org/wiki/index.php?title=Univariate_data" target="_blank">1-variate data</a> (an array of pairs of numbers).
+    Numerical data consist of <a href="https://add-my-pet.github.io/DEBportal/docs/Zero-variate_data.html" target="_blank">0-variate data</a> (just a number) and 
+    <a href="https://add-my-pet.github.io/DEBportal/docs/Uni-variate_data.html" target="_blank">1-variate data</a> (an array of pairs of numbers).
     The results of the estimation will be presented in a table for 0-variate data, or in a graph for 1-variate data.
     Each data set requires a bibkey for its source.
     All "bibkey"-fields allow multiple items: separate them using ",".
@@ -327,7 +329,7 @@
       COMPLETE
       <a href="https://youtu.be/WKtPWGmJzJI" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="13:54"></a>
     </h4>
-    This indicator for the <a href="http://www.debtheory.org/wiki/index.php?title=Completeness"target="_blank">level of completeness of the data</a>, 
+    This indicator for the <a href="https://add-my-pet.github.io/DEBportal/docs/Completeness.html"target="_blank">level of completeness of the data</a>, 
     a number between 0 and 10, has to be estimated based on the critaria that are listed in the window.
     Some data types of lower levels are typically not available, others might be guessed, so we subtract "punish" points and interpolate. 
     Many entries have COMPLETE = 2.5.
@@ -400,7 +402,7 @@
     If AmPeps was unable to specify the required code in the predict-file for certain data sets, as specified in the mydata-file, the missing specification is identified,
       and you have to add the code in the predict-file.
     Watch the red colors in the Matlab-editor for the need of further editing.
-    See further <a href="http://www.debtheory.org/wiki/index.php?title=Starting_an_estimation_for_a_new_species">"Starting an estimation"</a> on DEBwiki.
+    See further the <a href="https://add-my-pet.github.io/DEBportal/docs/AmPestimation.html" target="_blank">"AmP estimation"</a> page.
 
     <h2>AmPimport: modify a mydata-file</h2>
 

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>AmPeps@DEB2023</TITLE>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <script src="sys/jscripts.js"></script>
+</HEAD>
+  
+<BODY>
+
+  <div w3-include-html="sys/wallpaper_DEBportal.html"></div>
+  <div id="tb"></div><script>include_toolbar('DEBportal')</script>
+
+  <!--------------------------------------------------------------->
+  <!--   PART main                                               -->
+  <!--   Where all of the text is placed                         -->
+  <!--   use "contentFull" for 1 column                          -->
+  <!--   use "content" if you want two columns"                  -->
+  <!--------------------------------------------------------------->
+
+  <div id = "main">
+    <div id = "main-wrapper">    
+
+      <div id="contentFull">
+        <h1><a href="https://deb2021.sciencesconf.org/">AmPeps at the DEB2023 course</a></h1>
+
+        This page explains what you can do in preparation of an entry before the course DEB2023 starts and what to do next.
+        Please remember that we see an entry in the AmP collection as a publication, meaning that
+        <ul>
+          <li>submission means that you agree that it will be posted on the AmP website (after curation). 
+              If it contains data outside the public domain, please ensure that all involved parties agree. 
+          <li>you can invite others to help data-collection/writing. 
+              It is generally a good idea to include people who contributed to the data in the author-list of the entry;
+              entries have an optional field aknowledgments, where you can e.g. mention project numbers and supporting funding.  
+          <li>the bibitem of the corresponding bibkey of data-sets should make clear where the data came from.
+              If you measured the data yourself, please mention this in a bibitem of type "mics".
+          <li>your entry will be carefully curated, meaning that what will be posted might differ from what you submit.
+              There will, obviously, be feedback.
+          <li>please make use of the comment fields as much as possible, to give some background for the data.
+              If you selected a value within in a range, please mention the range in the comment.
+              Different sources typically give different values; mention this.
+              If you guessed the temperature, please mention that explicitly.
+              Does the data apply to females or both sexes? If it only applies to males, the code-name has a trailing "m";
+              female is the default gender in AmP.
+              If data is length, make explicit how length is defined. 
+              Different length-measures require different shape coefficients.
+          <li>if males differ from females, please include a discussion point that specifies in what parameters they are supposed to differ.
+              If you excluded particular data, via zero weights, motivate this in a discussion point.
+          <li>if facts exist that are worth knowing, especially those that have implications for the interpretation of data, please mention this
+              in one or more items in the optional section facts, and provide references.
+              You can also think of preferred temperature, to support your choice for "Typical body temperature", or supporting facts for eco-codes,
+              or empirical length-weight relationships if you had to make use of this.
+        </ul>
+       
+        <p>
+        We assume that you have seen the videos
+        <ul>
+          <li> <a href="https://youtu.be/X82Wu4UgnRE">DEBsite</a> on the setup of the AmP web site.
+          <li> <a href="https://youtu.be/E4ag2-WzhmQ">DEBdmod</a> on DEB models and parameters in AmP
+          <li> <a href="https://youtu.be/fkmtaGnJWbs">DEBbody</a> on body size as an emergent trait of metabolism.
+          <li> <a href="https://youtu.be/MBrhbXcHQxc">DEBfood</a> on food correction.
+          <li> <a href="https://youtu.be/vqHmIW1kfQo">DEBtemp</a> on temperature correction
+         </ul>
+        
+        <p>
+        What to do next depends if your species is already in the AmP collection or not.
+        If your pet is a particular geographical variety of an existing species that might deviate in parameter values, it counts as a new species.
+        In that case you extend the name of the species with a code for the geografic area, see e.g. Poecilia reticulata in the AmP collection.
+
+        <h2>Your pet is not already in AmP</h2>
+
+        First collect data with references for your species. It should at least have
+        <ul>
+          <li> size at birth, puberty, and ultimate size. If size is some length, you should hunt for at least one value to couple length to weight.
+          <li> reproduction as ultimate rate, or fecundity at a known age. Better is fecundity/reproduction as function of length or weight.
+          <li> maximum life span.
+          <li> size (= length and/or weight) as function of time (preferably time since birth), if not available: age at puberty.
+        </ul>
+        All rates and times require a temperature; the more data the better. See the AmP collection for inspiration.
+
+        <p>
+        Watch the videos
+        <ul>
+          <li> <a href="https://youtu.be/NcfbLdiFTY8">DEBecoc</a> on the use of eco-codes.
+          <li> <a href="https://youtu.be/pinZ_jKLPgQ">DEBampe</a> on the AmP entry prepare system.
+        </ul>
+        and read the <a href="AmPeps.html">manual for the AmP entry prepare system</a> carefully.
+        Please mail us if something is not clear.
+
+        <p>
+        Once you have produced the 4 source files with AmPeps, you can always add more data by editing the mydata-, pars_init- and predict-files.
+
+        <p>
+        We have the experience that it sometimes can happen that the procedure fails, for reasons that are not fully understood.
+        Retrying, by typing <code>AmPeps</code>, then hit <code>resume</code> and <code>pause/save</code> and 
+        <font style="color:green"><code>quit AmPgui, continue with AmPeps</code></font>, the problem disappeared in cases that we tried.
+
+        In the unfortunate case that AmPeps continues to fail, please report this to <a href="mailto:salm.kooijman@gmail.com">Bas Kooijman</a> and 
+        append the <code>results_my_pet_backup.mat</code> file, if it was produced.
+        You can always download-and-edit 
+        <a href="https://add-my-pet.github.io/DEBtool_M/lib/pet/AmP_source-files.zip">empty templates for the source files</a> 
+        and try <a href="https://deb.bolding-bruggeman.com/">DEB species explorer</a> to find useful initial parameter values for the <code>pars_init</code> file.
+        
+
+        <h2>Your pet is already in AmP</h2>
+
+        We assume here that you want to extend/improve an existing entry.
+        The general rule is that all existing data in an entry remains in the update, unless arguments exist to remove it.
+        These arguments should be given in one or more discussion points, as well as a (brief) explanation for the update (what changed and why).
+        
+        <p>
+        The best way to proceed is to edit the mydata-, pars_init- and predict-files directly (in Matlab), using other entries as example.
+        If you try AmPeps, it will discover that the species is already in the collection as soon as you enter its name (without typos) 
+           and proceeds by loading the 4 source files in the Matlab editor, skipping all other edits; a fast way of copying files.
+        Notice that species frequently change names nowadays.
+        AmP follows the nomenclature of species that are accepted in the Catalog of Life.
+        The <a href="species_list.html">species_list</a> gives an overview on what entries have what data, allowing you to select example-entries.
+        Use the search-fascility of your browser to locate example-species, but watch the model type.
+        DEBwiki describes the codes that are used for
+        <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data">zero-</a> and 
+        <a href="http://www.debtheory.org/wiki/index.php?title=Uni-variate_data">uni-variate data</a>.
+
+        <p>
+        Especially if your new data concerns varying food and/or temperature conditions, watch the video
+        <ul>
+          <li> <a href="https://youtu.be/MvOPj7ewIaw">DEBvpar</a> on varying food and/or temperatures.
+        </ul>
+        Food and/or temperature trajectories are frequently specified as knots of a spline (using interpolation). 
+        Entries that have such constructions can be identified by searching for the string <code>spline</code> with function <code>select_predict</code>.
+        Make sure that your example-species has the same DEB model.
+        Likewise, seasonally fluctuating temperatures are frequently modelled with a sine or cosine function. 
+        Identify example entries by searching for the strings <code>sin</code> or <code>cos</code> in the predict files.
+
+        <h2>Once you have the 4 source files during the course</h2> 
+	
+        The next step is to estimate parameters; the course crew will help you with this. 
+        Please watch the videos
+        <ul>
+          <li> <a href="https://youtu.be/9h_ZIuW5z04">DEBcpar</a> on parameter estimation in practice.
+          <li> <a href="https://youtu.be/GGgK94QHwm0">DEBppar</a> on point parameter estimation.
+        </ul>
+
+        <p>
+        If you arrived at a reasonable fit, the next crucial step is to find out if the parameter values make biological sense. 
+        See the video
+        <ul>
+          <li> <a href="https://youtu.be/mjbttcUUuiU">DEBrpar</a> on comparison with reference species
+        </ul>
+
+        <p>
+        The final phase of this course exercise is the most creative and important one: to interpret the results in terms of the biology of your species.
+        Find traits that you did not expect.
+        Is this new biological insight or an invitation to reconsider data and re-estimate?
+        Focus on this part in your lecture on your entry.
+
+        <h2>After the course</h2>
+
+        After the course, you can do a more comprehensive in-depth study on the traits of your species, using the tools as provided by 
+        <a href="https://add-my-pet.github.io/AmPtool/docs/">AmPtool</a>. See the videos
+        <ul>
+          <li> <a href="https://youtu.be/8XM865d0bZM">DEBampt</a> on AmPtool/AmPdata,
+          <li> <a href="https://youtu.be/Lepmsua7YiM">DEBshst</a> on the use of function shstat for plotting
+          <li> <a href="https://youtu.be/Tovsihw8xKw">DEBpatt</a> on patterns in parameter values
+        </ul>
+        The general idea is that your entry replaces the electronic material what you would otherwise append to a paper on the comparative traits of your species. 
+        This material was carefully reviewed, which hopefully helps in getting your paper accepted.
+        All methods that were used, including the models, are published, so a few references will do, which allows you to fully focus on the biology or applications.
+        We hope that the environment of the course and the symposium helps you with identifying promising candidates for productive collaboration.
+
+        <p>
+        You can always submit revisions of your entry.
+
+      </div> <!-- end of contentFull -->
+			
+      <!--------------------------------------------------------------->	
+      <!--   FOOTER                                                  -->
+      <!--------------------------------------------------------------->	
+
+      <div w3-include-html="sys/footer_amp.html"></div>
+      <script>w3IncludeHTML();</script>
+
+    </div> <!-- main wrapper -->
+  </div> <!-- main -->
+</BODY>
+</HTML>
