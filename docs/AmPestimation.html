@@ -585,13 +585,16 @@
 
         <p>
         Structure metaPar becomes available after load results_group.mat and has (among others) fields MRE, SMSE, cv and weights. 
-        The latter two, so metaPar.weights and metaPar.cv, have the names of the various parameters and their weights, as set in pars_init_group and corresponding variation coefficients, 
-        respectively. 
+        The latter two, so <code>metaPar.weights</code> and <code>metaPar.cv</code>, have the names of the various parameters and their weights,
+	  as set in <code>pars_init_group</code> and corresponding variation coefficients, respectively. 
         This can be used to study the trait off between a reduction of the variation coefficient and an increase in mean MRE and SMSE, 
         as a result of increasing the weights for one or more parameters. The command addCV initiates or adds to a table with this information. 
         The browser opens automatically at initiation of the table, hit refresh for additional rows in the table.
 
-        <p>
+       <p>
+ 	The functions <a href="https://amptool.debtheory.org/html/prt_SpecPerGenus.html"><code>prt_SpecPerGenus</code></a> and
+	   <a href="https://amptool.debtheory.org/html/prt_SpecPerFam.html"><code>prt_SpecPerFam</code></a> can be used to indentify potential targets for multi-species estimation.
+       <p>
         Although multi-species parameter estimation can be scientifically important, the AmP data base has presently no system to accommodate the cross-linking between different entries. 
         This means only results from single-species estimation can be submitted for publication in the AmP data base, 
         since we want to maximize clarity about the step from data to parameter values.
