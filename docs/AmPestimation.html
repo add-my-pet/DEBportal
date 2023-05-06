@@ -100,14 +100,20 @@
         A data set can be of several types:
         <ul>
 	  <li><a href="Zero-variate_data.html">zero-variate data</a>, i.e. dependent data in the form of a single number
-	  <li><a href="Uni-variate_data.html">uni-variate data</a>, i.e. dependent data in the form of a vector of numbers
-	  <li><a href="Bi-variate_data.html">bi-varate data</a>, i.e. dependent data in the form of a matrix of numbers
+	  <li><a href="Uni-variate_data.html">uni-variate data</a>, i.e. dependent data in the form of an n-vector of numbers
+	  <li><a href="Bi-variate_data.html">bi-varate data</a>, i.e. dependent data in the form of an (n,2)-matrix of numbers
 	  <li><a href="Tri-variate_data.html">tri-variate data</a>, i.e. dependent data in the form of a 3-dim array of numbers
-	  <li><a href="Multi-variate_data.html">multi-variate data</a>, i.e. dependent data in the form of a matrix of numbers
+	  <li><a href="Multi-variate_data.html">multi-variate data</a>, i.e. dependent data in the form of an (n,m)-matrix of numbers
 	  <li><a href="Pseudo_data.html">pseudo-data</a>, theoretical dependent scalar-valued data for a generalized animal
 	    that is added (with small weight coefficients) to avoid unrealistic parameter estimates 
 	  <li><a href="Auxiliary_data.html">auxiliary data</a>, independent data of any type (which, therefore, do not need to be predicted, for instance temperature)
         </ul>
+	An example of a zero-variate data set is the reproduction of an individual of certain size, at a certain temperature and at a certain food availability.
+	The latter three quantities are auxiliairy data for that zero-variate data point.
+	An example of a uni-variate data set is a set of weights as function of time at certain temperature- and food availability-trajectories.
+	The latter two data sets are auxiliairy data for that uni-variate data set.
+
+	<p>
         The data that is used to arrive at DEB parameter estimates consists of a collection of such data sets.
         Increasing the number of (real as opposed to pseudo) data sets, so increasing information, reduces the role of the pseudo-data in the parameter estimation.
         But if environmental conditions (feeding situation, temperature) differ between data sets in ways that are not taken into account properly,
