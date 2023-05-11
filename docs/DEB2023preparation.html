@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>DEB2023prep</TITLE>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <script src="sys/jscripts.js"></script>
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+  <style>
+		img {
+			display: block;
+			margin: 0 auto;
+			clear: both;
+		}
+	</style>
+</HEAD>
+  
+<BODY>
+
+  <div w3-include-html="sys/wallpaper_DEBportal.html"></div>
+  <div id="tb"></div><script>include_toolbar('DEBportal')</script>
+
+  <!--------------------------------------------------------------->
+  <!--   PART main                                               -->
+  <!--   Where all of the text is placed                         -->
+  <!--   use "contentFull" for 1 column                          -->
+  <!--   use "content" if you want two columns"                  -->
+  <!--------------------------------------------------------------->
+
+  <div id = "main">
+    <div id = "main-wrapper">    
+
+      <div id="contentFull">
+        <h1><a href="https://deb2021.sciencesconf.org/">DEB2023 final preparations</a></h1>
+
+        This page explains preparations to perform before coming to Baton Rouge
+        <ul>
+          <li>Read about your fellow participants in the DEB2023 course document. Send your photo to <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a> if you have not done so. We will skip introduction at Baton Rouge to save time, so this is important! 
+          <li>Check that the sofware works (see section below), get help to make it work before coming. PC users contact <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a>, mac users contact <a href="mailto:lika@uoc.gr">Dina</a>.
+          <li>Assemple your data, ask how to best formulate the data. 
+          
+
+        <h2>Software testing before coming to Baton Rouge</h2>
+	
+Test that AmPtool works on your PC:	
+	<pre><code class="matlab">	
+    % outputs a table with selected properties of selected species to html format
+ 	prt_tab({select('Daphniidae'),read_stat(select('Daphniidae'),{'p_M','R_i'})},{'species','[p_M]','R_i'}) 
+	</code></pre>
+	<pre><code class="matlab">	
+    get_n(list_taxa('Carnivora',4))	
+	</code></pre>
+	<pre><code class="matlab">	
+    treeview_taxa('Crustacea')
+	</code></pre>
+	<pre><code class="matlab">	
+   [~, taxon] = clade('Lemmus_trimucronatus'); pedigree(taxon,'p_M')
+	</code></pre>
+	
+Testing DEBtool via the repository of examples AmPtox. Download  <a href = "https://github.com/add-my-pet/AmPtox">the AmPtox GitHub repository</a> and save it in a directory outside of everything else. 
+
+
+
+We will not have in-depth technical lectures on population and ecosystem modelling, however this theme is included and depending on skills and interests you have the opportunity to explore this theme. 
+Please read the <a href = "2https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/popDyn/popDyn.html">DEB-in-Practice page on Population Dynamics</a>.
+
+
+
+Testing that you will be able to run the population code from your PC as we have it in the course:
+ <!--
+	<pre><code class="matlab">	
+   [txNL23W, info] = IBM('Daphnia_pulchella'), [], [], [], [], [], [}, 200, 1)
+	</code></pre>
+  -->
+     
+
+      </div> <!-- end of contentFull -->
+			
+      <!--------------------------------------------------------------->	
+      <!--   FOOTER                                                  -->
+      <!--------------------------------------------------------------->	
+
+      <div w3-include-html="sys/footer_amp.html"></div>
+      <script>w3IncludeHTML();</script>
+
+    </div> <!-- main wrapper -->
+  </div> <!-- main -->
+</BODY>
+</HTML>
