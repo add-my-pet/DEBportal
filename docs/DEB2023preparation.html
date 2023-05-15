@@ -36,14 +36,15 @@
 
         This page explains preparations to perform before coming to Baton Rouge
         <ul>
-          <li>Read about your fellow participants in the DEB2023 course document. Send your photo to <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a> if you have not done so. We will skip introduction at Baton Rouge to save time, so this is important! 
+          <li>Read about your fellow participants in the DEB2023 course document: AmP project species, Discussion Topics, Participant list. We will skip introduction rounds when in Baton Rouge!
           <li>Check that the sofware works (see section below), get help to make it work before coming. PC users contact <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a>, mac users contact <a href="mailto:lika@uoc.gr">Dina</a>.
-          <li>Assemple your data, ask how to best formulate the data. 
-          
+          <li>Assemple your data, ask how to best formulate the data. Email questions to <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a>. The more you can compile data before coming the better.
+         </ul> 
 
         <h2>Software testing before coming to Baton Rouge</h2>
-	
-Test that AmPtool works on your PC:	
+		
+<h3>Phylogeny and Ecology related packages</h3>		
+Make sure you have latest verrsion of AmPdata and AmPtool, with paths set to both directories. Test that AmPtool works on your PC:	
 	<pre><code class="matlab">	
     % outputs a table with selected properties of selected species to html format
  	prt_tab({select('Daphniidae'),read_stat(select('Daphniidae'),{'p_M','R_i'})},{'species','[p_M]','R_i'}) 
@@ -53,31 +54,69 @@ Test that AmPtool works on your PC:
 	</code></pre>
 	<pre><code class="matlab">	
     treeview_taxa('Crustacea')
+	gallery_png(select('Daphniidae'))
 	</code></pre>
 	<pre><code class="matlab">	
    [~, taxon] = clade('Lemmus_trimucronatus'); pedigree(taxon,'p_M')
 	</code></pre>
-	
-Testing DEBtool via the repository of examples AmPtox. Download  <a href = "https://github.com/add-my-pet/AmPtox">the AmPtox GitHub repository</a> and save it in a directory outside of everything else. 
+If you like, feel free to use the lineage, pedigree and treeview_taxa functions to see which species are in AmP that are most closely related to your study organisms.
 
+<h3>Populations</h3>	
 
+We will not have in-depth technical lectures on population and ecosystem modelling, however this theme is included and depending on skills and interests you have the opportunity to explore this. 
+Please read the <a href = "2https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/popDyn/popDyn.html">DEB-in-Practice page on Population Dynamics</a>, and note that we will only be working with the last section "IBMs".
 
-We will not have in-depth technical lectures on population and ecosystem modelling, however this theme is included and depending on skills and interests you have the opportunity to explore this theme. 
-Please read the <a href = "2https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/popDyn/popDyn.html">DEB-in-Practice page on Population Dynamics</a>.
+<p>
+Set patk to <a href="https://osdn.net/projects/mingw/releases/">MinGW for the GNU Compiler Collection for Windows</a>, and see <a href="https://www.youtube.com/watch?v=40MWdFAGTzg">YouTube for installation instructions</a> (basically how to set the path via editing the system Environment Variables).
 
-
-
-Testing that you will be able to run the population code from your PC as we have it in the course:
- <!--
-	<pre><code class="matlab">	
-   [txNL23W, info] = IBM('Daphnia_pulchella'), [], [], [], [], [], [}, 200, 1)
+<p>
+Next go to your Matlab console and type:
+<pre><code class="matlab">	
+    [txNL23W, info] = IBM('Daphnia_magna', [], [], [], [], [], [], 80, 1);
 	</code></pre>
-  -->
-     
+Check that 7 figures are plotted,  and that two html reports are generated. Then stop and we pick it back up at the course. It is fine if there are warnings in the console.
+
+<p> Last step, type:
+	 <pre><code class="matlab">	
+    [txNL23W, info] = IBM('Daphnia_magna', [], [], [], [], [], [], 80, 1,0);
+	</code></pre>
+6 txt files, netlogo software and some html pages will open. If that happens, stop and we pick this back up at Baton Rouge.
+
+<h3>Advanced data analysis</h3>		
+There are multiple ways to visualize and plot data for which parameters are estimated, as well as some advanced reporting which can be useful.
+    <ol>
+          <li><a href="https://miktex.org/download">Download MikTex</a>.  The production of the report runs BibTex (under Matlab), which can be downloaded freely, to produce an html with references; if not available, the bib-file is shown. (in short, if you don't have this you can still work, but it is free and easy to install and then references in the report look amazing!).
+		  <li>If you like to visualize data in 4 dimensions, with time the 4th dimension, make sure to dowload the <href="https://sourceforge.net/projects/apngasm/files/2.91/apngasm-2.91-bin-win64.zip/download">"animated png assembler" apngasm64.exe</a>. Unzip, put folder somewhere like in C drive. Set path in the "Environment Variables" (PC users).
+          <li>Download  <a href = "https://github.com/add-my-pet/AmPtox">the AmPtox GitHub repository</a> and save it in a directory outside of everything else. <a href="https://amptox.debtheory.org/docs/">AmPtox manual is on AmP website Use> AmPtox</a>
+          <li>In matlab, navigate to OECD202_dichromate, open run_OECD202_dichromate, and run that. If it works, and generates all files. Stop and we pick it up at the course. If not, and you cannot fix the problem, write to Starrlight
+    </ol> 
+
+  <h2>Trouble shooting</h2>
+
+You need to set paths to  MinGW for the GNU Compiler Collection for Windows, netlogo, miktex, java via the   "Edit the system environment variables" in windows. The point of these preparations is to make sure Matlab can run Java, Netlogo etc and that we can have a smooth course. I am at your disposition to help trouble shoot if any of these steps do not work. 
+
+
+
+
+<!-------
+This is how you get entries with tL_m and tW_m or tWw_m data (replace 1 by 0 if you do not have all entries locally), 
+where the assumption is that all entries with male-data also have female-data
+<pre><code class="matlab">	
+[~, nm, s_LL]=select_mydata(select,'L_L',1);
+[~, ~, s_L0Lt]=select_mydata(select,'L0-Lt',1);
+nm_LL = nm(s_LL)
+</code></pre>
+
+select the entries of a specified model say 'std' :
+<pre><code class="matlab">
+ [mod, nm]= read_allStat({'model'}); nm_std=nm(ismember(mod,'std'));
+ length(nm_std)
+</code></pre>
+--->
 
       </div> <!-- end of contentFull -->
 			
-      <!--------------------------------------------------------------->	
+      <!-------------------------------------------------------->	
       <!--   FOOTER                                                  -->
       <!--------------------------------------------------------------->	
 
