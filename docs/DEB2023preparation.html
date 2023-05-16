@@ -100,8 +100,18 @@ There are multiple ways to visualize and plot data for which parameters are esti
     </ol> 
 
   <h2>Trouble shooting</h2>
+  
+   <h3>PC</h3>
 You need to set paths to  MinGW for the GNU Compiler Collection for Windows, netlogo, miktex, java via the   "Edit the system environment variables" in windows. The point of these preparations is to make sure Matlab can run Java, Netlogo etc and that we can have a smooth course. Please contact us (see above)  to help troubleshoot issues if you cannot find answers from the various manuals and webpages. 
 
+  <h3>MAC</h3>
+  
+If you run the zsh put in the file .zprofile (or if you run the bash shell in .bash_profile) the following  lines
+<pre><code>	
+export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+export EBTPATH=/Applications/EBTtool.app/Contents/Resources
+export PATH=${JAVA_HOME}/bin:/Applications/NetLogo\ 6.2.0/app:/Applications/EBTtool.app/Contents/MacOs:$PATH
+</code></pre>
 
 
 
