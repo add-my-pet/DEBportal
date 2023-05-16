@@ -37,8 +37,9 @@
         This page explains preparations to perform before coming to Baton Rouge
         <ul>
           <li>Read about your fellow participants in the DEB2023 course document: AmP project species, Discussion Topics, Participant list. We will skip introduction rounds when in Baton Rouge!
-          <li>Check that the sofware works (see section below), get help to make it work before coming. PC users contact <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a>, mac users contact <a href="mailto:lika@uoc.gr">Dina</a>.
-          <li>Assemple your data, ask how to best formulate the data. Email questions to <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a>. The more you can compile data before coming the better.
+		  <li>Look at TOPICS 1 and 2 under discussiong groups in the course document.
+          <li>Check that the software works (see section below), and if not get help to make it work before coming. PC users contact <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a>, mac users contact <a href="mailto:lika@uoc.gr">Dina</a>.
+          <li>Assemble your data, ask how to best formulate the data. Email questions to <a href="mailto:starrlight@tecnico.ulisboa.pt">Starrlight</a>. The more you can compile data before coming the better.
          </ul> 
 
         <h2>Software testing before coming to Baton Rouge</h2>
@@ -67,10 +68,17 @@ We will not have in-depth technical lectures on population and ecosystem modelli
 Please read the <a href = "2https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/popDyn/popDyn.html">DEB-in-Practice page on Population Dynamics</a>, and note that we will only be working with the last section "IBMs".
 
 <p>
-Set patk to <a href="https://osdn.net/projects/mingw/releases/">MinGW for the GNU Compiler Collection for Windows</a>, and see <a href="https://www.youtube.com/watch?v=40MWdFAGTzg">YouTube for installation instructions</a> (basically how to set the path via editing the system Environment Variables).
+Set path to <a href="https://osdn.net/projects/mingw/releases/">MinGW for the GNU Compiler Collection for Windows</a>, and see <a href="https://www.youtube.com/watch?v=40MWdFAGTzg">YouTube for installation instructions</a> (basically how to set the path via editing the system Environment Variables).
+
 
 <p>
 Next go to your Matlab console and type:
+<pre><code class="matlab">	
+    [txNL23W, info] = EBT('Daphnia_magna', [], [], [], [], [], [], 80);
+	</code></pre>
+Should should get graphs. If you get warnings of the type that <code>'gcc' is not recognized as an internal or external command...</code> and no figures are generated, that means something went wrong with the MinGW set-up. This is best to trouble shoot and fix before coming, to make the most out of the population work. 
+<p>
+Next, lets make sure Netlogo is running:
 <pre><code class="matlab">	
     [txNL23W, info] = IBM('Daphnia_magna', [], [], [], [], [], [], 80, 1);
 	</code></pre>
@@ -92,8 +100,7 @@ There are multiple ways to visualize and plot data for which parameters are esti
     </ol> 
 
   <h2>Trouble shooting</h2>
-
-You need to set paths to  MinGW for the GNU Compiler Collection for Windows, netlogo, miktex, java via the   "Edit the system environment variables" in windows. The point of these preparations is to make sure Matlab can run Java, Netlogo etc and that we can have a smooth course. I am at your disposition to help trouble shoot if any of these steps do not work. 
+You need to set paths to  MinGW for the GNU Compiler Collection for Windows, netlogo, miktex, java via the   "Edit the system environment variables" in windows. The point of these preparations is to make sure Matlab can run Java, Netlogo etc and that we can have a smooth course. Please contact us (see above)  to help troubleshoot issues if you cannot find answers from the various manuals and webpages. 
 
 
 
