@@ -32,7 +32,7 @@
     <div id = "main-wrapper">    
 
       <div id="contentFull">
-        <h1><a href="https://deb2021.sciencesconf.org/">DEB2023 final preparations</a></h1>
+        <h1><a href="https://deb2023.sciencesconf.org/">DEB2023 final preparations</a></h1>
 
         This page explains preparations to perform before coming to Baton Rouge
         <ul>
@@ -44,8 +44,14 @@
 
         <h2>Software testing before coming to Baton Rouge</h2>
 		
+Before working make sure all packages are up to date. They change frequently. 
+If you like, you can clone <a href="https://github.com/add-my-pet/DEBtool_M/">DEBtool_M</a> and <a href="https://github.com/add-my-pet/AmPtool/">AmPtool</a> directly with GitHub for desktop, and synchronize before use to make sure you are up to date with the latest versions. 
+You need to download and overwrite <a href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPdata/AmPdata.zip">AmPdata</a> each time. 
+		
 <h3>Phylogeny and Ecology related packages</h3>		
-Make sure you have latest verrsion of AmPdata and AmPtool, with paths set to both directories. Test that AmPtool works on your PC:	
+Make sure you have latest version of <a href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPdata/AmPdata.zip">AmPdata</a> and <a href="https://github.com/add-my-pet/AmPtool/">AmPtool</a>, with paths set to both directories. 
+
+<p>Test that <a href="https://github.com/add-my-pet/AmPtool/">AmPtool</a> works on your PC:	
 	<pre><code class="matlab">	
     % outputs a table with selected properties of selected species to html format
  	prt_tab({select('Daphniidae'),read_stat(select('Daphniidae'),{'p_M','R_i'})},{'species','[p_M]','R_i'}) 
@@ -69,7 +75,7 @@ Please read the <a href = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/popDy
 
 <p>
 Set path to <a href="https://osdn.net/projects/mingw/releases/">MinGW for the GNU Compiler Collection for Windows</a>, and see <a href="https://youtu.be/sXW2VLrQ3Bs">YouTube for installation instructions</a> (basically how to set the path via editing the system Environment Variables).
-
+Matlab needs to be restarted after setting a windows path to MinGW.
 
 <p>
 Next go to your Matlab console and type:
@@ -77,6 +83,7 @@ Next go to your Matlab console and type:
 [txNL23W, info] = EBT('Daphnia_magna', [], [], [], [], [], 80);
 	</code></pre>
 You should obtain a set of graphs. If you get warnings of the type that <code>'gcc' is not recognized as an internal or external command...</code> and no figures are generated, that means something went wrong with the MinGW set-up. This is best to trouble shoot and fix before coming, to make the most out of the population work. 
+(Download NetLogo v 6.2.0 and set system path to the folder with NetLogo.exe as you did with the MinGW. YOu may also need to set the system path to Java if you encounter issues with Java).
 <p>
 Next, lets make sure Netlogo is running:
 <pre><code class="matlab">	
