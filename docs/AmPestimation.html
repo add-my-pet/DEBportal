@@ -223,6 +223,10 @@
         The AmP procedure distinguishes between real and pseudo data.
         The weight coefficients are automatically set in the mydata-file, weighing each data-set equally, but are 10 times as small for spseudo-data.
 	So a large uni-variate data set has (by default) the same weight as a zero-variate data-point.
+	You can exclude a whole data set, e.g. <code>LW</code>, from the estimation by multipling the weights with zero, <code>weights.LW = 0 * weights.LW</code>.
+	You can exclude the last, say 10, data points in this data set, by
+	<code>weights.LW(end-10:end) = 0; weights.tL = weights.tL * length(weights.tL)/nnz(weights.tL);</code>.
+	The second command restores the default that data set <code>LW</code> is given the same weight as other data sets.
 	If the resulting fit is very good, changes in weight coefficients hardly have an effect;
 	if the fit is not very good, however, such changes can have big effects. 
 
