@@ -231,7 +231,7 @@
         The overwriting of the weight coefficient is done by multiplying the default value by a dimensionless factor.
 	You can exclude a whole data set, e.g. <code>LW</code>, from the estimation by multipling the weights with zero, <code>weights.LW = 0 * weights.LW</code>.
 	You can exclude the last, say 10, data points in this data set, by
-	<code>weights.LW(end-10:end) = 0; weights.tL = weights.tL * length(weights.tL)/nnz(weights.tL);</code>.
+	<code>weights.LW(end-9:end) = 0; weights.tL = weights.tL * length(weights.tL)/nnz(weights.tL);</code>.
 	The second command restores the default that data set <code>LW</code> is given the same weight as other data sets.
 
         <h2 id="Loss">Loss function</h2>
