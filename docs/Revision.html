@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Revision</title>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <script src="sys/jscripts.js"></script>
+</head>
+<body>
+
+  <div w3-include-html="sys/wallpaper_DEBportal.html"></div>
+  <div id="tb"></div><script>include_toolbar('DEBportal')</script>
+
+<div id = "main">
+  <div id = "main-wrapper">    
+    <div id="contentFull">
+
+      <h1>Revision summary</h1>
+
+      Individual entries are updated for several reasons.
+      This summary is about revisions concerning hunderds of entries simultanously.
+
+      <table id="t01">
+        <tr class="head"><th>theme</th> <th>period</th> <th>motivation</th></tr>
+	
+	<tr><td>puberty</td>
+	  <td>2023/06-07</td>
+	  <td>Caged birds of several unrelated species show to be able to breed soon after fledching.
+	    However, breeders know that they wear out their birds this way.
+	    In the field, birds typically breed for the first time one or several years later.
+	    This points to ecological (seasons, establishment of territory), rather than physiological causes.
+	    This can best be captured with a time-parameter for time since birth at first breeding, which is done in this revision for all 1003 bird species in AmP.
+	    In absence of data on puberty, this event is assumed to coincide with fledching.
+	    Reserve allocated to reproduction then dissipates till some moment before first breeding to accumulate the required reserve.
+	    Upregulation of assimilation prior to nestling might play a role, but detailed data is generally lacking.
+	  </td>
+	</tr>
+
+        <tr><td>males</td>
+	  <td>2023/02-03</td>
+	  <td>In cases of gender size dimorphy, where the amounts of reserve and structure are equal at birth,
+	    the scaled reserve density of the larger gender is less, compared to the smaller gender.
+	    This requires a dynamic evaluation of reserve density, which is done in this revision.
+	    However, the reserve density will settle soon to a constant value at constant food density,
+	    since the change in reserve density is inversely proportional to length, which is small for neonates.
+	  </td>
+	</tr>
+
+        <tr><td>energy conductance</td>
+	  <td>2022/08-09</td>
+	  <td>Observed incubation times can be longer than predicted due to a delay in the onset of development.
+	    Birds suffer from the extra problem that the egg temperature can be low, especially initially; they become endothermic only after birth. 
+	    Predicted incubation/gestation times were sometimes much smaller than observed, due to a too high energy conductance.
+	    This revision reduced the energy conductance for entries with a high value, to increase realism.
+	    Effects on post-natal growth are largely compensated by an increased specific somatic maintenance.
+	  </td>
+	</tr>
+
+		
+
+      </table>
+      
+      <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+      
+      <script>modal()</script>
+
+    </div><!-- end of contentFull -->
+
+    <div w3-include-html="sys/footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+      
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+</body>
+</html>
