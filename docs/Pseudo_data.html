@@ -18,6 +18,8 @@
     
       Apart from the real data, the AmP procedure makes use of pseudo-data.
       Pseudo-data is a set of fixed (functions of) parameter values for a generalized animal species that is treated as dependent data but with small weight coefficients.
+      The default weight coefficients for all real data sets (smal or large) is 1, but that for pseudo-data is 0.1,
+      except for <code>kap_G,</code>, which is 1, see <a href="../html/addpseudodata"></a>.
 
       <p>
       The following table presents pseudo-data values used by default in the AmP procedure.
@@ -28,11 +30,11 @@
       <table id="t01">
         <tr class="head"><th>Code</th>  <th>Value</th> <th>Unit</th>	    <th>Description</th></tr>
         <tr><td>v</td>	   <td>0.02</td>  <td>cm/d</td>	    <td>energy conductance</td></tr>
-        <tr><td>kap</td>   <td>0.8</td>	  <td>-</td>        <td>allocation fraction to soma</td></tr>
-        <tr><td>kap_R</td> <td>0.95</td>  <td>-</td>	    <td>reproduction efficiency</td></tr>
         <tr><td>p_M</td>   <td>18</td>    <td>J/d.cm^3</td> <td>volume-specific somatic maintenance costs</td></tr>
-        <tr><td>k_J</td>   <td>0.002</td> <td>1/d</td>	    <td>maturity maintenance rate coefficient</td></tr>
+        <tr><td>k</td>     <td>0.3</td>   <td>-</td>	    <td>maintenance ratio</td></tr>
+        <tr><td>kap</td>   <td>0.8</td>	  <td>-</td>        <td>allocation fraction to soma</td></tr>
         <tr><td>kap_G</td> <td>0.8</td>	  <td>-</td>        <td>growth efficiency</td></tr>
+        <tr><td>kap_R</td> <td>0.95</td>  <td>-</td>	    <td>reproduction efficiency</td></tr>
       </table>
     </div> <!-- end of content -->
  
