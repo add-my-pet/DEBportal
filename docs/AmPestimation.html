@@ -269,9 +269,11 @@
         The simplex method tries to replace the worst parameter combination by one that is better than the best one, i.e. gives a smaller value of the loss-function.
         During the iteration, the parameters are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain
 	(<a href="http://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/">Marques et al 2018</a>).
-	If all went well, the method ends up with finding the parameter combination that is the global minimum of the loss function, which does not depend on the initial combination.
-	It might be a local, however, rather than a global minimum.
-	
+	If all went well, the method ends up with finding the parameter combination that is the global minimum of the loss function, which does not depend on the initial values.
+	However, it might be a local, rather than a global minimum.
+	It is always a good idea to start the estimation from the endpoint, to check that it does not change.
+	The simplex points tend to be relatively far apart initially, but then contract.
+	For this reason the maximum step number can best be fixed to 500, to restore the simplex size, and then continue with next rounds of 500 steps.
 
         <p>
         Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
@@ -317,7 +319,7 @@
         <p>
         Apart from independent data and parameters, the predict-file can use compound parameters, i.e. simple functions of parameters.
 	They are computed in the function <a href="https://debtool.debtheory.org/lib/pet/html/parscomp_st.html" target="_top">parscomp_st</a>,
-w	which all predict files call at the top of the file.  
+	which all predict files call at the top of the file.  
 	  
         <p>
         Estimation options are set via DEBtool_M function <a href="https://debtool.debtheory.org/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
