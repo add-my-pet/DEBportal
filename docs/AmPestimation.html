@@ -82,11 +82,8 @@
           <li>The toadlets Crinia lower their allocation fraction to soma between hatch and birth
 	    (<a href="https://www.zotero.org/groups/500643/deb_library/items/4ZMA4WX3/">Mueller et al 2012</a>).
 	  <li>Mammals take milk during their baby-stage, weaning is included in all stx models for mammals as a maturity threshold, but the change in diet is not taken into account.
-	  <li>Many birds first reproduce in their second year under (seasonal) field conditions.
-	    They apparently have a relatively long juvenile period during most of which they are fully grown.
-	    This trait leads to high values for maturity maintenance at puberty and low values for maturity maintenance.
-	    Husbandry data indicates that birds potentially reproduce much earlier, which questions the realism of these two parameters.
         </ul>
+	See further under <a href="Revision.html">Summary of revisions</a>.
 
         <h2 id="Data">Data and data types</h2>
         Data can be classified as
@@ -105,7 +102,7 @@
 	  <li><a href="Tri-variate_data.html">tri-variate data</a>, i.e. dependent data in the form of a 3-dim array of numbers
 	  <li><a href="Multi-variate_data.html">multi-variate data</a>, i.e. dependent data in the form of an (n,m)-matrix of numbers
 	  <li><a href="Pseudo_data.html">pseudo-data</a>, theoretical dependent scalar-valued data for a generalized animal
-	    that is added (with small weight coefficients) to avoid unrealistic parameter estimates 
+	  <li><a href="Chemical_data.html">chemical data</a> is indepenent data that treated as parameters; It is set by default, but can be overwritten and estimated 
 	  <li><a href="Auxiliary_data.html">auxiliary data</a>, independent data of any type (which, therefore, do not need to be predicted, for instance temperature)
         </ul>
 	An example of a zero-variate data set is the reproduction rate of an individual of certain size, at a certain temperature and at a certain food availability.
@@ -271,6 +268,11 @@
         The simplex method tries to replace the worst parameter combination by one that is better than the best one, i.e. gives a smaller value of the loss-function.
         During the iteration, the parameters are (optionally, but by default) filtered to avoid that combinations of values are outside their logical domain
 	(<a href="http://www.zotero.org/groups/500643/deb_library/items/PS3ESZDP/">Marques et al 2018</a>).
+	If all went well, the method ends up with finding the parameter combination that is the global minimum of the loss function, which does not depend on the initial values.
+	However, it might be a local, rather than a global minimum.
+	It is always a good idea to start the estimation from the endpoint, to check that it does not change.
+	The simplex points tend to be relatively far apart initially, but then contract.
+	For this reason the maximum step number can best be reduced to 500 and then continue with next rounds of 500 steps, to restore the simplex size.
 
         <p>
         Many predictions, as specified in the predict file, are the results of numerical procedures, involving small numerical errors.
@@ -313,21 +315,11 @@
         If your species is already in the collection, download the 4 files, add your name in the mydata-files as modification author,
         and a discussion point that explains what changed and why.
 
-	<p>
-	The mydata-file has the line <code>[data, units, label, weights] = addpseudodata(data, units, label, weights);</code>.
-	This line adds <a href="Pseudo_data.html">pseudo-data</a> to the data and (small) weight coefficients to the weights.
-	The weights can be overwritten and set to zero, for instance, if you want to avoid its use in the estimation.
-
-	<p>
-	The pars_init file has the line <code>[par, units, label, free] = addchem(par, units, label, free, metaData.phylum, metaData.class);</code>.
-	This line adds chemical parameters to the specified parameters and keeps them fixed by default.
-	The specific densities of dry mass (i.e. the dry/wet weight ratios if the specific density for wet weight equals 1 g/cm<sup>3</sup>) is set taxon-specifically in
-	<a href="https://debtool.debtheory.org/lib/pet/html/get_d_V.html"><code>get_d_V</code></a>.
-	The composition of the nitrogen-waste is set taxon-specifically in <a href="https://debtool.debtheory.org/lib/pet/html/get_N_waste.html"><code>get_N_waste</code></a>.
-	The other chemical parameters are set in <a href="https://debtool.debtheory.org/lib/pet/html/addchem.html"><code>addchem</code></a>,
-	but all these settings can be overwritten in the pars_init file.
-	The latter class of parameters rarely varies much across species.
-	      
+        <p>
+        Apart from independent data and parameters, the predict-file can use compound parameters, i.e. simple functions of parameters.
+	They are computed in the function <a href="https://debtool.debtheory.org/lib/pet/html/parscomp_st.html" target="_top">parscomp_st</a>,
+	which all predict files call at the top of the file.  
+	  
         <p>
         Estimation options are set via DEBtool_M function <a href="https://debtool.debtheory.org/lib/pet/html/estim_options.html">estim_options</a> in the run-file.
         Some options relate to details of the minimization algorithm, others to where to find initial values or what to output as result.
@@ -337,7 +329,7 @@
 	    <ul>
 	      <li> <code>estim_options('default');</code>, meaning select all defaults 
               <li> <code>estim_options('max_step_number', 5e2);</code> meaning that the algorithm stops after 500 steps
-	       (which will probably not enough to reach convergence, but see below)
+	       (which will probably not enough to reach convergence, but see above)
               <li> <code>estim_options('pars_init_method', 2);</code>, meaning select initial parameter values from the pars_init-file
 	      <li> <code>estim_options('results_output', 3);</code>, meaning write results_my_pet.mat, save figures, write html-file of results
 	      <li> <code>estim_options('method', 'nm');</code>, meaning use the Nead Melder method to minimize the lossfunction

@@ -4,6 +4,9 @@
   <TITLE>Multi-variate_data</TITLE>
   <link rel="stylesheet" type="text/css" href="sys/style.css"> 
   <script src="sys/jscripts.js"></script>
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </HEAD>
 <BODY>
 
@@ -21,7 +24,7 @@
       The concept that predictions for the various data are coupled by sharing parameters is key to DEB theory as well as to multi-variate data.
 
       <p>
-      <a href="Uni_variate_data.html">Uni-</a>, <a href="Bi_variate_data.html">bi-</a> and <a href="Tri-variate_data.html">tri-variate</a>
+      <a href="Uni-variate_data.html">Uni-</a>, <a href="Bi-variate_data.html">bi-</a> and <a href="Tri-variate_data.html">tri-variate</a>
       variables have one, two or three <b>independent</b> variables.
       More independent variables can be included via <a href="Auxiliary_data.html">auxiliary data</a>. 
 
@@ -35,12 +38,26 @@
       An example of a grouped plot is given in the <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Canis_familiaris/Canis_familiaris_res.html">dog-entry</a>.
       Bi- and tri-variate data sets do not need a grouped-plot definition;
       it is not possible to combine such data sets with other data sets in a grouped plot.
-
-      <p>
-      Yet it can be handy to specify a multi-variate data set as a matrix where the first column is treated as the independent variable and the others are dependent ones.
-      The specification in AmP follows the rules of those for bi-variate data, where the first element of <code>auxData.treat</code> is 0 or 1.
-      See further under <a href="Bi-variate_data.html">bi-variate data</a>.
-
+	  
+	  <p>
+	  An example of multi-variate can be found with the Doliolid:
+      <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Dolioletta_gegenbauri/Dolioletta_gegenbauri_res.html">Dolioletta gegenbauri</a>.
+	  The excerpt of the code below show how the multi-variate is set within the mydata file:
+	  <pre><code class="matlab">
+	  % food density - ingestion rate
+	data.XJX = [ ... % phytoplankton conc. (mug C/l), ingestion rate (mug C/d)
+	20	3.059  7.620 10.471
+	60	6.328 15.259 30.081
+	160 7.753 25.995 69.321
+	390	4.171 12.533 38.757];
+	units.XJX = {'mug C/l', 'mug C/d'};     label.XJX = {'phytoplankton conc.', 'ingestion rate'};  
+	treat.XJX = {2, [5; 15; 35]}; units.treat.XJX = 'mug C'; label.treat.XJX = 'zooid C weight';
+	temp.XJX = C2K(20); units.temp.XJX = 'K'; label.temp.XJX = 'temperature';
+	bibkey.XJX = 'GibsPaff2000';
+	subtitle.XJX = 'ingestion rate';
+	comment.XJX = 'Data for gonozooid';
+	</code></pre>
+	
       <p>
       If a data-matrix has 3 columns, i.e. 1 independent variable and 2 dependent ones, and if the units as well as the label for that data set is a cell-string of length 3,
       a plot is created with 2 different y-axes.
@@ -49,6 +66,11 @@
       An example of a plot with two different y-axes is given in the entries
       <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Vipera_aspis/Vipera_aspis_res.html">Vipera_aspis</a> and,
       <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Sialia_mexicana/Sialia_mexicana_res.html">Sialia_mexicana</a> (first element of treat is 1).
+	  
+	   <p>
+      Yet it can be handy to specify a multi-variate data set as a matrix where the first column is treated as the independent variable and the others are dependent ones.
+      The specification in AmP follows the rules of those for bi-variate data, where the first element of <code>auxData.treat</code> is 0 or 1.
+      See further under <a href="Bi-variate_data.html">bi-variate data</a>.
 
     </div> <!-- end of content -->
  

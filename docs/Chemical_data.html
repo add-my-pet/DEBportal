@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>Chemical_data</TITLE>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <script src="sys/jscripts.js"></script>
+</HEAD>
+<BODY>
+
+  <div w3-include-html="sys/wallpaper_DEBportal.html"></div>
+  <div id="tb"></div><script>include_toolbar('DEBportal')</script>
+
+<div id = "main">
+  <div id = "main-wrapper">    
+    <div id="contentFull">
+
+      <h1>Chemical data</h1>
+    
+      Chemical data is a set of values for a generalized animal species that is treated as parameters.
+      They are kept fixed (free = 0) by default, but can be released (free = 1) if adequat data exists to estimate them.
+      See <a href="https://debtool.debtheory.org/lib/pet/html/addchem.html">addchem</a>, which is called in the pars_init file.
+
+      <p>
+      Two groups of chemical compounds are delineated: organic (structure, reserve, food, feces) and mineral (carbon dioxide, water, dioxygen, nitrogen-waste).
+      Chemical data can be classified for these groups of chemical compounds as follows
+
+      <h2>Specific densities</h2>
+      
+      Specific density is mass per volume; in the standard DEB units: g/cm<sup>3</sup>.
+      Wet biomass has a specific density of around 1 g/cm<sup>3</sup>, since water dominates.
+      Dry biomass has a lower specific density, but the water content varies considerably among the taxa; see comments on section 3.2.1 of DEB3 .
+      Function <a href="https://debtool.debtheory.org/lib/pet/html/get_D_V.html">get_D_V</a> associates a typical value to the names of the phylum and class.
+      The specific densities of structure, reserve, food and feces are all set equal; those of the minerals are not specified nor used.
+      
+      <h2>Chemical potentials</h2>
+
+      The chemical potential of a generalized compound is the free energy per unit of mass; in the standard DEB units: J/C-mol.
+      The bulk of biomass consists of proteins, carbohydrates and lipids and their masses are expressed in C-moles.
+      AmP works in the combustion frame of reference (as opposed to the thermodynamic one), where the chemical potentials of mineral compounds is set to zero.
+      Table 4.2 of DEB3 gives typical values for the chemical potentials of the three dominant chemical groups.
+      Reserve is assumed  to be more riche in carbohydrates and/or lipids, relative to structure.
+      Food for animals consists of other organisms, so a mix between reserve and structure, and feces is assumed to have a somewhat lower chemical potential.
+      Needless to say that the actual chemical potentials depend on type of food (as do the digestion and defacation efficiencies, which are parameters)
+      
+      <h2>Chemical indices</h2>
+
+      A chemical index of a chemical element in a chemical compound is the frequency of atoms of that element, relative to carbon.
+      We only follow the chemical elements C, H, O and N for convenience, but inclusion of other elements is straight forward.
+      Since we work in C-moles, the chemical index of carbon is always 1 per definition.
+      The chemical indices of the 4 dry organic compounds are all taken equal by default; the molecular weights are implied by these settings.
+      They are computed in the function <a href="https://debtool.debtheory.org/lib/pet/html/parscomp_st.html" target="_top">parscomp_st</a>,
+      The composition of nitrogen waste differs between taxa;
+      ammonia (NH<sub>3</sub>) is typically used by invertebrates, but is rather toxic when it accumulates.
+      Function <a href="https://debtool.debtheory.org/lib/pet/html/get_N_waste.html">get_N_waste</a> associates a typical composition to the names of the phylum and class.
+        
+    </div> <!-- end of content -->
+ 
+    <div w3-include-html="sys/footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+</BODY>
+</HTML>
