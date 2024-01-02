@@ -330,7 +330,7 @@
       <a href="https://youtu.be/WKtPWGmJzJI" target="_blank"><img src="img/YouTube.png"  height = "50px" align="right" title="13:54"></a>
     </h4>
     This indicator for the <a href="https://add-my-pet.github.io/DEBportal/docs/Completeness.html"target="_blank">level of completeness of the data</a>, 
-    a number between 0 and 10, has to be estimated based on the critaria that are listed in the window.
+    a number between 0 and 10, has to be estimated based on the criteria that are listed in the window.
     Some data types of lower levels are typically not available, others might be guessed, so we subtract "punish" points and interpolate. 
     Many entries have COMPLETE = 2.5.
 
@@ -339,6 +339,22 @@
     The choice of the colors is from high to low in the lava-color scheme: from white to black, via red and blue.
     So choose first females, then males (since females will then appear in red, males in blue), or for different temperatures from high to low temperatures.
     This is no limit to the number of sets you can compose, but avoid using any data set twice.
+
+    The figure of a group plot can have a title and/or a subtitle, which can be specified as cell string: metaData.grp.title or metaData.grp.subtitle.
+    The length of this string should equal to the length of metaData.grp.sets.
+    Titles are part of the figure, i.e. a png file, but subtitles only appear in presentations on the website in directory entries_web.
+
+    Group plots have a legend.
+    The label of a data set in the legend can be specified as third cell in the label for that data set.
+    If not specified, the name of the data set will serve as label.
+    The legend can have a title.
+    The title of the legend is specified in txtData.label.sets as cell string of length equal to the length of metaData.grp.sets.
+    Some of the cells can be empty.
+
+    If the independent variables of the data sets in a group plot have the same values, consider a specification of the data sets as
+    <a href="AmPestimatio.html#data">bivariate or multivariate data</a>.
+    This eliminates the need to compose a group plot.
+    This plotting method can handle missing values.
 
     <h4>discussion</h4>
     Discussion points relate to general remarks you might have about the entry; 
