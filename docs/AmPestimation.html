@@ -422,15 +422,15 @@
         Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE, SMSE or SMAE (unless the fit is perfect).
 
         <p>
-	Although pseudo-data affect parameter estimates, so predictions, their contributions to errors is not include kin the reported errors.
+	Although pseudo-data affects parameter estimates, so predictions, the contributions to errors is not include in the reported errors.
         Error measures can be modified by choices of weight coefficients for each (data, prediction)-combination.
-	The default choice in AmP is that each data set contributes equally to total error, independent of the number of data-points in the data set.
+	The default choice in AmP is that each data set contributes equally to the total error, independent of the number of data-points in the data set.
 	Each data point in a data-set also contributes equally within that data set.
 	If a particular data point seems to be an outlier, it can be given a lower weight, such as zero,
 	and that data point no longer affects parameter estimation or the overall error.
 	In the same way, a whole data set can be excluded.
         If all weight coefficients of a data set are zero, it is not included in the computation of an error.
-	The best situation is, of course, that of a small MRE, SMSE and or SMAE.
+	The best situation is, of course, that of a small MRE, SMSE and/or SMAE.
         It is likely that the marks for completeness and goodness of fit will be negatively correlated.
 
         <p>
