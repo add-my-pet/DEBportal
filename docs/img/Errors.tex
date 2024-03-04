@@ -8,30 +8,36 @@
 name & formula\\ 
 \hline
 relative & 
-$\mbox{RE}_i = \sum_{j=1}^{n_i} \frac{w_{ij}}{w_{i+}} \frac{|d_{ij} - p_{ij}|}{|d_i|}$\\
-	
+$\mbox{RE}_i = \sum_{j=1}^{n_i} \frac{w_{ij}}{w_{i+}} \frac{|d_{ij} - p_{ij}|}{|d_i|}$
+\\[1mm]	
 mean relative & 
-$\mbox{MRE} = \frac{1}{n^\prime} \sum_{i=1}^{n^\prime} \mbox{RE}_i$\\
-	
+$\mbox{MRE} =  \sum_{i=1}^n \frac{w_{i+}}{w_{++}} \mbox{RE}_i$
+\\[1mm]	
 symm squared &
-$\mbox{SSE}_i = 2 \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{i+}} \frac{(d_{ij} - p_{ij})^2} {d_i^2 + p_i^2}$\\
-	
+$\mbox{SSE}_i = 2 \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{i+}} \frac{(d_{ij} - p_{ij})^2} {d_i^2 + p_i^2}$
+\\[1mm]	
 symm mean squared & 
-$\mbox{SMSE} = \frac{1}{n^\prime} \sum_{i=1}^{n^\prime} \mbox{SSE}_i$\\
-
+$\mbox{SMSE} = \sum_{i=1}^n \frac{w_{i+}}{w_{++}} \mbox{SSE}_i$
+\\[1mm]
 symm absolute & 
-$\mbox{SAE}_i = 2 \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{i+}} \frac{|d_{ij} - p_{ij}|} {|d_{ij}| + |p_{ij}|}$\\
-
+$\mbox{SAE}_i = 2 \sum_{j=1}^{n_i} \frac{w_{ij}} {w_{i+}} \frac{|d_{ij} - p_{ij}|} {|d_{ij}| + |p_{ij}|}$
+\\[1mm]
 symm mean absolute & 
-$\mbox{SMAE} = \frac{1}{n^\prime} \sum_{i=1}^{n^\prime} \mbox{SAE}_i$\\
+$\mbox{SMAE} = \sum_{i=1}^n \frac{w_{i+}}{w_{++}} \mbox{SAE}_i$\\
 \hline
-\end{tabular}\\
-
+\end{tabular}
+\\[-3mm]
 \[
-  w_{i+} = \sum_{j=1}^{n_i} w_{ij} > 0;  \quad
-  d_i = \frac{1}{n_i} \sum_{j=1}^{n_i} d_{ij}; \quad
-  p_i = \frac{1}{n_i} \sum_{j=1}^{n_i} p_{ij}
+  \mbox{mean data } d_i = \frac{1}{n_i} \sum_{j=1}^{n_i} d_{ij}; \quad
+  \mbox{mean prediction } p_i = \frac{1}{n_i} \sum_{j=1}^{n_i} p_{ij}
 \]
+\vspace*{-7mm}
+\[
+  w_{i+} = \sum_{j=1}^{n_i} w_{ij};  \quad
+	w_{++} = \sum_{i=1}^n w_{i+} \mbox{ with } w_{ij} \ge 0 \quad \mbox{for all} \quad i,j
+\]
+\\[-2mm]
+If $n_i=1$ and $w_{i+}=0$, then $w_{ij}/w_{i+}=1$; Default: $w_{ij} = 1$
 	
 \end{center}
 \end{document}
