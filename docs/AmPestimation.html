@@ -410,19 +410,27 @@
 
         <h3 id="Goodness">Goodness of fit</h3>
         <img class="myImg" src="img/Errors.jpg" alt="errors used in AmP" align="left">
-        The match between data and predictions is quantified by the goodness of fit using the mean relative error (MRE) and the symmetric mean squared error (SMSE).
-        MRE can have values from 0 to infinity, while SMSE has values from 0 to 1.
-        In both cases, 0 means predictions match data exactly.
-        MRE assesses the differences between data and predictions additively, judging equally an overestimation and underestimation of the same relative size
-        (e.g, +20% or -20% will give the same contribution), while SMSE assesses the difference multiplicatively,
-        judging overestimation and underestimation by the same factor equally (e.g. x2 or x/2 will give the same contribution).
-        Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE or SMSE (unless the fit is perfect).
+        The match between data and predictions is quantified by some error measure, i.e. a quantification of the goodness of fit.
+	A popular choice is the mean relative error (MRE), which can assume values from 0 to infinity.
+	The philosophy behind this measure is that data are "correct", while predictions can over- or under-estimate the data.
+	Some other choices are neutral in what is correct or not and are symmetric in the role of data and predictions:
+	one can interchange them, without affecting the error, and are called symmetric for this reason.
+	Examples are the symmetric mean squared error (SMSE) and the symmetric mean absolute error (SMAE), which can assume values from 0 to 1.
+        In all cases, 0 means predictions match data exactly.
+	Distance measures between d and p must (1) be non-negative, (2) zero if d = p and (3) the distance between d and p equals the distance between p and d.
+	For this reason MRE is not a distance measure (because they fail on criterion 3) and SMSE and SMAE are.
+        Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE, SMSE or SMAE (unless the fit is perfect).
 
         <p>
-        Relative errors in a univariate data set are summarized to that of a single data-point by taking the MRE for all data-points.
-        Only real data, not pseudo-data, are included in the assessment.
-        If all weight coefficients of a data set are zero, it is not included in the computation of the MRE.
-	The best situation is, of course, that of a small MRE.
+	Although pseudo-data affect parameter estimates, so predictions, their contributions to errors is not include kin the reported errors.
+        Error measures can be modified by choices of weight coefficients for each (data, prediction)-combination.
+	The default choice in AmP is that each data set contributes equally to total error, independent of the number of data-points in the data set.
+	Each data point in a data-set also contributes equally within that data set.
+	If a particular data point seems to be an outlier, it can be given a lower weight, such as zero,
+	and that data point no longer affects parameter estimation or the overall error.
+	In the same way, a whole data set can be excluded.
+        If all weight coefficients of a data set are zero, it is not included in the computation of an error.
+	The best situation is, of course, that of a small MRE, SMSE and or SMAE.
         It is likely that the marks for completeness and goodness of fit will be negatively correlated.
 
         <p>
