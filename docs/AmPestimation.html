@@ -410,15 +410,14 @@
 
         <h3 id="Goodness">Goodness of fit</h3>
         <img class="myImg" src="img/Errors.jpg" alt="errors used in AmP" align="left">
-        The match between data and predictions is quantified by some error measure, i.e. a quantification of the goodness of fit.
+        The match between data and predictions is quantified by some error measure, i.e. a measure for the goodness of fit.
 	A popular choice is the mean relative error (MRE), which can assume values from 0 to infinity.
-	The philosophy behind this measure is that data are "correct", while predictions can over- or under-estimate the data.
+	The philosophy behind this measure is that data is "correct", while predictions can over- or under-estimate the data.
 	Some other choices are neutral in what is correct or not and are symmetric in the role of data and predictions:
 	one can interchange them, without affecting the error, and are called symmetric for this reason.
 	Examples are the symmetric mean squared error (SMSE) and the symmetric mean absolute error (SMAE), which can assume values from 0 to 1.
-        In all cases, 0 means predictions match data exactly.
 	Distance measures between d and p must (1) be non-negative, (2) zero if d = p and (3) the distance between d and p equals the distance between p and d.
-	For this reason MRE is not a distance measure (because they fail on criterion 3) and SMSE and SMAE are.
+	For this reason MRE is not a distance measure (because it fails on criterion 3) and SMSE and SMAE are.
         Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE, SMSE or SMAE (unless the fit is perfect).
 
         <p>
@@ -431,6 +430,7 @@
 	and that data point no longer affects parameter estimation or the overall error.
 	In the same way, a whole data set can be excluded.
         If all weight coefficients of a data set are zero, it is not included in the computation of an error.
+	Weight coefficients hardly affect parameter estimates as long as the fit is perfect, but do affect the result more if the fit is less than perfect.
 	The best situation is, of course, that of a small MRE, SMSE and/or SMAE.
         It is likely that the marks for completeness and goodness of fit will be negatively correlated.
 
