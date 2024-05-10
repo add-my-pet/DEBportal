@@ -501,6 +501,8 @@
         If the phyla and classes of all species in the group are the same, the default values for these two parameters are again scalars, like in the single-species case.
         Notice that the default-settings for the chemical parameters can be overwritten in pars_init_group, also in the multi-species situation (using scalars or vectors).
         If the species do differ in water content, it is best to choose the specific cost for structure, [E_G], vector-valued and free.
+	The DEBtool function <code>res2pars_init_group</code> can be used to write a <code>pars_init_group.m</code> file from a set of <code>results_my_pet.mat</code> files.
+	It has no explicit input, but requires a global variable <code>pets</code> with the names of the species.
 
         <p>
         The method also allows that the model types for the different species are different.
