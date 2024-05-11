@@ -501,10 +501,11 @@
         If the phyla and classes of all species in the group are the same, the default values for these two parameters are again scalars, like in the single-species case.
         Notice that the default-settings for the chemical parameters can be overwritten in pars_init_group, also in the multi-species situation (using scalars or vectors).
         If the species do differ in water content, it is best to choose the specific cost for structure, [E_G], vector-valued and free.
-	If <code>group</code> is an empty sister directory of the species directories <code>my_pet</code> and the global <code>pets</code> is specified,
-	the DEBtool function <code>res2pars_init_group</code> copies the required <code>mydata_my_pet</code> and <code>predict_my_pet</code> files,
-	writes a <code>pars_init_group.m</code> file using the <code>results_my_pet.mat</code> files and a <code>run_group</code> file and opens them in the Matlab editor,
-	ready for use.
+	If <code>group</code> is an empty sister directory of the single-species directories <code>my_pet</code> and the global <code>pets</code> is specified,
+	the DEBtool function <code>res2pars_init_group</code> (no inputs) copies the required <code>mydata_my_pet</code> and <code>predict_my_pet</code> files,
+	writes a <code>pars_init_group.m</code> and a <code>run_group</code> file
+	and opens them in the Matlab editor, ready for use.
+	The <code>results_my_pet.mat</code> files in the sister directories are used to specify the initial parameter values.
 	
         <p>
         The method also allows that the model types for the different species are different.
