@@ -415,7 +415,7 @@
 	The philosophy behind this measure is that data is "correct", while predictions can over- or under-estimate the data.
 	Some other choices are neutral in what is correct or not and are symmetric in the role of data and predictions:
 	one can interchange them, without affecting the error, and are called symmetric for this reason.
-	Examples are the symmetric mean squared error (SMSE) and the symmetric mean absolute error (SMAE), which can assume values from 0 to 1.
+	Examples are the symmetric mean squared error (SMSE) and the symmetric mean absolute error (SMAE).
 	Distance measures between d and p must be (1) non-negative, (2) zero if d = p and (3) the distance between d and p equals the distance between p and d.
 	For this reason MRE is not a distance measure (because it fails on criterion 3) and SMSE and SMAE are.
         Notice that the result of the minimization of loss functions does not, generally, correspond with the minimum of MRE, SMSE or SMAE (unless the fit is perfect).
