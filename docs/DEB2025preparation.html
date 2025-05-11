@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE>DEB2023prep</TITLE>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <script src="sys/jscripts.js"></script>
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+  <style>
+		img {
+			display: block;
+			margin: 0 auto;
+			clear: both;
+		}
+	</style>
+</HEAD>
+  
+<BODY>
+
+  <div w3-include-html="sys/wallpaper_DEBportal.html"></div>
+  <div id="tb"></div><script>include_toolbar('DEBportal')</script>
+
+  <!--------------------------------------------------------------->
+  <!--   PART main                                               -->
+  <!--   Where all of the text is placed                         -->
+  <!--   use "contentFull" for 1 column                          -->
+  <!--   use "content" if you want two columns"                  -->
+  <!--------------------------------------------------------------->
+
+  <div id = "main">
+    <div id = "main-wrapper">    
+
+      <div id="contentFull">
+        <h1><a href="https://deb2025.sciencesconf.org/">DEB2025 final preparations</a></h1>
+
+        This page explains preparations to perform before coming to Heraklion
+        <ul>
+          <li>Read about your fellow participants in the DEB2023 course document: AmP project species, Discussion Topics, Participant list. We will skip introduction rounds when in Heraklion!
+		  <li>Look at TOPICS 1 and 2 under discussiong groups in the course document.
+          <li>Check that the software works (see section below), and if not get help to make it work before coming. Email questions to <a href="mailto:deb2025.school@uoc.gr">deb2025.school</a>.
+          <li>Assemble your data, ask how to best formulate the data. Email questions to <a href="mailto:deb2025.school@uoc.gr">deb2025.school</a>. The more you can compile data before coming the better.
+         </ul> 
+
+        <h2>Software testing before coming to Heraklion</h2>
+		
+Before working make sure all packages are up to date. They change frequently. 
+If you like, you can clone <a href="https://github.com/add-my-pet/DEBtool_M/">DEBtool_M</a> and <a href="https://github.com/add-my-pet/AmPtool/">AmPtool</a> directly with GitHub for desktop, and synchronize before use to make sure you are up to date with the latest versions. 
+You need to download and overwrite <a href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPdata/AmPdata.zip">AmPdata</a> each time. 
+		
+<h3>Phylogeny and Ecology related packages</h3>		
+Make sure you have latest version of <a href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/AmPdata/AmPdata.zip">AmPdata</a> and <a href="https://github.com/add-my-pet/AmPtool/">AmPtool</a>, with paths set to both directories. 
+
+<p>Test that <a href="https://github.com/add-my-pet/AmPtool/">AmPtool</a> works on your PC:	
+	<pre><code class="matlab">	
+    % outputs a table with selected properties of selected species to html format
+ 	prt_tab({select('Daphniidae'),read_stat(select('Daphniidae'),{'p_M','R_i'})},{'species','[p_M]','R_i'}) 
+	</code></pre>
+	<pre><code class="matlab">	
+    get_n(list_taxa('Carnivora',4))	
+	</code></pre>
+	<pre><code class="matlab">	
+    treeview_taxa('Crustacea')
+	gallery_png(select('Daphniidae'))
+	</code></pre>
+	<pre><code class="matlab">	
+   [~, taxon] = clade('Lemmus_trimucronatus'); pedigree(taxon,'p_M')
+	</code></pre>
+If you like, feel free to use the lineage, pedigree and treeview_taxa functions to see which species are in AmP that are most closely related to your study organisms.
+
+<h3>Advanced data analysis</h3>		
+There are multiple ways to visualize and plot data for which parameters are estimated, as well as some advanced reporting which can be useful.
+    <ol>
+          <li><a href="https://miktex.org/download">Download MikTex</a>.  The production of the report runs BibTex (under Matlab), which can be downloaded freely, to produce an html with references; if not available, the bib-file is shown. (in short, if you don't have this you can still work, but it is free and easy to install and then references in the report look amazing!).
+		  <li>If you like to visualize data in 4 dimensions, with time the 4th dimension, make sure to dowload the <href="https://sourceforge.net/projects/apngasm/files/2.91/apngasm-2.91-bin-win64.zip/download">"animated png assembler" apngasm64.exe</a>. Unzip, put folder somewhere like in C drive. Set path in the "Environment Variables" (PC users).
+          <li>Download  <a href = "https://github.com/add-my-pet/AmPtox">the AmPtox GitHub repository</a> and save it in a directory outside of everything else. <a href="https://amptox.debtheory.org/docs/">AmPtox manual is on AmP website Use> AmPtox</a>
+          <li>In matlab, navigate to OECD202_dichromate, open run_OECD202_dichromate, and run that. If it works, and generates all files. Stop and we pick it up at the course. If not, and you cannot fix the problem, write to Starrlight
+    </ol> 
+
+ 
+<!-------
+This is how you get entries with tL_m and tW_m or tWw_m data (replace 1 by 0 if you do not have all entries locally), 
+where the assumption is that all entries with male-data also have female-data
+<pre><code class="matlab">	
+[~, nm, s_LL]=select_mydata(select,'L_L',1);
+[~, ~, s_L0Lt]=select_mydata(select,'L0-Lt',1);
+nm_LL = nm(s_LL)
+</code></pre>
+
+select the entries of a specified model say 'std' :
+<pre><code class="matlab">
+ [mod, nm]= read_allStat({'model'}); nm_std=nm(ismember(mod,'std'));
+ length(nm_std)
+</code></pre>
+--->
+
+      </div> <!-- end of contentFull -->
+			
+      <!-------------------------------------------------------->	
+      <!--   FOOTER                                                  -->
+      <!--------------------------------------------------------------->	
+
+      <div w3-include-html="sys/footer_amp.html"></div>
+      <script>w3IncludeHTML();</script>
+
+    </div> <!-- main wrapper -->
+  </div> <!-- main -->
+</BODY>
+</HTML>
