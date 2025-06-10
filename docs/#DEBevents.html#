@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DEB events</title>
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+  <script src="sys/jscripts.js"></script>
+</head>
+<body>
+
+  <div w3-include-html="sys/wallpaper_DEBportal.html"></div>
+  <div id="tb"></div><script>include_toolbar('DEBportal')</script>
+
+<div id = "main">
+  <div id = "main-wrapper">    
+    <div id="contentFull">
+
+      <h1>DEB events</h1>
+
+      <a href="DEBkeynotes.html" target="_blank">Please follow this link to access the list of all past keynote speakers at DEB international symposia</a>. 
+
+      <table id="t01">
+        <tr class="head"><th>Event</th> <th>Location</th> <th>Dates</th> <th>Note</th></tr>
+	
+	<tr>
+	  <td><a href="https://deb2027.sciencesconf.org/" target="_blank">DEB 2027 tele-course, School & Symposium</a></td>	
+          <td>One line & Melbourne, Australia</td>	
+          <td>2025/??/?? - ?? (online course); 2027/12/?? - 12/?? (practical course); 2027/12/?? - ?? (symposium)</td>
+	  <td><a href="https://deb2027.sciencesconf.org/resource/page/id/23" target="_blank">10th Internat. Symposium</a>
+	    on DEB theory preceeded by a two part training event (<a href="https://deb2025.sciencesconf.org/resource/page/id/28" target="_blank">free online course</a> and
+	    <a href="https://deb2027.sciencesconf.org/resource/page/id/23" target="_blank">8-d practical course in person</a>).
+	  </td>
+	</tr>
+
+        <tr>
+	  <td><a href="https://www.elsevier.com/events/conferences/all/international-society-for-ecological-modelling-global-conference/participate#2-symposia-abstracts" target="_blank">From Data to Decision: Empowering Ecosystem Management through Modelling, Pre-ceded by DEB workshop.</a></td>	
+          <td>Kashiwa-no-ha Conference Centre, Kashiwa, Japan</td>	
+          <td>2025/010/18-23</td>
+	  <td>59th Internat. Symposium of the International Society for Ecological Modelling Global Conference.</td>
+	</tr>
+
+	<tr>
+	  <td><a href="https://deb2025.sciencesconf.org/" target="_blank">DEB 2025 tele-course, School & Symposium</a></td>	
+          <td>One line & Iraklion, Crete, Greece</td>	
+          <td>2025/02/14 - 03/28 (online course); 2025/05/26 - 06/03 (practical course); 2025/06/04 - 06 (symposium)</td>
+	  <td><a href="https://deb2025.sciencesconf.org/resource/page/id/25" target="_blank">9th Internat. Symposium</a>
+	    on DEB theory preceeded by a two part training event (<a href="https://deb2025.sciencesconf.org/resource/page/id/28" target="_blank">free online course</a> and
+	    <a href="https://deb2025.sciencesconf.org/resource/page/id/23" target="_blank">8-d practical course in person</a>).
+	    220 participarts enrolled for online-course, 44 for school (excluding 17 assistants)
+	    <img class="myImg" src="img/DEB2025_1.jpg" alt="DEB2025" align="right">	    
+	    <img class="myImg" src="img/DEB2025_2.jpg" alt="DEB2025" align="right">
+	    <img class="myImg" src="img/DEB2025_3.jpg" alt="DEB2025" align="right">
+	    <img class="myImg" src="img/DEB2025_4.jpg" alt="DEB2025" align="right">
+	    <img class="myImg" src="img/DEB2025_5.jpg" alt="DEB2025" align="right">
+	    <img class="myImg" src="img/DEB2025_6.jpg" alt="DEB2025" align="right">
+	    <a href="https://photos.app.goo.gl/tXXH3pHhjM7LYtkb7" target="_top">more</a>
+	  </td>
+	</tr>
+
+	<tr>
+	  <td><a href="https://www.irb.hr/eng/Divisions/Division-for-Marine-and-Environmental-Research/Laboratory-for-Informatics-and-Environmental-Modelling/Projects/Active-projects/AmP-Cro-Add-my-Pet-project-in-Croatia" target="_blank">Add-my-pet curator workshop V</a></td>
+	  <td>Ru&#273;er Bo&#353;kovi&#263; Institute (RBI), Zagreb, Croatia</td>
+	  <td>2025/02/02 - 08</td>
+	  <td>
+	    <img class="myImg" src="img/AmP2025_1.jpg" alt="AmP curator workshop 2025" align="right">	    
+	    <img class="myImg" src="img/AmP2025_2.jpg" alt="AmP curator workshop 2025" align="right">
+	    <img class="myImg" src="img/AmP2025_3.jpg" alt="AmP curator workshop 2025" align="right">
+	    <img class="myImg" src="img/AmP2025_4.jpg" alt="AmP curator workshop 2025" align="right">
+	    <img class="myImg" src="img/AmP2025_5.jpg" alt="AmP curator workshop 2025" align="right">
+	    <img class="myImg" src="img/AmP2025_6.jpg" alt="AmP curator workshop 2025" align="right">
+	    <img class="myImg" src="img/AmP2025_7.jpg" alt="AmP curator workshop 2025" align="right">
+	    Developments in AmP and preparation for DEB2025 
+	  </td> 
+	</tr>
+
+        <tr>
+	  <td><a href="https://deb2023.sciencesconf.org/" target="_blank">DEB 2023 tele-course, School & Symposium</a></td>	
+          <td>One line & Baton Rouge, Lousiana, USA</td>	
+          <td>2023/03/23 - 05/04 (online course); 2023/06/05 - 13 (practical course); 2023/06/14 - 16 (symposium)</td>
+	  <td><a href="https://deb2023.sciencesconf.org/resource/page/id/25" target="_blank">8th Internat. Symposium</a>
+	    on DEB theory preceeded by a two part training event (<a href="https://deb2023.sciencesconf.org/resource/page/id/28" target="_blank">free online course</a> and
+	    <a href="https://deb2023.sciencesconf.org/resource/page/id/23" target="_blank">8-d practical course in person</a>).
+	    142 participarts enrolled for online-course, 27 for school (excluding 13 assistants)
+	    <img class="myImg" src="img/DEB2023_1.jpg" alt="participants of DEB2023" align="right">
+	    <img class="myImg" src="img/DEB2023_2.jpg" alt="lots of squirrels around the place" align="right">
+	    <img class="myImg" src="img/DEB2023_3.jpg" alt="closeby New Orleans has a nice aquarium" align="right">
+	    <img class="myImg" src="img/DEB2023_4.jpg" alt="many discussion sessions were in the campus-park" align="right">
+	    <img class="myImg" src="img/DEB2023_5.jpg" alt="the alligator boat-trip in the swamps of Louisiana, American style" align="right">
+	    <img class="myImg" src="img/DEB2023_6.jpg" alt="some are scared by big insects, others are not ..." align="right">
+	  </td>
+	</tr>
+		
+	<tr>
+	  <td>Add-my-pet curator workshop IV</td>
+	  <td>Voorschoten, the Netherlands</td>
+	  <td>2023/02/28 - 03/23 & 2023/04/27 - 05/09</td>
+	  <td>
+	    <img class="myImg" src="img/AmP2023_1.jpg" alt="AmP curator workshop 2023" align="right">
+	    <img class="myImg" src="img/AmP2023_2.jpg" alt="AmP curator workshop 2023" align="right">
+	    <img class="myImg" src="img/AmP2023_3.jpg" alt="AmP curator workshop 2023" align="right">
+	    <img class="myImg" src="img/AmP2023_4.jpg" alt="AmP curator workshop 2023" align="right">
+	    Developments in AmP and preparation for DEB2023
+	  </td>
+	</tr>
+
+        <tr>
+	  <td><a href="https://deb2021.sciencesconf.org/resource/page/id/11">DEB 2021 tele-course, School & Symposium</a></td>
+	  <td>Online (due to COVID)</td>
+	  <td>2021/03/04 - 04/22 & 05/17 - 22</td>
+	  <td>7th international symposium on DEB theory: 2021/05/24 - 28
+	      Online with daily live zoom sessions 15:00 and 18:00 GMT (London time)</td>
+	</tr>
+
+<!---	
+	<tr>    
+          <td>short GUTS courses</td>
+	  <td>Wageningen, the Netherlands</td>
+	  <td>dates to be announced</td>
+	  <td>probably 2021 onwards; Dedicated 2-day GUTS courses, geared towards professionals in risk assessment of pesticides. More information</td>
+	</tr>
+
+
+	<tr>
+          <td><a href="https://www.debtox.info/downloads/Flyer2021.pdf">Summer school "Dynamic modelling of toxic effects"</a></td>
+	  <td>Roskilde Vandrehjem, Denmark</td>
+	  <td>2021/10/18 - 22</td>
+	  <td>due to the COVID-19 situation, the 2020 course has been cancelled. More information on the course page</td>
+	</tr>
+ -->
+	
+	<tr>
+          <td>Ecotox (GUTS)focused training courses at SETAC Europe</td>
+	  <td>Dublin, Ireland</td>
+	  <td>2020/05/03 - 07</td>
+	  <td>A course on the openGUTS software by Tjalling Jager and Roman Ashauer -
+	    an afternoon's hands-on course for using the software, with very limited attention to the backgrounds of the GUTS model itself.
+	    This course is now available for everyone via <a href="https://leanpub.com/c/openguts">Leanpub</a>.
+            TC01 - GUTS Modelling:
+	    From the Theory to the Practice (3rd May).
+	    A full-day training course organized by Sandrine Charles.
+	    Details on the course can be found here. (Practical: R software and MOSAIC web platform)</td>
+	</tr>
+
+	<tr>
+	  <td>debX 2020</td>
+	  <td>Online</td>
+	  <td>2020/02/17 - 03/23</td>
+	  <td>A 5-week course (MOOC) providing a framework for modelling metabolism at the organism level, covering the full life-cycle,
+	    using the Dynamic Energy Budget (DEB) Theory.
+	    A free online course about DEB theory that has been running for 4 years.
+	    This year it will have new French subtitles thanks to the LEMAR group in Brest</td>
+	</tr>
+	
+	<tr>    
+	  <td>Preditox 2020 - Ecotoxicology and Predictive Modelling</td>
+	  <td>Lyon, France</td>
+	  <td>2020/01/06 - 10</td>
+	  <td>(Ecotox) Winter school covering the following topics: Introduction to R software,
+	    Dose-response and TKTD modeling, Distribution fitting, Bayesian inference
+	  </td>
+	</tr>
+
+	<tr>
+	  <td>DEB session/symposium at the ISEM conference</td>
+	  <td>Salzburg, Austria</td>
+	  <td>2019/10/01 - 05</td>
+	  <td>Dynamic energy budgets are one of the main topics on the International Society for Ecological Modelling conference.
+	    Abstract submission deadline 26th April.</td>
+	</tr>
+
+	<tr>
+	  <td>Ecological applications of DEB at the Biomathematics ESMTB Summer School 2019 - Modelling in Marine Ecology</td>
+	  <td>Sicily, Italy</td>
+	  <td>2019/09/8 - 21</td>
+	  <td>The school aims to cover several themes on modelling in marine ecology and provide several courses within each theme.
+	    Five diverse themes were negotiated, with some of them having as many as five courses.
+	    Among modelling strategies, frameworks, and concepts, DEB theory and DEB-based models are presented and applied</td>
+	</tr>
+
+	<tr>
+	  <td><a href="https://deb2019.sciencesconf.org/">DEB2019: Practical course, Workshop & Symposium</a></td>
+	  <td>Brest, France</td>
+	  <td>2019/04/1 - 6 & 8-9 & 10 - 12</td>
+	  <td>
+	    <img class="myImg" src="img/DEB2019_1.jpg" alt="participants DEB2019" align="right">
+	    <img class="myImg" src="img/DEB2019_2.jpg" alt="participants DEB2019" align="right">
+	    <img class="myImg" src="img/DEB2019_3.jpg" alt="participants DEB2019" align="right">
+	    DEB School practical course (a continuation of the tele-course, including practical exercises).
+	    The course is followed by 2-day DEB workshops, and the 6th international symposium!
+	    Application for the school and abstract submission are open (deadline October 20th)</td>
+	</tr>
+
+	<tr>
+	  <td>DEB2019: Tele-course</td>
+	  <td>Online</td>
+	  <td>2019/01/24 - 02/28</td>
+	  <td>10th edition of the DEB tele-course: general theoretical part.
+	    Focus is on chapters 1-4 of the DEB3-book, which deal with the principles of the theory and (the simplest) univariate DEB models</td>
+	</tr>
+
+	<tr>
+	  <td>Add-my-pet curator workshop III</td>
+	  <td>Voorschoten, the Netherlands</td>
+	  <td>2018/08/13-20</td>
+	  <td>
+	    <img class="myImg" src="img/AmP2018_1.jpg" alt="AmP curator workshop 2018" align="right">
+	    <img class="myImg" src="img/AmP2018_2.jpg" alt="AmP curator workshop 2018" align="right">
+	    <img class="myImg" src="img/AmP2018_3.jpg" alt="AmP curator workshop 2018" align="right">
+	    Developments in AmP</td>
+	</tr>
+
+	<tr>
+	  <td>debX 2018</td>
+	  <td>Online</td>
+	  <td>2018/02/19 - 03/26</td>
+	  <td>A 5-week course (MOOC) providing a framework for modelling metabolism at the organism level,
+	    covering the full life-cycle, using the Dynamic Energy Budget (DEB) Theory</td>
+        </tr>
+	
+	<tr>	  
+	  <td><a href"http://deb.akvaplan.com/teledescription.html">DEB2017 tele-course</a> &
+	    <a href="http://deb.akvaplan.com/debschool.html">School</a> &
+	    <a href="https://www.akvaplan.niva.no/mynewsdesk-articles/%E2%80%8Bdeb2017-5th-international-symposium-on-dynamic-energy-budget-theory-tromso-norway-may-31-june-2-2017/">5th International DEB Symposium</a></td>
+	  <td>Troms&oslash;, Norway</td>
+	  <td>2017/05/21 - 30 & 05/31 - 06/02</td>
+	  <td>Continuation of the DEB Tele-course.
+	    The focus of the practical course is mastering the skills involved in the interface between the empirical world and mathematics.
+	    The course is followed by the symposium covering advances in research and developments of DEB theory in the context of ecosystem
+	    based approaches to managing resources.
+	    (Akvaplan-niva AS)</td>
+	</tr>
+
+	<tr>
+	  <td>debX micro</td>
+	  <td>Online</td>
+	  <td>2017/05/12 - 25</td>
+	  <td>A framework for modelling metabolism for microorganisms using the Dynamic Energy Budget (DEB) Theory is provided in this course</td>
+	</tr>
+
+	<tr>	  
+	  <td>9th DEB Tele-course 2017</td>
+	  <td>Online</td>
+	  <td>2017/03/02 - 04/06</td>
+	  <td>The tele-course focuses on chapters 1-4 of the DEB-book, which deals with the principles of the theory and with univariate DEB models.
+	    (Akvaplan-niva AS)</td>
+	</tr>
+
+	<tr>
+	  <td>Add-my-pet curator workshop II</td>
+	  <td>Voorschoten, the Netherlands</td>
+	  <td>2017/01/23 - 27</td>
+	  <td>
+	    <img class="myImg" src="img/AmP2017.jpg" alt="AmP curator workshop 2017" align="right">
+	    Developments in AmP/ DEB course and symposium 2017</td>
+	</tr>
+
+	<tr>
+	  <td><a href="https://www.labexmer.eu/en/labexmer-alaune/mems-summer-school-august-29-september-2">MEMS Summer School</a></td>
+	  <td>Brest, France</td>
+	  <td>2016/08/29 - 09/02</td>
+	  <td>
+	    <img class="myImg" src="img/MEMS2016.jpg" alt="MEMS Summer School 2016" align="right">
+	    "Combining Modeling and Experimental Approaches for Marine organisms under Stress"</td>
+	</tr>
+
+	<tr>
+	  <td>TKTD summerschool 'DynModTox' 2016</td>
+	  <td>Holb&aelig;k, Denmark</td>
+	  <td>2016/08/09 - 17</td>
+	  <td>Learning the basics of toxicokinetic and toxicodynamic modelling, how they can be linked and how to analyse
+	    and interpret body residue and toxicity data on a mechanistic basis.
+	    The course follows the same format as in 2014, but with more freedom in the group projects
+	    <a href="http://debtox.info/courses_past/dynmodtox_2016.html">Impressions</a></td>
+	</tr>
+	
+	<tr>
+	  <td>Add-my-pet curator workshop I</td>
+	  <td>Voorschoten, the Netherlands</td>
+	  <td>2016/06/25 - 07/02</td>
+	  <td>
+	    <img class="myImg" src="img/AmP2016_1.jpg" alt="AmP curator workshop 2016" align="right">
+	    <img class="myImg" src="img/AmP2016_2.jpg" alt="AmP curator workshop 2016" align="right">
+	    <img class="myImg" src="img/AmP2016_3.jpg" alt="AmP curator workshop 2016" align="right">
+	    <img class="myImg" src="img/AmP2016_4.jpg" alt="AmP curator workshop 2016" align="right">
+	    <img class="myImg" src="img/AmP2016_5.jpg" alt="AmP curator workshop 2016" align="right">
+	    Developments in add-my-pet/ DEB course 2017</td>
+	</tr>
+
+	<tr>
+	  <td><a href="http://www.bio.vu.nl/thb/research/bib/Kooy2016.html">Effective Strategic Renewal workshop</a></td>
+	  <td>Copenhagen Business School, Copenhagen Denmark</td>
+	  <td>2016/06/22</td>
+	  <td>Study of applicability of DEB theory in Economics</td>
+	</tr>
+
+	<tr>
+	  <td>Eco(toxi)cology tool for produced water workshop</td>
+	  <td>Statoil, Trondheim, Norway</td>
+	  <td>2016/03/03 - 04</td>
+	  <td>Improving risk assessment for produced water in the Bering Sea using DEB theory</td>
+	</tr>
+
+	<tr>
+	  <td>TKTD summerschool 'DynModTox' 2014</td>
+	  <td>Roskilde, Denmark</td>
+	  <td>2016/08/05 - 13</td>
+	  <td>Focus on (basic) toxicokinetics and toxicodynamic modelling (sub-lethal effects) using DEB theory in the form of the simplified DEBkiss model.
+	    Use of OpenModel next to Matlab. Impressions</td>
+	</tr>
+
+	<tr>
+	  <td>DEB2015 course and Symposium</td>
+	  <td>Online and Marseille, France</td>
+	  <td>2015/02/19 - 03/26 & 04/20-30</td>
+	  <td>
+	    <img class="myImg" src="img/debmap2015.gif" alt="124 participants DEB2015" align="right">
+	    8th DEB Tele-course (19 Feb - 26 Mar):
+	    general theoretical part (5 weeks part-time) in tele-mode (at your working place)
+	    Participants;
+	    practical training part (20 Apr - 27 Apr):
+	    7 days in class-room mode in the CIRM (Centre for International Meetings in Mathematics) in campus Luminy, Marseille (France);
+	    4th Symposium on DEB theory (28 Apr - 30 Apr): at campus Luminy, Marseille (France).
+	    DEB 2015 is organised conjointly by the CIRM, the Mediterranean Institute of Oceanography (MIO) and the Institute Pytheas (OSU).
+	    These are components of Aix-Marseille University (AMU)</td>
+	</tr>
+
+	<tr>
+	  <td>Multispecies parameter estimation workshop</td>
+	  <td>LEMAR, Brest, France</td>
+	  <td>2015/09/07 - 08</td>
+	  <td><img class="myImg" src="img/Multispecies_workshop2015.jpg" alt="participants" align="right">
+	    Introduction to multispecies DEB parameter estimation</td>
+	</tr>
+
+	<tr>    
+	  <td>PhD course on Theoretical Ecology</td>
+	  <td>Amsterdam</td>
+	  <td>2015/02/02</td>
+	  <td>4 lectures on DEB theory for metabolic metabolic organisation at VU University</td>
+	</tr>
+
+	<tr>
+	  <td>DEB2013 course and Symposium</td>
+	  <td>Online and NIOZ, Texel, Netherlands</td>
+	  <td>2013/02 - 03 & 04/15 - 26</td>
+	  <td>
+	    <img class="myImg" src="img/debmap2013.gif" alt="130 participants DEB2013" align="right">
+	    <img class="myImg" src="img/DEB2013_participants_1.jpg" alt="Parciticipants of DEB2013" align="right">
+	    <img class="myImg" src="img/DEB2013_participants_2.jpg" alt="Parciticipants of DEB2013" align="right">
+	    7th DEB Tele-course (Feb - Mar): general theoretical part in tele-mode Participants;
+	    practical training part (15 Apr - 23 Apr) in class-room mode in the Royal Netherlands Institute for Sea Research (NIOZ), Texel (Netherlands).
+	    3rd Symposium on DEB theory (24 Apr - 26 Apr) at NIOZ
+	  </td>
+	</tr>
+
+	<tr>
+	  <td>TKTD summerschool 'DynModTox' 2012</td>
+	  <td>Holb&aelig;k, Denmark</td>
+	  <td>2012/08/11 - 18</td>
+	  <td>Learning the basics of toxicokinetic and toxicodynamic modelling, how they can be linked and how to analyse and interpret body residue
+	    and toxicity data on a mechanistic basis. TKTD modelling in general, and GUTS and DEBtox in particular. Impressions</td>
+	</tr>
+
+	<tr>
+	  <td>Workshop on DEB theory</td>
+	  <td>Melbourne, Australia</td>
+	  <td>2012/08/06 - 07</td>
+	  <td>Lecture series, discussion sessions, school</td>
+	</tr>
+
+	<tr>    
+	  <td>PhD course on Theoretical Ecology</td>
+	  <td>Amsterdam</td>
+	  <td>2012/01/16</td>
+	  <td>4 lectures on DEB theory for metabolic metabolic organisation at VU University</td>
+	</tr>
+
+	<tr>    
+	  <td>Summer course</td>
+	  <td>Wimereux</td>
+	  <td>2011/05/10 - 06/14</td>
+	  <td>Station Marine de Wimereux, Univ. du Littoral cote d'Opale:
+	    Lectures on metabolic organisation and evolutionary aspects</td>
+	</tr>
+
+	<tr>
+	  <td><a href="https://sites.google.com/site/debsymposium2011/">DEB2011 course and Symposium</a></td>
+	  <td>Online and Lisbon, Portugal</td>
+	  <td>2011/02-03 & 04/04-15</td>
+	  <td>
+	    <img class="myImg" src="img/DEB2011.jpg" alt="DEB2011 organizing crew in 2009" align="right">
+	    <img class="myImg" src="img/DEB2011_participants.jpg" alt="participants DEB2011" align="right">
+	    6th DEB Tele-course (Feb - Mar): general theoretical part in tele-mode. Participants.;
+	    practical training part (04 Apr - 12 Apr): in class-room mode at the Instituto Superior T&eacute;cnico (T&eactute;cnico Lisboa), Lisbon (Portugal).
+	    Most participants.; 2nd Symposium on DEB theory (13 - 15 Apr) at T&eacute;cnico Lisboa in Lisbon.</td>
+	</tr>
+	
+	<tr>    
+	  <td>7th AQUAdeb meeting</td>
+	  <td>Nantes</td>
+	  <td>2010/04/27</td>
+	  <td>Upcomming events in DEB research</td>
+	</tr>
+
+	<tr>    
+	  <td>PhD course on Theoretical Ecology</td>
+	  <td>Amsterdam</td>
+	  <td>2010/01/11</td>
+	  <td>4 lectures on DEB theory for metabolic metabolic organisation at VU University</td>
+	</tr>
+
+	<tr>    
+	  <td>6th AQUAdeb meeting</td>
+	  <td>Nantes</td>
+	  <td>2009/11/05</td>
+	  <td>Upcomming events in DEB research</td>
+	</tr>
+
+	<tr>    
+	  <td><a href="https://wwz.ifremer.fr/deb2009">DEB2009 course and 1st Symposium</a></td>
+	  <td>Online and Brest, France</td>
+	  <td>2009/02/12 - 03/19 & 09/17 - 10/22 & 04/19 - 23</td>
+	  <td>
+	    <img class="myImg" src="img/debmap2009.gif" alt="61 participants DEB2009" align="right">
+	    <img class="myImg" src="img/DEB2009.jpg" alt="DEB2009 organizing crew " align="right">
+	    5th DEB Tele-course in tele-mode: 02/02: plenary introductory program about chap 1-5 of the DEB book,
+	    and 09/10: advanced parallel program with selected topics related to the various symposium sessions.
+	    Practical training part (04): course and discussion day in Brest, France;
+	    1st Symposium on DEB theory DEB Theory: 30 years of research for metabolic organization</td>
+	</tr>
+	
+	<tr>    
+	  <td>5th AQUAdeb meeting</td>
+	  <td>Nantes</td>
+	  <td>2008/10/28</td>
+	  <td>3rd edition of DEB book and its maintenance</td>
+	</tr>
+
+	<tr>    
+	  <td>4th AQUAdeb meeting</td>
+	  <td>Nantes</td>
+	  <td>2008/04/24</td>
+	  <td>Isotope dynamics</td>
+	</tr>
+
+	<tr>    
+	  <td>PhD course in Theoretical Ecology</td>
+	  <td>Amsterdam</td>
+	  <td>2008/01/07</td>
+	  <td>4 lectures on metabolic organisation at VU University</td>
+	</tr>
+
+	<tr>    
+	  <td>3rd Workshop on DEB theory applications in marine systems</td>
+	  <td>Marseille</td>
+	  <td>2007/12/20</td>
+	  <td>University of the Mediterranee</td>
+	</tr>
+
+	<tr>    
+	  <td>3rd AQUAdeb meeting</td>
+	  <td>Rennes</td>
+	  <td>2007/12/18</td>
+	  <td>Agrocampus</td>
+	</tr>
+
+	<tr>    
+	  <td>2nd AQUAdeb meeting</td>
+	  <td>Nantes</td>
+	  <td>2007/04/25</td>
+	  <td>Ifremer, estimation of DEB parameters</td>
+	</tr>
+
+	<tr>    
+	  <td>DEB2007 tele course</td>
+	  <td>Online</td>
+	  <td>2007/02 - 03</td>
+	  <td>
+	    <img class="myImg" src="img/debmap2007.gif" alt="52 participants DEB2007" align="right">
+	    4th DEB Tele-course in tele-mode</td>
+	</tr>
+
+	<tr>    
+	  <td>2nd Workshop on DEB theory applications in marine systems</td>
+	  <td>Marseille</td>
+	  <td>2007/01/17 - 18</td>
+	  <td>Centre d'Oceanologie de Marseille Laboratoire de Microbiologie, de Geochimie et d'Ecologie Marines, Marseille</td>
+	</tr>
+
+	<tr>    
+	  <td>1st AQUAdeb meeting</td>
+	  <td>Nantes</td>
+	  <td>2006/10/30</td>
+	  <td>Ifremer, estimation of DEB parameters</td>
+	</tr>
+
+	<tr>    
+	  <td>1st Workshop on DEB theory applications in marine systems</td>
+	  <td>Marseille</td>
+	  <td>2005/12/12 - 14</td>
+	  <td>Centre d'Oceanologie de Marseille Laboratoire de Microbiologie, de Geochimie et d'Ecologie Marines, Marseille</td>
+	</tr>
+
+	<tr>    
+	  <td>PhD course in Theoretical Ecology</td>
+	  <td>Amsterdam</td>
+	  <td>2005/12/05</td>
+	  <td>4 lectures on DEB theory at VU University Amsterdam</td>
+	</tr>
+
+	<tr>    
+	  <td>DEB2005 tele course</td>
+	  <td>Online</td>
+	  <td>2005/02 - 03</td>
+	  <td>
+	    <img class="myImg" src="img/debmap2005.gif" alt="26 participants DEB2005" align="right">
+	    3th DEB Tele-course in tele-mode</td>
+	</tr>
+
+	<tr>    
+	  <td>ESMTB Summerschool</td>
+	  <td>Seq&uuml;enza, Spain</td>
+	  <td>2003/08/25 - 09/03</td>
+	  <td>
+	    <img class="myImg" src="img/Sequenza2003.jpg" alt="participants of summerschool" align="right">
+	    <a href="http://euromedbiomath.s2003.free.fr/">
+	    Scales in Mathematical and Theoretical Ecology From Individuals to Ecosystems</a>
+	  </td>
+	</tr>
+
+	<tr>    
+	  <td>DEB2003 tele course</td>
+	  <td>Online</td>
+	  <td>2003/02 - 03</td>
+	  <td>
+	    <img class="myImg" src="img/debmap2003.gif" alt="48 participants DEB2003" align="right">
+	    2nd DEB Tele-course in tele-mode</td>
+	</tr>
+
+	<tr>    
+	  <td>DEB2001 tele course</td>
+	  <td>Online</td>
+	  <td>2001/02 - 01</td>
+	  <td>
+	    <img class="myImg" src="img/debmap2001.gif" alt="57 participants DEB2003" align="right">
+	    <img class="myImg" src="img/debmap2001a.gif" alt="57 participants DEB2003" align="right">
+	    1st DEB Tele-course in tele-mode</td>
+	</tr>
+
+	<tr>    
+	  <td>DEB course</td>
+	  <td>Berlin, Germany</td>
+	  <td>2000/02/17</td>
+	  <td>6-lecture course at Humboldt University</td>
+	</tr>
+
+	<tr>    
+	  <td>DEB course</td>
+	  <td>Woutschoten, the Netherlands</td>
+	  <td>2000/01/06</td>
+	  <td>5 lectures at 3rd winterschool on pupulation dynamics</td>
+	</tr>
+
+      </table>
+      
+      <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+      
+      <script>modal()</script>
+
+    </div><!-- end of contentFull -->
+
+    <div w3-include-html="sys/footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+      
+  </div> <!-- end of main wrapper -->
+</div> <!-- end of main -->
+</body>
+</html>
