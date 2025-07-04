@@ -39,23 +39,23 @@
       Bi- and tri-variate data sets do not need a grouped-plot definition;
       it is not possible to combine such data sets with other data sets in a grouped plot.
 	  
-	  <p>
-	  An example of multi-variate can be found with the Doliolid:
+      <p>
+      An example of multi-variate can be found with the Doliolid:
       <a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/Dolioletta_gegenbauri/Dolioletta_gegenbauri_res.html">Dolioletta gegenbauri</a>.
-	  The excerpt of the code below show how the multi-variate is set within the mydata file:
+	  The excerpt of the code below shows how the multi-variate is set within the mydata file:
 	  <pre><code class="matlab">
-	  % food density - ingestion rate
-	data.XJX = [ ... % phytoplankton conc. (mug C/l), ingestion rate (mug C/d)
-	20	3.059  7.620 10.471
-	60	6.328 15.259 30.081
-	160 7.753 25.995 69.321
-	390	4.171 12.533 38.757];
-	units.XJX = {'mug C/l', 'mug C/d'};     label.XJX = {'phytoplankton conc.', 'ingestion rate'};  
-	treat.XJX = {2, [5; 15; 35]}; units.treat.XJX = 'mug C'; label.treat.XJX = 'zooid C weight';
-	temp.XJX = C2K(20); units.temp.XJX = 'K'; label.temp.XJX = 'temperature';
-	bibkey.XJX = 'GibsPaff2000';
-	subtitle.XJX = 'ingestion rate';
-	comment.XJX = 'Data for gonozooid';
+	 % food density - ingestion rate
+	 data.XJX = [ ... % phytoplankton conc. (mug C/l), ingestion rate (mug C/d)
+	  20	3.059  7.620 10.471
+	  60	6.328 15.259 30.081
+	 160    7.753 25.995 69.321
+	 390	4.171 12.533 38.757];
+	 units.XJX = {'mug C/l', 'mug C/d'};     label.XJX = {'phytoplankton conc.', 'ingestion rate'};  
+	 treat.XJX = {2, [5; 15; 35]}; units.treat.XJX = 'mug C'; label.treat.XJX = 'zooid C weight';
+	 temp.XJX = C2K(20); units.temp.XJX = 'K'; label.temp.XJX = 'temperature';
+	 bibkey.XJX = 'GibsPaff2000';
+	 subtitle.XJX = 'ingestion rate';
+	 comment.XJX = 'Data for gonozooid';
 	</code></pre>
 	
       <p>
