@@ -369,8 +369,7 @@
 	  The options allow to switch-off filters, but it then becomes likely that the predict-file reports an error if the algorithm tries an illegal combination of parameters values.
           DEBtool functions that involve a numerical procedure always have a flag as output that indicates success (1) or failure (0).
 	  This flag can be used as filter for failures to force other choices of parameter combinations, like in
-	  <code>[tau_p, tau_b, l_p, l_b, info]=get_tp(pars_tp, f); if ~info; prdData=[]; return; end</code>.
-								 
+	  <code>[tau_p, tau_b, l_p, l_b, info]=get_tp(pars_tp, f); if ~info; prdData=[]; return; end</code>.							 
 								 
         <p>
         If the fit is really miserable, select <code>estim_options('results_output', 3);</code> and <code>estim_options('method', 'no');</code>,
@@ -399,7 +398,21 @@
 	<p>
 	If the estimation was successful and you like to submit your entry to the AmP collection (by email to debtheory.org@gmail.com) a curator will run
 	<code>AmPtool/curation/curation_report(my_pet)</code> for checking, which you can also do yourself, of course. 
-							       
+
+	<h2 id="Plotting">Plotting results</h2>
+	
+	The predictions for univariate datasets at the end of an estimation cycle are plotted automatically with datapoints in red, and the predicted curve in blue,
+	if <code>results_output</code> in <code>estim_options</code> settings is 1 or higher.
+	The curve can be replaced by (un-connected) predicted points by specifying <code>treat</code> for that dataset, see <a href="Uni-variate_data.html">Univar data</a>.
+	Predictions for multivariate data, i.e. several curves per plot, can also be specified via  <code>treat</code>, where its second argument can be used to define
+	labels of the legend.
+	The title for the legend can be set via <code>label.treat</code>, see <a href="Bi-variate_data.html">Bivar data</a>.
+
+	<p>
+	Several datasets with the same independent variable (and units) can be combined in a single plot via a grouped plot, see <a href="Multi-variate_data.html">Multivar data</a>.
+	The labels for the legend are then specified as 3rd argument of the label of the dataset, and the title of the legend in <code>txtData.label.sets</code>, see e.g.
+	<a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/Calidris_canutus/mydata_Calidris_canutus.m">Calidris_canutus</a>.
+	  
         <h2 id="Evaluation">
 	  Evaluation of estimates
 	  <a href="https://youtu.be/LchBb8oC8Ng" target="_blank"><img src="img/YouTube.png" title="11:08" height="25px" align="right"></a>
