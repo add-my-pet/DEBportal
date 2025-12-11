@@ -412,7 +412,31 @@
 	Several datasets with the same independent variable (and units) can be combined in a single plot via a grouped plot, see <a href="Multi-variate_data.html">Multivar data</a>.
 	The labels for the legend are then specified as 3rd argument of the label of the dataset, and the title of the legend in <code>txtData.label.sets</code>, see e.g.
 	<a href="https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/Calidris_canutus/mydata_Calidris_canutus.m">Calidris_canutus</a>.
-	  
+
+	<h3 id="Elusive">Elusive parameters</h3>
+
+	Although all DEB parameters can be estimated from data, some parameters need advanced data, such as the reproduction efficiency &kappa;<sub>R</sub>
+	and the maturity maintenance rate coefficient k<sub>J</sub>.
+	In absence of such advanced data, these parameters become elusive, i.e. poorly determined by available data, also called non-identifiable.
+	One approach is to fix such parameters at default values, as done for &kappa;<sub>R</sub>.
+	An alternative is to use speudo data, which allows that predictions for this data can deviate from the value.
+	The deviation can be controlled by weights coefficients in the section <code>set pseudodata and respective weights</code>.
+	With <code>weights.psd.k_J = 0;</code>, the pseudodata value for k<sub>J</sub> no longer plays a role in the estimation.
+
+	<p>
+	Common practice is to set <code>k_J = 0.002;</code> 1/d  with <code>free.k_J = 0;</code> in the <code>pars_init></code>-file
+	as long as <code>p_M > 20</code> J/d.cm<sup>3</sup> as resulting parameter estimate.
+        Otherwise <code>free.k_J = 1;</code> and the line <code>weights.psd.k_J = 0; weights.psd.k = 0.1;</code> is added in the section <code>set pseudodata</code>
+	of the <code>mydata</code>-file.
+        The default pseudodata k = 0.3 then applies; it is important that maintenance ratio k remains less than 1, to avoid that the maturity density can decrease during ontogeny.
+	Alternatively you can add the line <code>weights.psd.k_J = 0; weights.psd.s_s = 0.1;</code>.
+        The function <code>addpseudodata</code> (which is used in the <code>mydata</code>-file) calls <code>get_FAS</code> and is used to get a default value to the factorial
+	aerobic scope, given the taxonomic position of the species, and <code>FAS2ss</code> to get a pseudodata value for s_s.
+	See <a href="https://www.zotero.org/groups/500643/deb_library/items/EJHXAWUC/">Verhille and Kooijman 2025</a>.
+	    
+	By default <code>weights.psd.s_s = 0;</code>, so these settings are typically not used.
+	It is also possible, or course, to overwrite this value with <code>psd.s_s = some value; weights.psd.s_s = 0.1;</code> directly in the <code>mydata-file</code>. 
+				
         <h2 id="Evaluation">
 	  Evaluation of estimates
 	  <a href="https://youtu.be/LchBb8oC8Ng" target="_blank"><img src="img/YouTube.png" title="11:08" height="25px" align="right"></a>
