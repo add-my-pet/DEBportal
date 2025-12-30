@@ -424,7 +424,7 @@
 	With <code>weights.psd.k_J = 0;</code>, the pseudodata value for k<sub>J</sub> no longer plays a role in the estimation.
 
 	<p>
-	Common practice is to set <code>k_J = 0.002;</code> 1/d  with <code>free.k_J = 0;</code> in the <code>pars_init></code>-file
+	Common practice is to set <code>k_J = 0.002;</code> 1/d  with <code>free.k_J = 0;</code> in the <code>pars_init</code>-file
 	as long as <code>p_M > 20</code> J/d.cm<sup>3</sup> as resulting parameter estimate.
         Otherwise <code>free.k_J = 1;</code> and the line <code>weights.psd.k_J = 0; weights.psd.k = 0.1;</code> is added in the section <code>set pseudodata</code>
 	of the <code>mydata</code>-file.
