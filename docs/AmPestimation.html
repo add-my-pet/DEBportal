@@ -442,6 +442,8 @@
 	</h2>
         To judge parameter values, you can study the implied properties, setting <code>estim_options('results_output', 3);</code>,
         and an html-page is automatically opened in your system browser at the end of an iteration (or directly if 'method' 'no' is specified).
+	Alternatively, you can run <code>prt_report_my_pet('pet_name')</code> to create an html page with many implied properties,
+	or <code>prt_report_my_pet('pet_name','pet_name_AmP')</code> to compare properties of your pet, with one that is already in AmP.
         If all looks OK, you can specify 'results_output' 4 or till 6, and implied properties of related species in the collection are included in the table in the html-page.
 	At level 5, some most related species are included in the comparison with color-coding for each trait to what extent your species differ for the others.
 	You can add a global <code>refPets</code> to the run-file and fill it with a cell-string of ids of species to compare with (so over-writing the automatized selection).
