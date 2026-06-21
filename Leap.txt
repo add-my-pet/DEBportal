@@ -1,0 +1,35 @@
+From: Bas Kooijman
+To: DEBlist members
+Date: 2026/06/22
+Subject: DEBlearn
+
+Dear DEB list members,
+
+Apart from rather frequent incidental courses/workshops here and there, the "regular" DEB course history is
+listed in the DEBcalendar: https://debportal.debtheory.org/docs/DEBcalendar.html
+
+1993 yearly DEB courses at VU Univ just after DEB1 was published
+2001 2-yearly international internet courses as soon as VU Univ bought software Backboard
+2009 2-yearly courses plus symposium and Special Issue as we have them now, with help of Marianne Alunno-Bruscia and financial support by Ifremer
+2018 MOOC course, developed by the Lisbon-group, replacing Blackboard, as preparation for our "classic" DEB courses
+     see https://debportal.debtheory.org/docs/DEBevents.html
+
+and now a new chapter, which I see as preparation for or parallel to the MOOC courses: 
+2026 DEBlearn: an AI DEB learning tool, set up by Lothar Kuijper at VU Univ using AI tool Replit.
+
+Lothar graduated with me in 2004 on trophic flows in food web dynamics, so he had quite an exposure to early DEB, but he is now specialised in education.
+Important gadgets of DEBlearn are that the user can interact in his/her own language (Chinese, Spanish and many more)
+and take the learning experience at any time and as frequently as wanted.
+
+DEBlearn is still in the development-stage as part of the Open Education concept of VU Univ, but you can already see it:
+as first step goto https://120526-leeromgevingreplit.replit.app/feedback and login to LEAP-VU. 
+Select the language of your preference in the top toolbar right.
+Select the DEB course lower left ("Switch course", depending on the language that you selected). 
+
+Please play and mail your experience/suggestions to l.d.j.kuijper@vu.nl
+Your work will help to improve DEBlearn, after which it will be officially hosted by VU Univ with is more logical address (I hope).
+I will by then make links from the DEB website to DEBlearn.
+
+Best wishes
+
+Bas Kooijman

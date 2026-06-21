@@ -1,0 +1,6 @@
+DEB3           https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010.pdf
+DEB3comments   https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_c.pdf
+DEBsummary     https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_i.pdf
+DEBnotation    https://www.bio.vu.nl/thb/deb/deblab/bib/Kooy2010_n.pdf
+DEBtox         https://www.bio.vu.nl/thb/deb/deblab/bib/KooyBeda1996.pdf
+
