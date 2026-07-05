@@ -10,9 +10,9 @@ body {
 }
 
 /*-- offset in-page anchor jumps (e.g. DEBpapers.html#Patterns) so the target      --*/
-/*-- heading/caption lands below the two fixed top bars (#top 80px + #top2 65px)    --*/
+/*-- heading/caption lands below the two fixed top bars (#top 80px + #top2 65px)   --*/
 html {
-    scroll-padding-top: 155px;
+    scroll-padding-top: 80px;
 }
 
 /*--  ----------------------------                                    --*/
