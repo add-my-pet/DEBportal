@@ -5,8 +5,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.1em;
     margin: 0;
-    padding: 0; 
+    padding: 0;
     width: 100%;
+}
+
+/*-- offset in-page anchor jumps (e.g. DEBpapers.html#Patterns) so the target      --*/
+/*-- heading/caption lands below the two fixed top bars (#top 80px + #top2 65px)    --*/
+html {
+    scroll-padding-top: 155px;
 }
 
 /*--  ----------------------------                                    --*/
